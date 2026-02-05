@@ -1,0 +1,5 @@
+site_name: CharmsBot
+nav:
+  - Inicio: index.md
+  - Comandos: commands.md
+  - Changelog: changelog.md
