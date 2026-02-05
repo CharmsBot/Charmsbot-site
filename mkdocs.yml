@@ -3,3 +3,6 @@ nav:
   - Inicio: index.md
   - Comandos: commands.md
   - Changelog: changelog.md
+
+extra_templates:
+  - changelog_html
