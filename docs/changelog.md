@@ -1,6 +1,4 @@
-# Changelog
-
-- [v0.1.0](../changelog_html/v0.1.0.html)
-- [v1.0.0](../changelog_html/v1.0.0.html)
-- [v1.5.0](../changelog_html/v1.5.0.html)
-- [v2.0.0](../changelog_html/v2.0.0.html)
+<script>
+  window.location.href = "../site_html/changelog.html";
+</script>
+<p>If you are not redirected, <a href="../site_html/changelog.html">click here</a>.</p>
