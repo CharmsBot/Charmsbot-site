@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CharmsBot • Privacy Policy</title>
+  <style>
+    :root{
+      --bg1:#11162a;
+      --bg2:#0b0f1e;
+      --text:#e8eefc;
+      --muted: rgba(232,238,252,0.70);
+      --line: rgba(255,255,255,0.10);
+
+      --purple: rgba(147, 88, 255, 0.20);
+      --purpleBorder: rgba(147, 88, 255, 0.35);
+      --purpleText: #cdb7ff;
+
+      --cyan: #00d4ff;
+      --cyanBg: rgba(0, 212, 255, 0.10);
+      --cyanBorder: rgba(0, 212, 255, 0.25);
+    }
+
+    *{box-sizing:border-box}
+
+    html, body { height: 100%; }
+
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans", "Helvetica Neue", sans-serif;
+      color:var(--text);
+      background: transparent;
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* One continuous background layer for the whole page */
+    body::before{
+      content:"";
+      position: fixed;
+      inset: 0;
+      z-index: -1;
+      background:
+        radial-gradient(1200px 800px at 50% -200px, rgba(147,88,255,0.35), transparent 60%),
+        radial-gradient(900px 600px at 20% 0%, rgba(0,212,255,0.14), transparent 55%),
+        linear-gradient(180deg, var(--bg1), var(--bg2));
+    }
+
+    a{color:var(--cyan); text-decoration:none}
+    a:hover{opacity:.9}
+
+    .wrap{
+      max-width: 920px;
+      margin: 56px auto 40px;
+      padding: 0 18px;
+    }
+    .panel{
+      background: linear-gradient(180deg, rgba(255,255,255,0.05), rgba(255,255,255,0.03));
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 18px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.35);
+      overflow:hidden;
+    }
+    .hero{
+      padding: 34px 30px 18px;
+      text-align:center;
+    }
+    .logo{
+      width: 118px;
+      height: 118px;
+      border-radius: 16px;
+      background: rgba(0,0,0,0.18);
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      box-shadow: inset 0 0 0 1px rgba(255,255,255,0.08);
+      margin-bottom: 14px;
+    }
+    .logo img{
+      width: 96px;
+      height: 96px;
+      image-rendering: pixelated;
+      border-radius: 10px;
+    }
+    .brand{
+      font-size: 44px;
+      margin: 0;
+      letter-spacing: 0.2px;
+      color: #52a8ff;
+      font-weight: 800;
+    }
+    .tag{
+      margin: 8px 0 18px;
+      color: var(--muted);
+      font-size: 16px;
+    }
+    .divider{
+      height:1px;
+      background: var(--line);
+      margin: 16px 0 18px;
+    }
+    .nav{
+      display:flex;
+      gap: 12px;
+      justify-content:center;
+      flex-wrap:wrap;
+      padding-bottom: 10px;
+    }
+    .btn{
+      display:inline-block;
+      padding: 10px 18px;
+      border-radius: 14px;
+      background: var(--purple);
+      border: 1px solid var(--purpleBorder);
+      color: var(--purpleText);
+      font-weight: 600;
+      transition: transform .08s ease, background .08s ease;
+    }
+    .btn:hover{transform: translateY(-1px); background: rgba(147, 88, 255, 0.26);}
+
+    .content{
+      padding: 22px 28px 10px;
+    }
+    .page-title{
+      font-size: 38px;
+      margin: 0;
+      text-align:center;
+      color: #52a8ff;
+      font-weight: 800;
+    }
+    .page-sub{
+      text-align:center;
+      margin: 10px 0 20px;
+      color: var(--muted);
+    }
+
+    .subnav{
+      display:flex; gap:10px; flex-wrap:wrap; justify-content:center;
+      margin: 0 0 18px 0;
+    }
+    .subbtn{
+      text-decoration:none;
+      background: var(--cyanBg);
+      color: var(--cyan);
+      padding:8px 14px;
+      border-radius:14px;
+      font-size:0.95em;
+      border:1px solid var(--cyanBorder);
+      transition: transform .08s ease, background .08s ease;
+    }
+    .subbtn:hover{transform: translateY(-1px); background: rgba(0, 212, 255, 0.16);}
+    .subbtn.active{
+      background: rgba(0, 212, 255, 0.18);
+      border-color: rgba(0, 212, 255, 0.38);
+    }
+
+    .prose{
+      color: var(--text);
+      line-height: 1.65;
+      font-size: 15.5px;
+    }
+    .prose h2{
+      margin-top: 26px;
+      padding-top: 10px;
+      border-top: 1px solid var(--line);
+      color: #f1f5ff;
+      font-size: 22px;
+    }
+    .prose p{color: rgba(232,238,252,0.84);}
+    .prose li{color: rgba(232,238,252,0.84); margin: 6px 0;}
+    .prose ul{padding-left: 22px;}
+    .prose code{
+      background: rgba(0,0,0,0.22);
+      border: 1px solid rgba(255,255,255,0.10);
+      padding: 2px 6px;
+      border-radius: 8px;
+      color: #d7e6ff;
+      font-size: 0.95em;
+      white-space: nowrap;
+    }
+
+    .footer{
+      padding: 18px 22px 22px;
+      border-top: 1px solid var(--line);
+      color: rgba(232,238,252,0.60);
+      font-size: 13px;
+      text-align:center;
+    }
+    .footer a{color: var(--cyan);}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="panel">
+      <div class="hero">
+        <div class="logo">
+          <img src="https://i.imgur.com/FjCwTyg.png" alt="CharmsBot logo" />
+        </div>
+
+        <h1 class="brand">CharmsBot</h1>
+        <div class="tag">Discord bot for Tibia • Documentation & Changelog</div>
+
+        <div class="divider"></div>
+
+        <div class="nav">
+          <a class="btn" href="../">Home</a>
+          <a class="btn" href="../commands/">Commands</a>
+          <a class="btn" href="../changelog/">Changelog</a>
+          <a class="btn" href="../contact/">Contact</a>
+          <a class="btn" href="../legal/">Legal</a>
+        </div>
+      </div>
+
+      <div class="content">
+        <h2 class="page-title">Privacy Policy</h2>
+        <div class="page-sub">Effective Date: August 4, 2025</div>
+
+        <div class="subnav">
+          <a class="subbtn" href="../terms/">Terms of Service</a>
+          <a class="subbtn active" href="../privacy/">Privacy Policy</a>
+        </div>
+
+        <div class="prose">
+          <p>This Privacy Policy describes how <strong>CharmsBot</strong> ("the Bot," "we," or "us") collects, uses, stores, and protects your data when you interact with it on Discord. By using the Bot, you agree to the practices outlined in this policy. If you do not agree, please refrain from using the Bot.</p>
+
+          <h2>1. Data We Collect</h2>
+          <p>To provide the Bot’s functionality, we collect the following data:</p>
+          <ul>
+            <li><strong>Discord User ID:</strong> A unique identifier provided by Discord to associate your data, such as characters and analyses, with your Discord account. This ensures your data is accessible only to you.</li>
+            <li>
+              <strong>Character Information:</strong> When you use commands to manage characters, we collect:
+              <ul>
+                <li>Character name (provided by you).</li>
+                <li>Character stats, including level, maximum hitpoints, maximum mana, and charm points.</li>
+                <li>Selected charms from the list of available Tibia in-game charms.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Hunt Data:</strong> When you use hunt analysis features, such as calculating optimal charms or weapon proficiency XP, we collect:
+              <ul>
+                <li>Information about killed monsters and session times you provide.</li>
+                <li>Derived data, such as damage calculations or experience estimates, generated from your inputs.</li>
+              </ul>
+            </li>
+            <li>
+              <strong>Saved Analyses:</strong> If you choose to save hunt analyses or charm configurations, we store:
+              <ul>
+                <li>An optional name you assign to each analysis or configuration.</li>
+                <li>Details of the analyses, including creature names, charm assignments, and calculated results.</li>
+              </ul>
+            </li>
+          </ul>
+          <p>This data is essential for delivering a personalized and functional experience for managing your Tibia characters and analyzing hunts.</p>
+
+          <h2>2. How We Use Your Data</h2>
+          <p>We use your data solely to operate the Bot and provide its services, including:</p>
+          <ul>
+            <li><strong>Character Management:</strong> Enabling you to add, edit, delete, or view information about your Tibia characters through specific commands.</li>
+            <li><strong>Hunt Analysis:</strong> Processing hunt data to calculate optimal charm assignments, damage estimates, or weapon proficiency XP to help you optimize your gameplay.</li>
+            <li><strong>Storage of Configurations:</strong> Saving and displaying hunt analyses or charm configurations you choose to store for future reference.</li>
+            <li><strong>Functionality Improvement:</strong> Using interaction data to identify errors, enhance the Bot’s performance, and ensure a smooth user experience.</li>
+          </ul>
+          <p>We do not use your data for purposes unrelated to the Bot, such as advertising or external analytics.</p>
+
+          <h2>3. Data Storage and Security</h2>
+          <p><strong>Storage:</strong> Your data is stored in a secure database, linked to your Discord User ID to keep it organized and accessible only to you.<br>
+          <strong>Retention:</strong> We retain your data until you delete it using commands like <code>/character delete</code> (which removes a character and all associated data) or <code>/hunt delete</code> (which removes specific saved hunt data). If the Bot is discontinued, all stored data will be securely deleted.<br>
+          <strong>Security:</strong> We implement reasonable measures to protect your data, such as secure database configurations. However, no system is entirely secure, and we cannot guarantee absolute protection against unauthorized access.</p>
+
+          <h2>4. Data Sharing</h2>
+          <p>We do not share or sell your data to third parties, except in the following cases:</p>
+          <ul>
+            <li><strong>Discord API:</strong> The Bot operates within Discord’s ecosystem, and certain data, such as your User ID, is processed through Discord’s API to enable interactions.</li>
+            <li><strong>Legal Requirements:</strong> We may disclose data if required by law, such as in response to a court order or legal request.</li>
+            <li><strong>Service Providers:</strong> We use third-party services, such as a database provider, to store data. These providers only access data necessary for their services and are bound by their own privacy policies.</li>
+          </ul>
+          <p>We are committed to minimizing data sharing and safeguarding your privacy to the fullest extent possible.</p>
+
+          <h2>5. Your Rights</h2>
+          <p>You have full control over your data and can:</p>
+          <ul>
+            <li>View your data with <code>/character view</code> to see your characters.</li>
+            <li>Edit your data with the <code>/character edit</code> command.</li>
+            <li>Delete your data with <code>/character delete</code> (including all associated analyses) or <code>/hunt delete</code>.</li>
+            <li>Stop using the Bot at any time, and your data will remain secure until you choose to delete it.</li>
+          </ul>
+
+          <h2>6. Third-Party Services</h2>
+          <p>The Bot relies on the following third-party services:</p>
+          <ul>
+            <li><strong>Discord API:</strong> To process commands, send messages, and manage interactions.</li>
+            <li><strong>Database Service:</strong> To store and retrieve your character and analysis data.</li>
+          </ul>
+          <p>These services have their own privacy policies, which we recommend you review to understand how they handle your data.</p>
+
+          <h2>7. Changes to This Policy</h2>
+          <p>We may update this policy to reflect changes in the Bot’s functionality or legal requirements. Updates will be posted on this page, and the “Effective Date” will be revised. Continued use of the Bot after a change indicates your acceptance of the updated policy.</p>
+        </div>
+      </div>
+
+      <div class="footer">
+        Tibia is made by <a href="https://www.cipsoft.com/en/" target="_blank" rel="noopener noreferrer">CipSoft GmbH</a>.
+        All content from the official <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer">Tibia</a> website
+        or provided by CipSoft is copyrighted by CipSoft.
+        <br/>
+        CharmsBot © 2026
+      </div>
+    </div>
+  </div>
+</body>
+</html>

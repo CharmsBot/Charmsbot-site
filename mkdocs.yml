@@ -3,6 +3,7 @@ nav:
   - Home: index.md
   - Commands: commands.md
   - Changelog: changelog.md
-
-extra_templates:
-  - changelog_html
+  - Contact: contact.md
+  - Legal: legal.md
+  - Terms of Service: terms.md
+  - Privacy Policy: privacy.md
