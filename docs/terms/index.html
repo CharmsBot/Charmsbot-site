@@ -106,6 +106,20 @@
       flex-wrap:wrap;
       padding-bottom: 10px;
     }
+
+    /* UPDATED: nav like changelog (white text) */
+    .nav a{
+      text-decoration:none;
+      color: rgba(255,255,255,0.86);
+      background: rgba(91,45,132,0.65);
+      border: 1px solid rgba(160,120,220,0.35);
+      padding: 11px 18px;
+      border-radius: 16px;
+      transition: transform .08s ease, background .08s ease;
+      font-weight: 600;
+    }
+    .nav a:hover{ transform: translateY(-1px); background: rgba(109,58,160,0.70); }
+
     .btn{
       display:inline-block;
       padding: 10px 18px;
@@ -178,6 +192,35 @@
       font-size: 0.95em;
       white-space: nowrap;
     }
+
+    /* Accordion (like changelog). No arrow. One open at a time. */
+    .accordion{ margin-top: 18px; }
+    .acc-item{
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 14px;
+      overflow: hidden;
+      margin: 12px 0;
+    }
+    .acc-btn{
+      width:100%;
+      text-align:left;
+      border:0;
+      cursor:pointer;
+      padding: 14px 16px;
+      background: rgba(255,255,255,0.04);
+      color: rgba(255,255,255,0.92);
+      font-size: 1.05em;
+      font-weight: 800;
+    }
+    .acc-btn:hover{ background: rgba(255,255,255,0.06); }
+    .acc-panel{
+      display:none;
+      padding: 12px 16px 16px 16px;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+    .acc-item.is-open .acc-panel{ display:block; }
+    .acc-item.is-open .acc-btn{ background: rgba(0, 212, 255, 0.08); }
 
     .footer{
       padding: 18px 22px 22px;
@@ -304,5 +347,94 @@
       </div>
     </div>
   </div>
+
+  <script>
+    (function () {
+      const prose = document.querySelector(".prose");
+      if (!prose) return;
+
+      // Use existing H2 sections inside .prose (not the page title).
+      const headings = Array.from(prose.querySelectorAll(":scope > h2"));
+      if (headings.length === 0) return;
+
+      // Keep any intro content before the first H2 outside the accordion.
+      const firstH2 = headings[0];
+      const introNodes = [];
+      let n = prose.firstChild;
+      while (n && n !== firstH2) {
+        const next = n.nextSibling;
+        introNodes.push(n);
+        n = next;
+      }
+
+      const accordion = document.createElement("div");
+      accordion.className = "accordion";
+      accordion.id = "terms-accordion";
+
+      function collectSectionNodes(startH2) {
+        const nodes = [];
+        let cur = startH2.nextSibling;
+        while (cur) {
+          if (cur.nodeType === 1 && cur.tagName && cur.tagName.toLowerCase() === "h2") break;
+          const next = cur.nextSibling;
+          nodes.push(cur);
+          cur = next;
+        }
+        return nodes;
+      }
+
+      headings.forEach((h2, idx) => {
+        const title = (h2.textContent || "").trim();
+
+        const item = document.createElement("div");
+        item.className = "acc-item" + (idx === 0 ? " is-open" : "");
+
+        const btn = document.createElement("button");
+        btn.className = "acc-btn";
+        btn.type = "button";
+        btn.textContent = title || `Section ${idx + 1}`;
+
+        const panel = document.createElement("div");
+        panel.className = "acc-panel";
+
+        const sectionNodes = collectSectionNodes(h2);
+        sectionNodes.forEach(node => panel.appendChild(node));
+
+        h2.remove();
+
+        item.appendChild(btn);
+        item.appendChild(panel);
+        accordion.appendChild(item);
+      });
+
+      // Rebuild .prose: intro content + accordion
+      prose.innerHTML = "";
+      introNodes.forEach(node => prose.appendChild(node));
+      prose.appendChild(accordion);
+
+      // One open at a time (toggle-close allowed)
+      const items = Array.from(accordion.querySelectorAll(".acc-item"));
+      const buttons = Array.from(accordion.querySelectorAll(".acc-btn"));
+
+      function closeAll(exceptItem) {
+        items.forEach(it => {
+          if (it !== exceptItem) it.classList.remove("is-open");
+        });
+      }
+
+      buttons.forEach(btn => {
+        btn.addEventListener("click", () => {
+          const item = btn.closest(".acc-item");
+          const isOpen = item.classList.contains("is-open");
+          if (isOpen) {
+            item.classList.remove("is-open");
+            return;
+          }
+          closeAll(item);
+          item.classList.add("is-open");
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
