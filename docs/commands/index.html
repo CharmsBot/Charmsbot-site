@@ -89,12 +89,9 @@
       border-radius: 12px;
       overflow:hidden;
       border: 1px solid rgba(255,255,255,0.06);
-
-      /* Keep columns consistent */
       table-layout: fixed;
     }
 
-    /* Fixed column widths across all tables */
     th:first-child, td:first-child { width: 240px; }
     th:nth-child(2), td:nth-child(2) { width: auto; }
 
@@ -139,11 +136,185 @@
     }
     .footer p{ color:#888; font-size:0.95em; margin:6px 0; }
 
+    /* Accordion trigger row styling */
+    .accordion-trigger{
+      cursor: pointer;
+      user-select: none;
+      transition: background .08s ease;
+      position: relative;
+    }
+    .accordion-trigger:hover td{
+      background: rgba(255,255,255,0.03);
+    }
+    .accordion-trigger td{
+      transition: background .08s ease;
+    }
+
+    /* Chevron hint */
+    .accordion-trigger td:nth-child(2){
+      position: relative;
+      padding-right: 42px; /* room for arrow */
+    }
+    .accordion-trigger .chevron{
+      position: absolute;
+      right: 16px;
+      top: 50%;
+      transform: translateY(-50%) rotate(0deg);
+      width: 18px;
+      height: 18px;
+      opacity: 0.85;
+      transition: transform .12s ease, opacity .12s ease;
+      pointer-events: none;
+      color: rgba(255,255,255,0.85);
+    }
+    .accordion-trigger[aria-expanded="true"] .chevron{
+      transform: translateY(-50%) rotate(180deg);
+      opacity: 1;
+    }
+
+    /* Accordion panel row */
+    .accordion-panel-row td{
+      padding: 0;
+      border-bottom: 1px solid rgba(255,255,255,0.06);
+      background: rgba(0,0,0,0.10);
+    }
+
+    .accordion-panel{
+      padding: 16px 14px 16px 14px;
+    }
+
+    .panel-title{
+      color:#e4e4e4;
+      font-weight:800;
+      margin-bottom: 10px;
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+
+    .panel-subtitle{
+      color:#aeb3bb;
+      font-size:0.95em;
+      margin-bottom: 14px;
+    }
+
+    .panel-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+    }
+
+    .panel-card{
+      margin:0;
+      border-radius: 12px;
+      overflow:hidden;
+      background: rgba(0,0,0,0.18);
+      border: 1px solid rgba(255,255,255,0.06);
+    }
+
+    /* Images: NO CROP, smaller */
+    .panel-card img{
+      width: 100%;
+      max-height: 260px;
+      height: auto;
+      object-fit: contain;
+      background: rgba(0,0,0,0.12);
+      display: block;
+      padding: 10px;
+      cursor: zoom-in; /* hint that it's clickable */
+    }
+
+    .panel-card figcaption{
+      padding: 10px 12px;
+      color:#c4c4c4;
+      font-size: 0.92em;
+      border-top: 1px solid rgba(255,255,255,0.06);
+    }
+
+    .panel-note{
+      margin-top: 6px;
+      color:#aeb3bb;
+      font-size: 0.95em;
+    }
+
+    /* Lightbox (click-to-zoom) */
+    .lightbox{
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.75);
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 24px;
+      z-index: 9999;
+    }
+    .lightbox.is-open{
+      display: flex;
+    }
+    .lightbox-content{
+      max-width: min(1100px, 96vw);
+      max-height: 92vh;
+      background: rgba(0,0,0,0.35);
+      border: 1px solid rgba(255,255,255,0.10);
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+    }
+    .lightbox-img{
+      display: block;
+      width: 100%;
+      height: auto;
+      max-height: 92vh;
+      object-fit: contain;
+      background: rgba(0,0,0,0.25);
+    }
+    .lightbox-close{
+      position: absolute;
+      top: 18px;
+      right: 18px;
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      color: rgba(255,255,255,0.9);
+      font-size: 22px;
+      line-height: 40px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .08s ease, background .08s ease;
+    }
+    .lightbox-close:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.5);
+    }
+
     @media (max-width:600px){
       .container{ padding:25px 20px; }
       h1{ font-size:2em; }
       h2{ font-size:1.3em; }
       th, td{ padding: 10px 10px; }
+      .accordion-panel{ padding: 14px 10px; }
+
+      .accordion-trigger td:nth-child(2){
+        padding-right: 34px;
+      }
+      .accordion-trigger .chevron{
+        right: 10px;
+      }
+
+      .panel-grid{
+        grid-template-columns: 1fr;
+      }
+
+      .panel-card img{
+        max-height: 220px;
+        padding: 8px;
+      }
+
+      .lightbox{
+        padding: 14px;
+      }
     }
   </style>
 </head>
@@ -169,10 +340,73 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <!-- /character add (accordion) -->
+        <tr class="accordion-trigger" data-accordion="character-add" aria-expanded="false">
           <td><code>/character add</code></td>
-          <td>Add a new character with stats, charm points, and charms</td>
+          <td>
+            Add a new character with stats, charm points, and charms
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="character-add" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/character add</code> — Flow</span></div>
+              <div class="panel-subtitle">Create a character, add charms by level, and save.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/character_management/character/add/01-characteradd.png"
+                    alt="Character add - stats modal"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Fill character stats and submit the form.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/character_management/character/add/02-characteradd.png"
+                    alt="Character add - add charms embed (initial)"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Add charms screen (initial state).</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/character_management/character/add/03-characteradd.png"
+                    alt="Character add - charm level dropdown"
+                    loading="lazy"
+                  />
+                  <figcaption>3) Select charm level (Level 1 / 2 / 3).</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/character_management/character/add/04-characteradd.png"
+                    alt="Character add - selected charms"
+                    loading="lazy"
+                  />
+                  <figcaption>4) Confirm selected charms before saving.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/character_management/character/add/05-characteradd.png"
+                    alt="Character add - success embed"
+                    loading="lazy"
+                  />
+                  <figcaption>5) Save to create the character successfully.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
+        </tr>
+
         <tr>
           <td><code>/character view</code></td>
           <td>View all your saved characters and their configurations</td>
@@ -197,14 +431,44 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <tr class="accordion-trigger" data-accordion="analysis" aria-expanded="false">
           <td><code>/analysis</code></td>
-          <td>Analyze your hunt using your character's saved charms</td>
+          <td>
+            Analyze your hunt using your character's saved charms
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
-        <tr>
+        <tr class="accordion-panel-row" data-accordion-panel="analysis" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/analysis</code> — Screenshots</span></div>
+              <div class="panel-subtitle">Add real screenshots for this command when ready.</div>
+              <div class="panel-note">Coming soon.</div>
+            </div>
+          </td>
+        </tr>
+
+        <tr class="accordion-trigger" data-accordion="bestcharms" aria-expanded="false">
           <td><code>/bestcharms</code></td>
-          <td>Find the optimal charm configuration using ALL available charms</td>
+          <td>
+            Find the optimal charm configuration using ALL available charms
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
+        <tr class="accordion-panel-row" data-accordion-panel="bestcharms" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/bestcharms</code> — Screenshots</span></div>
+              <div class="panel-subtitle">Add real screenshots for this command when ready.</div>
+              <div class="panel-note">Coming soon.</div>
+            </div>
+          </td>
+        </tr>
+
         <tr>
           <td><code>/element</code></td>
           <td>Quick element efficiency checker (no character required)</td>
@@ -269,5 +533,103 @@
       <p>Commands Reference</p>
     </div>
   </div>
+
+  <!-- Lightbox modal -->
+  <div class="lightbox" id="lightbox" aria-hidden="true">
+    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+    <div class="lightbox-content" role="dialog" aria-modal="true">
+      <img class="lightbox-img" id="lightboxImg" alt="">
+    </div>
+  </div>
+
+  <script>
+    // Accordion: reusable for any command
+    // Behavior: only one panel open at a time on the page
+    function closeAllAccordions(exceptKey) {
+      document.querySelectorAll('[data-accordion]').forEach((row) => {
+        const key = row.getAttribute('data-accordion');
+        if (key === exceptKey) return;
+
+        row.setAttribute('aria-expanded', 'false');
+
+        const panel = document.querySelector(`[data-accordion-panel="${key}"]`);
+        if (panel) panel.hidden = true;
+      });
+    }
+
+    document.querySelectorAll('[data-accordion]').forEach((trigger) => {
+      trigger.addEventListener('click', () => {
+        const key = trigger.getAttribute('data-accordion');
+        const panelRow = document.querySelector(`[data-accordion-panel="${key}"]`);
+        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
+
+        if (!isExpanded) closeAllAccordions(key);
+
+        trigger.setAttribute('aria-expanded', String(!isExpanded));
+        if (panelRow) panelRow.hidden = isExpanded;
+      });
+    });
+
+    // Lightbox: click any panel image to open large + lock scroll
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightboxImg');
+    const lightboxClose = document.getElementById('lightboxClose');
+
+    let savedScrollY = 0;
+
+    function lockScroll() {
+      savedScrollY = window.scrollY || 0;
+      document.body.style.position = 'fixed';
+      document.body.style.top = `-${savedScrollY}px`;
+      document.body.style.left = '0';
+      document.body.style.right = '0';
+      document.body.style.width = '100%';
+    }
+
+    function unlockScroll() {
+      const top = document.body.style.top;
+      document.body.style.position = '';
+      document.body.style.top = '';
+      document.body.style.left = '';
+      document.body.style.right = '';
+      document.body.style.width = '';
+      const y = top ? Math.abs(parseInt(top, 10)) : savedScrollY;
+      window.scrollTo(0, y);
+    }
+
+    function openLightbox(src, altText) {
+      lightboxImg.src = src;
+      lightboxImg.alt = altText || 'Screenshot';
+      lightbox.classList.add('is-open');
+      lightbox.setAttribute('aria-hidden', 'false');
+      lockScroll();
+    }
+
+    function closeLightbox() {
+      lightbox.classList.remove('is-open');
+      lightbox.setAttribute('aria-hidden', 'true');
+      lightboxImg.src = '';
+      unlockScroll();
+    }
+
+    document.addEventListener('click', (e) => {
+      const img = e.target.closest('.panel-card img');
+      if (!img) return;
+      openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+    });
+
+    lightboxClose.addEventListener('click', closeLightbox);
+
+    lightbox.addEventListener('click', (e) => {
+      const clickedInside = e.target.closest('.lightbox-content');
+      if (!clickedInside) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
+        closeLightbox();
+      }
+    });
+  </script>
 </body>
 </html>
