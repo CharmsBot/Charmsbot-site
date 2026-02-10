@@ -221,7 +221,7 @@
       background: rgba(0,0,0,0.12);
       display: block;
       padding: 10px;
-      cursor: zoom-in; /* hint that it's clickable */
+      cursor: zoom-in;
     }
 
     .panel-card figcaption{
@@ -229,12 +229,6 @@
       color:#c4c4c4;
       font-size: 0.92em;
       border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .panel-note{
-      margin-top: 6px;
-      color:#aeb3bb;
-      font-size: 0.95em;
     }
 
     /* Lightbox (click-to-zoom) */
@@ -264,9 +258,17 @@
       display: block;
       width: 100%;
       height: auto;
-      max-height: 92vh;
+      max-height: 82vh;
       object-fit: contain;
       background: rgba(0,0,0,0.25);
+    }
+    .lightbox-caption{
+      padding: 12px 14px;
+      color: #c4c4c4;
+      font-size: 0.95em;
+      border-top: 1px solid rgba(255,255,255,0.10);
+      background: rgba(0,0,0,0.35);
+      text-align: center;
     }
     .lightbox-close{
       position: absolute;
@@ -314,6 +316,9 @@
 
       .lightbox{
         padding: 14px;
+      }
+      .lightbox-img{
+        max-height: 78vh;
       }
     }
   </style>
@@ -431,6 +436,7 @@
         </tr>
       </thead>
       <tbody>
+        <!-- /analysis (accordion) -->
         <tr class="accordion-trigger" data-accordion="analysis" aria-expanded="false">
           <td><code>/analysis</code></td>
           <td>
@@ -440,16 +446,82 @@
             </svg>
           </td>
         </tr>
+
         <tr class="accordion-panel-row" data-accordion-panel="analysis" hidden>
           <td colspan="2">
             <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/analysis</code> — Screenshots</span></div>
-              <div class="panel-subtitle">Add real screenshots for this command when ready.</div>
-              <div class="panel-note">Coming soon.</div>
+              <div class="panel-title">📸 <span><code>/analysis</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, paste your Hunt Analyzer, view results, and save.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/01-analysis.png"
+                    alt="Analysis - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character to analyze.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/02-analysis.png"
+                    alt="Analysis - empty form"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Paste your Hunt Analyzer data into the analysis form.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/03-analysis.png"
+                    alt="Analysis - pasted session"
+                    loading="lazy"
+                  />
+                  <figcaption>3) Review the pasted Hunt Analyzer session data.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/04-analysis.png"
+                    alt="Analysis - optional hunt name"
+                    loading="lazy"
+                  />
+                  <figcaption>4) Optionally name the hunt before saving the analysis.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/05-analysis.png"
+                    alt="Analysis - best elements"
+                    loading="lazy"
+                  />
+                  <figcaption>5) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/06-analysis.png"
+                    alt="Analysis - optimal charm assignment"
+                    loading="lazy"
+                  />
+                  <figcaption>6) Optimal charm assignment based on analyzed monsters and stats.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/Charmsbot-site/assets/images/commands/hunt_analysis/analysis/07-analysis.png"
+                    alt="Analysis - saved"
+                    loading="lazy"
+                  />
+                  <figcaption>7) Analysis saved successfully and linked to the character.</figcaption>
+                </figure>
+              </div>
             </div>
           </td>
         </tr>
 
+        <!-- /bestcharms (accordion placeholder) -->
         <tr class="accordion-trigger" data-accordion="bestcharms" aria-expanded="false">
           <td><code>/bestcharms</code></td>
           <td>
@@ -464,7 +536,6 @@
             <div class="accordion-panel">
               <div class="panel-title">📸 <span><code>/bestcharms</code> — Screenshots</span></div>
               <div class="panel-subtitle">Add real screenshots for this command when ready.</div>
-              <div class="panel-note">Coming soon.</div>
             </div>
           </td>
         </tr>
@@ -537,8 +608,10 @@
   <!-- Lightbox modal -->
   <div class="lightbox" id="lightbox" aria-hidden="true">
     <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
+
     <div class="lightbox-content" role="dialog" aria-modal="true">
       <img class="lightbox-img" id="lightboxImg" alt="">
+      <div class="lightbox-caption" id="lightboxCaption"></div>
     </div>
   </div>
 
@@ -570,10 +643,11 @@
       });
     });
 
-    // Lightbox: click any panel image to open large + lock scroll
+    // Lightbox: open image large, show caption, lock scroll
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
+    const lightboxCaption = document.getElementById('lightboxCaption');
 
     let savedScrollY = 0;
 
@@ -597,9 +671,10 @@
       window.scrollTo(0, y);
     }
 
-    function openLightbox(src, altText) {
+    function openLightbox(src, altText, captionText) {
       lightboxImg.src = src;
       lightboxImg.alt = altText || 'Screenshot';
+      lightboxCaption.textContent = captionText || '';
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       lockScroll();
@@ -609,13 +684,22 @@
       lightbox.classList.remove('is-open');
       lightbox.setAttribute('aria-hidden', 'true');
       lightboxImg.src = '';
+      lightboxCaption.textContent = '';
       unlockScroll();
     }
 
     document.addEventListener('click', (e) => {
       const img = e.target.closest('.panel-card img');
       if (!img) return;
-      openLightbox(img.getAttribute('src'), img.getAttribute('alt'));
+
+      const figure = img.closest('figure');
+      const caption = figure ? figure.querySelector('figcaption') : null;
+
+      openLightbox(
+        img.getAttribute('src'),
+        img.getAttribute('alt'),
+        caption ? caption.textContent : ''
+      );
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
