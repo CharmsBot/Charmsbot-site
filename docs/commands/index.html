@@ -245,6 +245,8 @@
     .lightbox.is-open{
       display: flex;
     }
+
+    /* 3-column layout so arrows never overlap the image */
     .lightbox-content{
       max-width: min(1100px, 96vw);
       max-height: 92vh;
@@ -253,7 +255,20 @@
       border-radius: 14px;
       overflow: hidden;
       box-shadow: 0 20px 60px rgba(0,0,0,0.6);
+
+      display: grid;
+      grid-template-columns: 58px 1fr 58px;
+      align-items: center;
+      position: relative;
     }
+
+    .lightbox-main{
+      display: flex;
+      flex-direction: column;
+      max-height: 92vh;
+      min-width: 0;
+    }
+
     .lightbox-img{
       display: block;
       width: 100%;
@@ -262,6 +277,7 @@
       object-fit: contain;
       background: rgba(0,0,0,0.25);
     }
+
     .lightbox-caption{
       padding: 12px 14px;
       color: #c4c4c4;
@@ -270,6 +286,7 @@
       background: rgba(0,0,0,0.35);
       text-align: center;
     }
+
     .lightbox-close{
       position: absolute;
       top: 18px;
@@ -285,11 +302,36 @@
       text-align: center;
       cursor: pointer;
       transition: transform .08s ease, background .08s ease;
+      z-index: 10001;
     }
     .lightbox-close:hover{
       transform: translateY(-1px);
       background: rgba(0,0,0,0.5);
     }
+
+    /* Buttons are in their own columns (not absolute) */
+    .lightbox-nav{
+      width: 46px;
+      height: 46px;
+      border-radius: 14px;
+      border: 1px solid rgba(255,255,255,0.14);
+      background: rgba(0,0,0,0.35);
+      color: rgba(255,255,255,0.92);
+      font-size: 26px;
+      line-height: 44px;
+      text-align: center;
+      cursor: pointer;
+      transition: transform .08s ease, background .08s ease, opacity .08s ease;
+      user-select: none;
+      justify-self: center;
+      z-index: 10001;
+    }
+    .lightbox-nav:hover{
+      transform: translateY(-1px);
+      background: rgba(0,0,0,0.5);
+    }
+    .lightbox-prev{ grid-column: 1; }
+    .lightbox-next{ grid-column: 3; }
 
     @media (max-width:600px){
       .container{ padding:25px 20px; }
@@ -319,6 +361,17 @@
       }
       .lightbox-img{
         max-height: 78vh;
+      }
+
+      .lightbox-content{
+        grid-template-columns: 52px 1fr 52px;
+      }
+
+      .lightbox-nav{
+        width: 42px;
+        height: 42px;
+        line-height: 40px;
+        border-radius: 12px;
       }
     }
   </style>
@@ -521,7 +574,7 @@
           </td>
         </tr>
 
-        <!-- /bestcharms (accordion placeholder) -->
+        <!-- /bestcharms (accordion) -->
         <tr class="accordion-trigger" data-accordion="bestcharms" aria-expanded="false">
           <td><code>/bestcharms</code></td>
           <td>
@@ -531,11 +584,77 @@
             </svg>
           </td>
         </tr>
+
         <tr class="accordion-panel-row" data-accordion-panel="bestcharms" hidden>
           <td colspan="2">
             <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/bestcharms</code> — Screenshots</span></div>
-              <div class="panel-subtitle">Add real screenshots for this command when ready.</div>
+              <div class="panel-title">📸 <span><code>/bestcharms</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, paste your Hunt Analyzer, view the best setup, and save.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/01-bestcharms.png"
+                    alt="Bestcharms - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character for the bestcharms analysis.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/02-bestcharms.png"
+                    alt="Bestcharms - paste hunt analyzer"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Paste your Hunt Analyzer data into the form.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/03-bestcharms.png"
+                    alt="Bestcharms - save name required to save"
+                    loading="lazy"
+                  />
+                  <figcaption>3) Enter a hunt name if you want to save this configuration.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/04-bestcharms.png"
+                    alt="Bestcharms - best elements"
+                    loading="lazy"
+                  />
+                  <figcaption>4) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/05-bestcharms.png"
+                    alt="Bestcharms - optimal charm assignment summary"
+                    loading="lazy"
+                  />
+                  <figcaption>5) Review the recommended charms, total cost, any missing charms, and the expected damage increase.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png"
+                    alt="Bestcharms - detailed assignments"
+                    loading="lazy"
+                  />
+                  <figcaption>6) Detailed creature assignments with recommended charm level and damage efficiency breakdown.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/bestcharms/07-bestcharms.png"
+                    alt="Bestcharms - saved successfully"
+                    loading="lazy"
+                  />
+                  <figcaption>7) Bestcharms configuration saved successfully for the character.</figcaption>
+                </figure>
+              </div>
             </div>
           </td>
         </tr>
@@ -610,8 +729,14 @@
     <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
 
     <div class="lightbox-content" role="dialog" aria-modal="true">
-      <img class="lightbox-img" id="lightboxImg" alt="">
-      <div class="lightbox-caption" id="lightboxCaption"></div>
+      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
+
+      <div class="lightbox-main">
+        <img class="lightbox-img" id="lightboxImg" alt="">
+        <div class="lightbox-caption" id="lightboxCaption"></div>
+      </div>
+
+      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
     </div>
   </div>
 
@@ -648,6 +773,8 @@
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
     const lightboxCaption = document.getElementById('lightboxCaption');
+    const lightboxPrev = document.getElementById('lightboxPrev');
+    const lightboxNext = document.getElementById('lightboxNext');
 
     let savedScrollY = 0;
 
@@ -671,10 +798,67 @@
       window.scrollTo(0, y);
     }
 
-    function openLightbox(src, altText, captionText) {
-      lightboxImg.src = src;
-      lightboxImg.alt = altText || 'Screenshot';
-      lightboxCaption.textContent = captionText || '';
+    // Collect screenshots ONLY from the currently open accordion panel
+    function getOpenAccordionKey() {
+      const open = document.querySelector('[data-accordion][aria-expanded="true"]');
+      return open ? open.getAttribute('data-accordion') : null;
+    }
+
+    function collectGalleryItemsFromOpenAccordion() {
+      const key = getOpenAccordionKey();
+      if (!key) return [];
+
+      const panel = document.querySelector(`[data-accordion-panel="${key}"]`);
+      if (!panel) return [];
+
+      const items = [];
+      panel.querySelectorAll('.panel-card img').forEach((img) => {
+        const figure = img.closest('figure');
+        const captionEl = figure ? figure.querySelector('figcaption') : null;
+
+        items.push({
+          src: img.getAttribute('src') || '',
+          alt: img.getAttribute('alt') || 'Screenshot',
+          caption: captionEl ? captionEl.textContent : ''
+        });
+      });
+
+      return items;
+    }
+
+    let galleryItems = [];
+    let currentIndex = -1;
+
+    function renderLightboxByIndex(idx) {
+      if (!galleryItems.length) return;
+
+      const safeIdx = ((idx % galleryItems.length) + galleryItems.length) % galleryItems.length;
+      currentIndex = safeIdx;
+
+      const item = galleryItems[safeIdx];
+      lightboxImg.src = item.src;
+      lightboxImg.alt = item.alt;
+      lightboxCaption.textContent = item.caption || '';
+    }
+
+    function openLightboxForImage(clickedImgEl) {
+      // Build gallery from the open accordion only
+      galleryItems = collectGalleryItemsFromOpenAccordion();
+
+      // If no accordion is open, fallback to just this image (no nav)
+      if (!galleryItems.length) {
+        galleryItems = [{
+          src: clickedImgEl.getAttribute('src') || '',
+          alt: clickedImgEl.getAttribute('alt') || 'Screenshot',
+          caption: (clickedImgEl.closest('figure')?.querySelector('figcaption')?.textContent) || ''
+        }];
+      }
+
+      const clickedSrc = clickedImgEl.getAttribute('src') || '';
+      const idx = galleryItems.findIndex((it) => it.src === clickedSrc);
+
+      renderLightboxByIndex(idx >= 0 ? idx : 0);
+
       lightbox.classList.add('is-open');
       lightbox.setAttribute('aria-hidden', 'false');
       lockScroll();
@@ -685,24 +869,38 @@
       lightbox.setAttribute('aria-hidden', 'true');
       lightboxImg.src = '';
       lightboxCaption.textContent = '';
+      currentIndex = -1;
+      galleryItems = [];
       unlockScroll();
     }
 
+    function showPrev() {
+      if (currentIndex < 0) return;
+      renderLightboxByIndex(currentIndex - 1);
+    }
+
+    function showNext() {
+      if (currentIndex < 0) return;
+      renderLightboxByIndex(currentIndex + 1);
+    }
+
+    // Click handler: open only for images inside the currently open accordion
     document.addEventListener('click', (e) => {
       const img = e.target.closest('.panel-card img');
       if (!img) return;
 
-      const figure = img.closest('figure');
-      const caption = figure ? figure.querySelector('figcaption') : null;
+      const key = getOpenAccordionKey();
+      if (key) {
+        const openPanel = document.querySelector(`[data-accordion-panel="${key}"]`);
+        if (openPanel && !openPanel.contains(img)) return;
+      }
 
-      openLightbox(
-        img.getAttribute('src'),
-        img.getAttribute('alt'),
-        caption ? caption.textContent : ''
-      );
+      openLightboxForImage(img);
     });
 
     lightboxClose.addEventListener('click', closeLightbox);
+    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
+    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
 
     lightbox.addEventListener('click', (e) => {
       const clickedInside = e.target.closest('.lightbox-content');
@@ -710,9 +908,11 @@
     });
 
     document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape' && lightbox.classList.contains('is-open')) {
-        closeLightbox();
-      }
+      if (!lightbox.classList.contains('is-open')) return;
+
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') showPrev();
+      if (e.key === 'ArrowRight') showNext();
     });
   </script>
 </body>
