@@ -64,7 +64,9 @@
       transition: transform .08s ease, background .08s ease;
       font-weight: 600;
     }
-    .nav a:hover{ transform: translateY(-1px); background: rgba(109,58,160,0.70); }
+    .nav a:hover{
+      transform: translateY(-1px);
+      background: rgba(109,58,160,0.70);
     }
 
     h2{
@@ -87,7 +89,14 @@
       border-radius: 12px;
       overflow:hidden;
       border: 1px solid rgba(255,255,255,0.06);
+
+      /* Keep columns consistent */
+      table-layout: fixed;
     }
+
+    /* Fixed column widths across all tables */
+    th:first-child, td:first-child { width: 240px; }
+    th:nth-child(2), td:nth-child(2) { width: auto; }
 
     th{
       background: rgba(0, 212, 255, 0.15);
@@ -102,6 +111,12 @@
       padding: 12px 14px;
       border-bottom: 1px solid rgba(255,255,255,0.06);
       color:#c4c4c4;
+    }
+
+    /* Description column: left-aligned (header + cells) */
+    table th:nth-child(2),
+    table td:nth-child(2){
+      text-align: left;
     }
 
     tr:last-child td{ border-bottom:none; }
@@ -138,14 +153,12 @@
     <p class="subtitle">Complete command reference</p>
 
     <div class="nav">
-  <a href="../">Home</a>
-  <a href="../commands/">Commands</a>
-  <a href="../changelog/">Changelog</a>
-  <a href="../contact/">Contact</a>
-  <a href="../legal/">Legal</a>
-</div>
-
-
+      <a href="../">Home</a>
+      <a href="../commands/">Commands</a>
+      <a href="../changelog/">Changelog</a>
+      <a href="../contact/">Contact</a>
+      <a href="../legal/">Legal</a>
+    </div>
 
     <h2>👤 Character Management</h2>
     <table>
