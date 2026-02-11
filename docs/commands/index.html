@@ -647,8 +647,6 @@
                   <figcaption>1) Select a character to run the analysis.</figcaption>
                 </figure>
 
-                <!-- 02-analysis.png removed per latest flow -->
-
                 <figure class="panel-card">
                   <img
                     src="/assets/images/commands/hunt_analysis/analysis/03-analysis.png"
@@ -834,14 +832,113 @@
         </tr>
       </thead>
       <tbody>
-        <tr>
+        <!-- /hunt view (accordion) -->
+        <tr class="accordion-trigger" data-accordion="hunt-view" aria-expanded="false">
           <td><code>/hunt view</code></td>
-          <td>View your saved analyses and bestcharms configurations</td>
+          <td>
+            View your saved analyses and bestcharms configurations
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
-        <tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="hunt-view" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/hunt view</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, choose the hunt type, then open a saved hunt.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/view/01-huntview.png"
+                    alt="Hunt view - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character whose saved hunts you want to view.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/view/02-huntview.png"
+                    alt="Hunt view - select hunt type"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to open.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/view/03-huntview.png"
+                    alt="Hunt view - hunt details"
+                    loading="lazy"
+                  />
+                  <figcaption>3) The saved hunt details are displayed with its charm assignments.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
+        </tr>
+
+        <!-- /hunt delete (accordion) -->
+        <tr class="accordion-trigger" data-accordion="hunt-delete" aria-expanded="false">
           <td><code>/hunt delete</code></td>
-          <td>Delete a specific saved hunt</td>
+          <td>
+            Delete a specific saved hunt
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="hunt-delete" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/hunt delete</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, choose the hunt type, confirm deletion, and see the result.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/delete/01-huntdelete.png"
+                    alt="Hunt delete - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character whose saved hunt you want to delete.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/delete/02-huntdelete.png"
+                    alt="Hunt delete - select hunt type"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to delete. This action cannot be undone.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/delete/03-huntdelete.png"
+                    alt="Hunt delete - confirm deletion"
+                    loading="lazy"
+                  />
+                  <figcaption>3) Click Confirm Delete to remove the saved hunt.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_management/hunt/delete/04-huntdelete.png"
+                    alt="Hunt delete - deleted summary"
+                    loading="lazy"
+                  />
+                  <figcaption>4) A summary is shown with the deleted hunt name and the updated remaining-hunts counter.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
+        </tr>
+
         <tr>
           <td><code>/hunt rename</code></td>
           <td>Rename a saved hunt</td>
