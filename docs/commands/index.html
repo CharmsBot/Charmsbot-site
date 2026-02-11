@@ -502,9 +502,62 @@
           </td>
         </tr>
 
-        <tr>
+        <!-- /character edit (accordion) -->
+        <tr class="accordion-trigger" data-accordion="character-edit" aria-expanded="false">
           <td><code>/character edit</code></td>
-          <td>Edit an existing character's stats and charms</td>
+          <td>
+            Edit an existing character's stats and charms
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
+        </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="character-edit" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/character edit</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, update stats, optionally update charms, and save.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/edit/01-characteredit.png"
+                    alt="Character edit - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character you want to edit from the list.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/edit/02-characteredit.png"
+                    alt="Character edit - edit stats modal"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Fill in the character stats you want to update.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/edit/03-characteredit.png"
+                    alt="Character edit - edit charms view"
+                    loading="lazy"
+                  />
+                  <figcaption>3) Update your charms if needed, then click Save to finish.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/edit/04-characteredit.png"
+                    alt="Character edit - updated summary"
+                    loading="lazy"
+                  />
+                  <figcaption>4) At the end, a summary is shown with the updated stats, charm points, and selected charms.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
         </tr>
 
         <!-- /character delete (accordion) -->
@@ -730,9 +783,44 @@
           </td>
         </tr>
 
-        <tr>
+        <!-- /element (accordion) -->
+        <tr class="accordion-trigger" data-accordion="element" aria-expanded="false">
           <td><code>/element</code></td>
-          <td>Quick element efficiency checker (no character required)</td>
+          <td>
+            Quick element efficiency checker (no character required)
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
+        </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="element" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/element</code> — Flow</span></div>
+              <div class="panel-subtitle">Paste your Hunt Analyzer and check element weaknesses for the spawn.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/element/01-element.png"
+                    alt="Element - paste hunt analyzer"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Paste the Hunt Analyzer for the hunt you want to check.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/hunt_analysis/element/02-element.png"
+                    alt="Element - results"
+                    loading="lazy"
+                  />
+                  <figcaption>2) View the overall best damage types for the spawn and a breakdown of each monster's elemental vulnerabilities.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
