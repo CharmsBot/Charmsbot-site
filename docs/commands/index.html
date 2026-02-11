@@ -462,17 +462,98 @@
           </td>
         </tr>
 
-        <tr>
+        <!-- /character view (accordion) -->
+        <tr class="accordion-trigger" data-accordion="character-view" aria-expanded="false">
           <td><code>/character view</code></td>
-          <td>View all your saved characters and their configurations</td>
+          <td>
+            View all your saved characters and their configurations
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
         </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="character-view" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/character view</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character to view its saved information.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/view/01-characterview.png"
+                    alt="Character view - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character you want to see from the list.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/view/02-characterview.png"
+                    alt="Character view - summary"
+                    loading="lazy"
+                  />
+                  <figcaption>2) A summary is shown with character stats, charm points, saved charms, and usage limits.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
+        </tr>
+
         <tr>
           <td><code>/character edit</code></td>
           <td>Edit an existing character's stats and charms</td>
         </tr>
-        <tr>
+
+        <!-- /character delete (accordion) -->
+        <tr class="accordion-trigger" data-accordion="character-delete" aria-expanded="false">
           <td><code>/character delete</code></td>
-          <td>Delete a character and all associated data</td>
+          <td>
+            Delete a character and all associated data
+            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
+              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
+            </svg>
+          </td>
+        </tr>
+
+        <tr class="accordion-panel-row" data-accordion-panel="character-delete" hidden>
+          <td colspan="2">
+            <div class="accordion-panel">
+              <div class="panel-title">📸 <span><code>/character delete</code> — Flow</span></div>
+              <div class="panel-subtitle">Select a character, confirm deletion, and see the result.</div>
+
+              <div class="panel-grid">
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/delete/01-characterdelete.png"
+                    alt="Character delete - select character"
+                    loading="lazy"
+                  />
+                  <figcaption>1) Select the character you want to delete from the list.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/delete/02-characterdelete.png"
+                    alt="Character delete - confirm deletion"
+                    loading="lazy"
+                  />
+                  <figcaption>2) Click Confirm Delete to remove the character, including all saved stats, analyses, and bestcharms. This action cannot be undone.</figcaption>
+                </figure>
+
+                <figure class="panel-card">
+                  <img
+                    src="/assets/images/commands/character_management/character/delete/03-characterdelete.png"
+                    alt="Character delete - deleted"
+                    loading="lazy"
+                  />
+                  <figcaption>3) The character was deleted successfully. A counter shows how many character slots are available.</figcaption>
+                </figure>
+              </div>
+            </div>
+          </td>
         </tr>
       </tbody>
     </table>
