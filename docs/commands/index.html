@@ -110,7 +110,6 @@
       color:#c4c4c4;
     }
 
-    /* Description column: left-aligned (header + cells) */
     table th:nth-child(2),
     table td:nth-child(2){
       text-align: left;
@@ -153,7 +152,7 @@
     /* Chevron hint */
     .accordion-trigger td:nth-child(2){
       position: relative;
-      padding-right: 42px; /* room for arrow */
+      padding-right: 42px;
     }
     .accordion-trigger .chevron{
       position: absolute;
@@ -212,7 +211,6 @@
       border: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Images: NO CROP, smaller */
     .panel-card img{
       width: 100%;
       max-height: 260px;
@@ -231,7 +229,7 @@
       border-top: 1px solid rgba(255,255,255,0.06);
     }
 
-    /* Lightbox (click-to-zoom) */
+    /* Lightbox */
     .lightbox{
       position: fixed;
       inset: 0;
@@ -309,7 +307,6 @@
       background: rgba(0,0,0,0.5);
     }
 
-    /* Buttons are in their own columns (not absolute) */
     .lightbox-nav{
       width: 46px;
       height: 46px;
@@ -431,7 +428,7 @@
                     alt="Character add - add charms embed (initial)"
                     loading="lazy"
                   />
-                  <figcaption>2) Add charms screen (initial state).</figcaption>
+                  <figcaption>2) Click the dropdown below to select a charm level.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -440,7 +437,7 @@
                     alt="Character add - charm level dropdown"
                     loading="lazy"
                   />
-                  <figcaption>3) Select charm level (Level 1 / 2 / 3).</figcaption>
+                  <figcaption>3) Select a level first, then add the appropriate charms for that level.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -449,7 +446,7 @@
                     alt="Character add - selected charms"
                     loading="lazy"
                   />
-                  <figcaption>4) Confirm selected charms before saving.</figcaption>
+                  <figcaption>4) After adding charms, click Continue. Once everything looks correct, click Save.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -458,7 +455,7 @@
                     alt="Character add - success embed"
                     loading="lazy"
                   />
-                  <figcaption>5) Save to create the character successfully.</figcaption>
+                  <figcaption>5) A summary is shown with character stats, charm points, saved charms, and usage limits.</figcaption>
                 </figure>
               </div>
             </div>
@@ -513,17 +510,10 @@
                     alt="Analysis - select character"
                     loading="lazy"
                   />
-                  <figcaption>1) Select the character to analyze.</figcaption>
+                  <figcaption>1) Select a character to run the analysis.</figcaption>
                 </figure>
 
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/02-analysis.png"
-                    alt="Analysis - empty form"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Paste your Hunt Analyzer data into the analysis form.</figcaption>
-                </figure>
+                <!-- 02-analysis.png removed per latest flow -->
 
                 <figure class="panel-card">
                   <img
@@ -531,7 +521,7 @@
                     alt="Analysis - pasted session"
                     loading="lazy"
                   />
-                  <figcaption>3) Review the pasted Hunt Analyzer session data.</figcaption>
+                  <figcaption>2) Paste your Hunt Analyzer data into the analysis form.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -540,7 +530,7 @@
                     alt="Analysis - optional hunt name"
                     loading="lazy"
                   />
-                  <figcaption>4) Optionally name the hunt before saving the analysis.</figcaption>
+                  <figcaption>3) Enter a hunt name if you want to save this configuration.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -549,7 +539,7 @@
                     alt="Analysis - best elements"
                     loading="lazy"
                   />
-                  <figcaption>5) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
+                  <figcaption>4) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -558,7 +548,7 @@
                     alt="Analysis - optimal charm assignment"
                     loading="lazy"
                   />
-                  <figcaption>6) Optimal charm assignment based on analyzed monsters and stats.</figcaption>
+                  <figcaption>5) Optimal charm assignment based on analyzed monsters stats and saved charms.</figcaption>
                 </figure>
 
                 <figure class="panel-card">
@@ -567,7 +557,7 @@
                     alt="Analysis - saved"
                     loading="lazy"
                   />
-                  <figcaption>7) Analysis saved successfully and linked to the character.</figcaption>
+                  <figcaption>6) If you entered a hunt name, this message confirms the analysis was saved successfully.</figcaption>
                 </figure>
               </div>
             </div>
@@ -741,15 +731,13 @@
   </div>
 
   <script>
-    // Accordion: reusable for any command
-    // Behavior: only one panel open at a time on the page
+    // Accordion: only one panel open at a time
     function closeAllAccordions(exceptKey) {
       document.querySelectorAll('[data-accordion]').forEach((row) => {
         const key = row.getAttribute('data-accordion');
         if (key === exceptKey) return;
 
         row.setAttribute('aria-expanded', 'false');
-
         const panel = document.querySelector(`[data-accordion-panel="${key}"]`);
         if (panel) panel.hidden = true;
       });
@@ -768,7 +756,7 @@
       });
     });
 
-    // Lightbox: open image large, show caption, lock scroll
+    // Lightbox
     const lightbox = document.getElementById('lightbox');
     const lightboxImg = document.getElementById('lightboxImg');
     const lightboxClose = document.getElementById('lightboxClose');
@@ -798,7 +786,7 @@
       window.scrollTo(0, y);
     }
 
-    // Collect screenshots ONLY from the currently open accordion panel
+    // Scope gallery to the currently open accordion only
     function getOpenAccordionKey() {
       const open = document.querySelector('[data-accordion][aria-expanded="true"]');
       return open ? open.getAttribute('data-accordion') : null;
@@ -842,10 +830,8 @@
     }
 
     function openLightboxForImage(clickedImgEl) {
-      // Build gallery from the open accordion only
       galleryItems = collectGalleryItemsFromOpenAccordion();
 
-      // If no accordion is open, fallback to just this image (no nav)
       if (!galleryItems.length) {
         galleryItems = [{
           src: clickedImgEl.getAttribute('src') || '',
@@ -856,7 +842,6 @@
 
       const clickedSrc = clickedImgEl.getAttribute('src') || '';
       const idx = galleryItems.findIndex((it) => it.src === clickedSrc);
-
       renderLightboxByIndex(idx >= 0 ? idx : 0);
 
       lightbox.classList.add('is-open');
@@ -884,7 +869,6 @@
       renderLightboxByIndex(currentIndex + 1);
     }
 
-    // Click handler: open only for images inside the currently open accordion
     document.addEventListener('click', (e) => {
       const img = e.target.closest('.panel-card img');
       if (!img) return;
