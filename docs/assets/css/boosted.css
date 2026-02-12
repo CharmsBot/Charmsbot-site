@@ -1,10 +1,18 @@
-/* Boosted widget (single pedestal, top-right) */
+/* Boosted widget (single pedestal, top-right)
+   FIXED to viewport (even if page uses transforms) by mounting in <body> via JS.
+*/
 
-.tibia-boosted-panel{
+#boosted-widget {
   position: fixed;
   top: 18px;
   right: 18px;
-  z-index: 9999;
+  z-index: 99999;
+  pointer-events: none; /* panel enables pointer events inside */
+}
+
+/* Panel */
+.tibia-boosted-panel{
+  pointer-events: auto;
 
   background: rgba(0,0,0,.28);
   border: 1px solid rgba(255,255,255,.10);
@@ -13,7 +21,18 @@
   padding: 12px 12px 14px;
   backdrop-filter: blur(6px);
 
-  overflow: hidden; /* prevents pedestal from bleeding outside the rounded box */
+  overflow: hidden; /* prevents pedestal from bleeding outside rounded box */
+  box-shadow: 0 18px 45px rgba(0,0,0,.35);
+
+  /* Smooth show/hide */
+  transition: opacity .18s ease, transform .18s ease;
+}
+
+/* Optional hide state (JS toggles this) */
+.tibia-boosted-panel.is-hidden{
+  opacity: 0;
+  transform: translateY(-10px);
+  pointer-events: none;
 }
 
 .tibia-boosted-title{
@@ -23,7 +42,6 @@
   color: rgba(255,255,255,.92);
   text-align: center;
 }
-
 
 /* Single pedestal stage */
 .tibia-pedestal{
@@ -41,42 +59,47 @@
   image-rendering: pixelated;
 }
 
-/*
-  Alignment tweaks:
-  - Move both sprites left
-  - Make creature bigger
-*/
-
+/* Creature (left slot) */
 .tibia-sprite-creature{
   position: absolute;
   left: 18%;
   top: 25%;
-  transform: translate(-50%, -50%) scale(1.50); /* <<< add scale */
+  transform: translate(-50%, -50%) scale(1.50);
+  transform-origin: center;
+
   max-width: 150px;
   max-height: 96px;
+
   image-rendering: pixelated;
   pointer-events: none;
   filter: drop-shadow(0 10px 10px rgba(0,0,0,.55));
 }
 
-
+/* Boss (right slot) */
 .tibia-sprite-boss{
   position: absolute;
-  left: 62%;            /* move left */
+  left: 62%;
   top: 45%;
   transform: translate(-50%, -50%);
+  transform-origin: center;
+
   max-width: 112px;
   max-height: 90px;
+
   image-rendering: pixelated;
   pointer-events: none;
   filter: drop-shadow(0 10px 10px rgba(0,0,0,.55));
 }
 
-/* Responsive */
+/* Mobile: put it in normal flow (optional) */
 @media (max-width: 520px){
-  .tibia-boosted-panel{
+  #boosted-widget{
     position: static;
     margin: 14px 0;
+    width: 100%;
+    pointer-events: auto;
+  }
+  .tibia-boosted-panel{
     width: 100%;
   }
   .tibia-pedestal{
