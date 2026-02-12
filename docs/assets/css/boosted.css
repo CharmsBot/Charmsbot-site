@@ -62,9 +62,9 @@
 /* Creature (left slot) */
 .tibia-sprite-creature{
   position: absolute;
-  left: 18%;
-  top: 25%;
-  transform: translate(-50%, -50%) scale(1.50);
+  left: 25%;
+  top: 38%;
+  transform: translate(-50%, -50%) scale(1.25);
   transform-origin: center;
 
   max-width: 150px;
@@ -78,9 +78,9 @@
 /* Boss (right slot) */
 .tibia-sprite-boss{
   position: absolute;
-  left: 62%;
-  top: 45%;
-  transform: translate(-50%, -50%);
+  left: 60%;
+  top: 38%;
+  transform: translate(-50%, -50%) scale(1.25);
   transform-origin: center;
 
   max-width: 112px;
