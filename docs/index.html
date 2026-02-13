@@ -160,11 +160,84 @@
     }
     .footer p{ color:#888; font-size:0.95em; margin:6px 0; }
 
-    @media (max-width:600px){
-      .container{ padding:25px 20px; }
-      h1{ font-size:2em; }
-      h2{ font-size:1.3em; }
-      .discord-badge-wrap img{ height: 40px; }
+    /* ========================================= */
+    /* SIDEBAR WIDGETS STYLES (MATCHING JS)      */
+    /* ========================================= */
+
+    /* Right side Pedestal */
+    .right-widget-wrapper {
+      position: fixed;
+      top: 30px;
+      right: 30px;
+      z-index: 9999;
+    }
+
+    /* Left side Bot Status */
+    .left-status-wrapper {
+      position: fixed;
+      top: 30px;
+      left: 30px;
+      z-index: 10000;
+    }
+
+    /* Glassmorphism Bot Status Container */
+    #bot-status-container {
+      background: rgba(255, 255, 255, 0.05); 
+      backdrop-filter: blur(10px);
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      border-radius: 12px;
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+      transition: all 0.3s ease;
+    }
+
+    .bot-status-indicator {
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background-color: #888; /* Neutral initial color */
+      transition: all 0.3s ease;
+    }
+
+    .bot-status-text {
+      font-weight: 700;
+      font-size: 0.9em;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+      color: #888;
+    }
+
+    /* --- JS DYNAMIC CLASSES --- */
+    
+    /* Online state */
+    #bot-status-container.online .bot-status-indicator {
+      background-color: #00ff4c;
+      box-shadow: 0 0 15px rgba(0, 255, 76, 0.8);
+    }
+    #bot-status-container.online .bot-status-text { color: #00ff4c; }
+    #bot-status-container.online { border-color: rgba(0, 255, 76, 0.3); }
+
+    /* Offline state */
+    #bot-status-container.offline .bot-status-indicator {
+      background-color: #ff2b2b;
+      box-shadow: 0 0 15px rgba(255, 43, 43, 0.8);
+    }
+    #bot-status-container.offline .bot-status-text { color: #ff2b2b; }
+    #bot-status-container.offline { border-color: rgba(255, 43, 43, 0.2); }
+
+    @media (max-width: 1200px) {
+        .right-widget-wrapper, .left-status-wrapper {
+            position: relative;
+            top: auto;
+            right: auto;
+            left: auto;
+            display: flex;
+            justify-content: center;
+            margin: 20px auto;
+        }
     }
   </style>
   <link rel="icon" href="/assets/images/_shared/favicon/favicon.ico" sizes="any">
@@ -185,14 +258,12 @@
     <p class="subtitle">Discord bot for Tibia • Documentation & Changelog</p>
 
     <div class="nav">
-  <a href="./">Home</a>
-  <a href="commands/">Commands</a>
-  <a href="changelog/">Changelog</a>
-  <a href="contact/">Contact</a>
-  <a href="legal/">Legal</a>
-</div>
-
-
+      <a href="./">Home</a>
+      <a href="commands/">Commands</a>
+      <a href="changelog/">Changelog</a>
+      <a href="contact/">Contact</a>
+      <a href="legal/">Legal</a>
+    </div>
 
     <h2>🎯 Overview</h2>
     <p><strong>CharmsBot</strong> is a comprehensive Discord bot designed for Tibia players to optimize their hunting experience. It provides advanced charm assignment calculations, element efficiency analysis, loot splitting, and utility tools to help players maximize their damage output and manage hunts efficiently.</p>
@@ -355,7 +426,19 @@
       <p>CharmsBot-site</p>
     </div>
   </div>
-  <div id="boosted-widget"></div>
+
+  <div class="right-widget-wrapper">
+    <div id="boosted-widget"></div>
+  </div>
+
+  <div class="left-status-wrapper">
+    <div id="bot-status-container" class="offline">
+       <div class="bot-status-indicator"></div>
+       <span class="bot-status-text" id="botStatusText">BOT OFFLINE</span>
+    </div>
+  </div>
+
   <script src="/assets/js/boosted.js"></script>
+  <script src="/assets/js/bot-status.js"></script>
 </body>
 </html>
