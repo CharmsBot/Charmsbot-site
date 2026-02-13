@@ -1,20 +1,22 @@
 (function () {
+  // Use the clean API URL without timestamp to allow Cloudflare Edge Caching
   const STATUS_API = "https://botstatus.martin-delcampo93.workers.dev/api/bot/status";
-  const CHECK_INTERVAL = 30000; 
+  
+  // Increased to 60s to match the Worker's s-maxage and save KV read operations
+  const CHECK_INTERVAL = 60000; 
 
   async function checkStatus() {
     try {
-      const response = await fetch(`${STATUS_API}?t=${Date.now()}`);
+      // Removed the ?t= parameter so the Worker can serve the cached response
+      const response = await fetch(STATUS_API);
       
-      // If the request is successful, we parse the data
       if (response.ok) {
         const data = await response.json();
         updateUI(data.online);
         console.log("Sync successful. Bot Online:", data.online);
       }
     } catch (error) {
-      // If there is a network error or timeout, we DON'T change the UI.
-      // We keep the last known state to avoid false "OFFLINE" flashes.
+      // Maintain last state on network errors to prevent UI flickering
       console.warn("Network hiccup. Maintaining last known status.");
     }
   }
