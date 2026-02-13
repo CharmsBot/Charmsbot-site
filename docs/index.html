@@ -5,16 +5,49 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Home</title>
 
-  <link rel="stylesheet" href="/assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/style.css">
+  <link rel="stylesheet" href="assets/css/header-bar.css">
 
-  <link rel="icon" href="/assets/images/_shared/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/assets/images/_shared/favicon/apple-touch-icon.png">
+  <link rel="icon" href="assets/images/_shared/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="assets/images/_shared/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#7b2cbf">
-  <link rel="stylesheet" href="/assets/css/boosted.css">
 </head>
 <body>
+  <div class="top-header-bar">
+    <div class="header-left offline">
+      <div class="bot-status-indicator"></div>
+      <span class="bot-status-text">CHARMSBOT OFFLINE</span>
+    </div>
+
+    <div class="header-center">
+      <span class="countdown-label">Time to Server Save</span>
+      <span id="serverSaveCountdown" class="countdown-timer">00:00:00</span>
+    </div>
+
+    <div class="header-right">
+      <span class="boosted-label">Today's Boosted</span>
+      <div class="boosted-pedestal">
+        <img class="pedestal-base" 
+             src="assets/images/_shared/boosted/_ui/pedestal.png" 
+             alt="Pedestal">
+        
+        <img id="boostedCreatureImg" 
+             class="boosted-sprite-creature" 
+             alt="Boosted Creature" 
+             loading="lazy"
+             style="display:none;">
+        
+        <img id="boostedBossImg" 
+             class="boosted-sprite-boss" 
+             alt="Boosted Boss" 
+             loading="lazy"
+             style="display:none;">
+      </div>
+    </div>
+  </div>
+
   <div class="container">
     <div class="logo-wrap">
       <img class="logo" src="https://i.imgur.com/FjCwTyg.png" alt="CharmsBot Logo" />
@@ -193,21 +226,10 @@
     </div>
   </div>
 
-  <div class="right-widget-wrapper">
-    <div id="boosted-widget"></div>
-  </div>
-
-  <div class="left-status-wrapper">
-    <div id="bot-status-container" class="offline">
-       <div class="bot-status-indicator"></div>
-       <span class="bot-status-text" id="botStatusText">BOT OFFLINE</span>
-    </div>
-  </div>
-
-  <script src="/assets/js/boosted.js"></script>
-  <script src="/assets/js/bot-status.js"></script>
+  <script src="assets/js/header-bar.js"></script>
   
   <script>
+    // Bloqueo de instalación PWA
     window.addEventListener('beforeinstallprompt', (e) => {
       e.preventDefault();
       return false;
