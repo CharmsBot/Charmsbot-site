@@ -9,7 +9,6 @@
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  /* Fondo sólido uniforme para evitar variaciones en los widgets */
   background-color: #1a1a2e; 
   color: #e4e4e4;
   min-height: 100vh;
@@ -19,7 +18,7 @@ body {
 
 /* --- 2. Main Layout Container --- */
 .container {
-  max-width: 900px;
+  max-width: 1100px; /* Caja más ancha */
   margin: 0 auto;
   background: rgba(255, 255, 255, 0.05);
   border-radius: 20px;
@@ -104,7 +103,7 @@ p {
 }
 
 .logo {
-  width: 200px;
+  width: 120px; /* Logo más pequeño */
   max-width: 60vw;
   border-radius: 14px;
   box-shadow: 0 10px 24px rgba(0, 0, 0, 0.35);
@@ -190,7 +189,3 @@ code {
   font-size: 0.95em; 
   margin: 6px 0; 
 }
-
-/* --- 8. Widget Wrappers movidos a sus respectivos archivos CSS --- */
-/* .right-widget-wrapper ahora está en boosted.css */
-/* .left-status-wrapper ahora está en bot-status.css */
