@@ -139,35 +139,28 @@
   image-rendering: crisp-edges;
 }
 
-/* Sprites Animados */
+/* Sprites (Ahora fijos) */
 .boosted-sprite-creature, .boosted-sprite-boss {
   position: absolute;
-  top: 23%;
-  transform: translate(-50%, -50%) scale(1.15);
-  max-width: 64px;
-  max-height: 64px;
+  top: 30%;
+  transform: translate(-50%, -50%) scale(1.10);
+  max-width: 55px;
+  max-height: 55px;
   image-rendering: pixelated;
   filter: drop-shadow(0 6px 12px rgba(0, 0, 0, 0.6));
   z-index: 2;
 }
 
 .boosted-sprite-creature {
-  left: 25%;
-  animation: float-sprite 3s ease-in-out infinite;
+  left: 29%;
 }
 
 .boosted-sprite-boss {
   left: 55%;
-  animation: float-sprite 3s ease-in-out infinite 0.5s;
-}
-
-@keyframes float-sprite {
-  0%, 100% { transform: translate(-50%, -50%) scale(1.15) translateY(0px); }
-  50% { transform: translate(-50%, -50%) scale(1.15) translateY(-3px); }
 }
 
 /* ============================================
-   SOLUCIÓN AL DESPLAZAMIENTO (Ajuste Quirúrgico)
+   SOLUCIÓN AL DESPLAZAMIENTO
    ============================================ */
 
 body {
