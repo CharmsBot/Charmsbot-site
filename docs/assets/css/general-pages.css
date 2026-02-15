@@ -1,0 +1,195 @@
+/* ============================================
+   GENERAL-PAGES.CSS - CharmsBot
+   Shared styles for changelog, contact, and legal pages
+   ============================================ */
+
+/* ===== ACCORDION (Changelog) ===== */
+.acc {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin-top: 6px;
+}
+
+.acc-item {
+  border: 1px solid rgba(0, 212, 255, 0.18);
+  background: rgba(0, 212, 255, 0.06);
+  border-radius: 16px;
+  overflow: hidden;
+}
+
+.acc-btn {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 16px 16px;
+  background: transparent;
+  border: 0;
+  color: #00d4ff;
+  font-size: 20px;
+  font-weight: 800;
+  cursor: pointer;
+  text-align: left;
+}
+
+.acc-btn .left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pill {
+  font-size: 12px;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.85);
+  background: rgba(255, 255, 255, 0.10);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  padding: 5px 10px;
+  border-radius: 999px;
+}
+
+.chev {
+  width: 34px;
+  height: 34px;
+  border-radius: 12px;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  background: rgba(0, 212, 255, 0.10);
+  display: grid;
+  place-items: center;
+  transition: transform .15s ease;
+  flex: 0 0 auto;
+}
+
+.chev svg {
+  width: 16px;
+  height: 16px;
+  fill: #00d4ff;
+}
+
+.acc-item[data-open="true"] .chev {
+  transform: rotate(180deg);
+}
+
+.acc-panel {
+  display: none;
+  padding: 0 12px 12px;
+}
+
+.acc-item[data-open="true"] .acc-panel {
+  display: block;
+}
+
+.frame {
+  width: 100%;
+  border: 0;
+  border-radius: 14px;
+  background: rgba(0, 0, 0, 0.15);
+  overflow: hidden;
+  height: 420px;
+}
+
+.hint {
+  margin-top: 10px;
+  color: rgba(255, 255, 255, 0.55);
+  font-size: 13px;
+  text-align: center;
+}
+
+/* ===== KEY-VALUE PAIRS (Contact) ===== */
+.kv {
+  margin: 8px 0;
+  color: #c4c4c4;
+}
+
+.kv strong {
+  color: rgba(255, 255, 255, 0.90);
+}
+
+/* ===== SUBNAV (Legal) ===== */
+.subnav {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 0 0 28px 0;
+}
+
+.subnav a {
+  text-decoration: none;
+  background: rgba(0, 212, 255, 0.10);
+  color: #00d4ff;
+  padding: 8px 14px;
+  border-radius: 14px;
+  font-size: 0.95em;
+  border: 1px solid rgba(0, 212, 255, 0.25);
+  transition: transform .08s ease, background .08s ease;
+}
+
+.subnav a:hover {
+  transform: translateY(-1px);
+  background: rgba(0, 212, 255, 0.16);
+}
+
+/* ===== LINKS ===== */
+a.link {
+  color: #00d4ff;
+  text-decoration: none;
+  font-weight: 700;
+}
+
+a.link:hover {
+  text-decoration: underline;
+}
+
+/* ===== DIVIDER ===== */
+.divider,
+hr.divider {
+  border: none;
+  height: 1px;
+  background: rgba(255, 255, 255, 0.10);
+  margin: 18px 0;
+}
+
+/* ===== FOOTER LINKS ===== */
+.footer-link {
+  color: #ffd700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+}
+
+.footer-link:hover {
+  color: #ffed4e;
+  text-decoration: underline;
+}
+
+/* ===== WRAP CONTAINER (Changelog specific) ===== */
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 28px;
+  box-shadow: 0 16px 60px rgba(0, 0, 0, .45);
+  padding: 34px 26px 30px;
+  backdrop-filter: blur(10px);
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+  .acc-btn {
+    font-size: 18px;
+    padding: 14px;
+  }
+
+  .wrap {
+    padding: 26px 14px 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .wrap {
+    padding: 26px 14px 20px;
+  }
+}

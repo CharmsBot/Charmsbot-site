@@ -5,185 +5,96 @@
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Changelog • CharmsBot</title>
 
+  <!-- CSS en orden -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header-bar.css">
+  <link rel="stylesheet" href="../assets/css/general-pages.css">
+
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/images/_shared/favicon/site.webmanifest">
+  <meta name="theme-color" content="#7b2cbf">
+
   <style>
-    :root{
-      --bg:#0b1020;
+    /* Estilos específicos de changelog */
+    :root {
+      --bg: #0b1020;
       --card: rgba(255,255,255,0.06);
       --card2: rgba(255,255,255,0.08);
       --border: rgba(255,255,255,0.10);
       --text: rgba(255,255,255,0.86);
       --muted: rgba(255,255,255,0.58);
-      --accent:#49a6ff;
-      --btn:#5b2d84;
-      --btn2:#6d3aa0;
+      --accent: #49a6ff;
+      --btn: #5b2d84;
+      --btn2: #6d3aa0;
       --shadow: 0 16px 60px rgba(0,0,0,.45);
       --radius: 18px;
     }
 
-    *{box-sizing:border-box}
-    body{
-      margin:0;
-      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
-      color:var(--text);
+    body {
       background:
         radial-gradient(1200px 600px at 50% -100px, rgba(90,60,140,.45), transparent 60%),
         radial-gradient(1000px 700px at 50% 120%, rgba(0,160,255,.20), transparent 55%),
         var(--bg);
-      min-height:100vh;
-      padding:38px 18px 60px;
     }
 
-    .wrap{
-      max-width: 980px;
-      margin: 0 auto;
-      background: rgba(255,255,255,0.04);
-      border: 1px solid var(--border);
-      border-radius: 28px;
-      box-shadow: var(--shadow);
-      padding: 34px 26px 30px;
-      backdrop-filter: blur(10px);
-    }
-
-    h1{
+    h1 {
       margin: 6px 0 8px;
-      text-align:center;
+      text-align: center;
       font-size: 48px;
-      line-height:1.05;
+      line-height: 1.05;
       color: var(--accent);
       font-weight: 800;
     }
 
-    .subtitle{
-      text-align:center;
-      margin:0 0 18px;
-      color:var(--muted);
+    .subtitle {
+      text-align: center;
+      margin: 0 0 18px;
+      color: var(--muted);
       font-size: 18px;
     }
-
-    .divider{
-      height:1px;
-      background: rgba(255,255,255,0.10);
-      margin: 22px 0 26px;
-    }
-
-    .nav{
-      display:flex;
-      gap:14px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin: 0 0 22px;
-    }
-
-    .nav a{
-      text-decoration:none;
-      color: rgba(255,255,255,0.86);
-      background: rgba(91,45,132,0.65);
-      border: 1px solid rgba(160,120,220,0.35);
-      padding: 11px 18px;
-      border-radius: 16px;
-      transition: transform .08s ease, background .08s ease;
-      font-weight: 600;
-    }
-    .nav a:hover{ transform: translateY(-1px); background: rgba(109,58,160,0.70); }
-
-    /* Accordion */
-    .acc{
-      display:flex;
-      flex-direction:column;
-      gap:14px;
-      margin-top: 6px;
-    }
-
-    .acc-item{
-      border: 1px solid rgba(0,212,255,0.18);
-      background: rgba(0,212,255,0.06);
-      border-radius: 16px;
-      overflow:hidden;
-    }
-
-    .acc-btn{
-      width:100%;
-      display:flex;
-      align-items:center;
-      justify-content:space-between;
-      gap:12px;
-      padding: 16px 16px;
-      background: transparent;
-      border: 0;
-      color: #00d4ff;
-      font-size: 20px;
-      font-weight: 800;
-      cursor:pointer;
-      text-align:left;
-    }
-
-    .acc-btn .left{
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .pill{
-      font-size: 12px;
-      font-weight: 800;
-      color: rgba(255,255,255,0.85);
-      background: rgba(255,255,255,0.10);
-      border: 1px solid rgba(255,255,255,0.12);
-      padding: 5px 10px;
-      border-radius: 999px;
-    }
-
-    .chev{
-      width:34px;height:34px;
-      border-radius: 12px;
-      border: 1px solid rgba(0,212,255,0.25);
-      background: rgba(0,212,255,0.10);
-      display:grid;place-items:center;
-      transition: transform .15s ease;
-      flex: 0 0 auto;
-    }
-    .chev svg{width:16px;height:16px;fill:#00d4ff}
-
-    .acc-item[data-open="true"] .chev{ transform: rotate(180deg); }
-
-    .acc-panel{
-      display:none;
-      padding: 0 12px 12px;
-    }
-    .acc-item[data-open="true"] .acc-panel{ display:block; }
-
-    .frame{
-      width: 100%;
-      border: 0;
-      border-radius: 14px;
-      background: rgba(0,0,0,0.15);
-      overflow:hidden;
-      /* height se ajusta con JS */
-      height: 420px;
-    }
-
-    .hint{
-      margin-top: 10px;
-      color: rgba(255,255,255,0.55);
-      font-size: 13px;
-      text-align:center;
-    }
-
-    @media (max-width: 600px){
-      h1{ font-size: 40px; }
-      .wrap{ padding: 26px 14px 20px; }
-    }
   </style>
-  <link rel="icon" href="/assets/images/_shared/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/assets/images/_shared/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="/assets/images/_shared/favicon/site.webmanifest">
-  <meta name="theme-color" content="#7b2cbf">
-  <link rel="stylesheet" href="/assets/css/boosted.css">
 </head>
 
 <body>
+  <!-- Header Bar -->
+  <div class="top-header-bar">
+    <div class="header-left offline">
+      <div class="bot-status-indicator"></div>
+      <span class="bot-status-text">CHARMSBOT OFFLINE</span>
+    </div>
+
+    <div class="header-center">
+      <span class="countdown-label">Time to Server Save</span>
+      <span id="serverSaveCountdown" class="countdown-timer">00:00:00</span>
+    </div>
+
+    <div class="header-right">
+      <span class="boosted-label">Today's Boosted</span>
+      <div class="boosted-pedestal">
+        <img class="pedestal-base" 
+             src="../assets/images/_shared/boosted/_ui/pedestal.png" 
+             alt="Pedestal">
+        
+        <img id="boostedCreatureImg" 
+             class="boosted-sprite-creature" 
+             alt="Boosted Creature" 
+             loading="lazy"
+             style="display:none;">
+        
+        <img id="boostedBossImg" 
+             class="boosted-sprite-boss" 
+             alt="Boosted Boss" 
+             loading="lazy"
+             style="display:none;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <div class="wrap">
     <h1>Changelog</h1>
     <p class="subtitle">Release history</p>
@@ -253,6 +164,24 @@
     </div>
 
     <p class="hint">Tip: click a version to expand/collapse. Only one stays open.</p>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2025</p>
+      
+      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="line-height: 1.6; color: #ffffff;">
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
+          is a trademark of 
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
+          All rights to Tibia and its official content are owned by CipSoft.
+        </p>
+        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+          This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
+        </p>
+      </div>
+    </div>
   </div>
 
   <script>
@@ -321,7 +250,8 @@
       }
     });
   </script>
-  <div id="boosted-widget"></div>
-  <script src="/assets/js/boosted.js"></script>
+
+  <!-- Header Bar JavaScript -->
+  <script src="../assets/js/header-bar.js"></script>
 </body>
 </html>

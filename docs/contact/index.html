@@ -5,129 +5,56 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Contact</title>
 
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
+  <!-- CSS en orden -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header-bar.css">
+  <link rel="stylesheet" href="../assets/css/general-pages.css">
 
-    body{
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color:#e4e4e4;
-      min-height:100vh;
-      padding:40px 20px;
-      line-height:1.6;
-    }
-
-    .container{
-      max-width:900px;
-      margin:0 auto;
-      background: rgba(255,255,255,0.05);
-      border-radius:20px;
-      padding:40px;
-      backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 8px 32px rgba(0,0,0,0.3);
-    }
-
-    h1{
-      text-align:center;
-      font-size:2.5em;
-      margin-bottom:10px;
-      background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-
-    .subtitle{
-      text-align:center;
-      color:#888;
-      font-size:1.1em;
-      margin-bottom:20px;
-      padding-bottom:18px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-
-    .divider{
-      border:none;
-      height:1px;
-      background: rgba(255,255,255,0.10);
-      margin: 18px 0;
-    }
-
-    /* Top navigation (same as changelog) */
-    .nav{
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin: 10px 0 18px 0;
-    }
-    .nav a{
-      text-decoration:none;
-      color: rgba(255,255,255,0.86);
-      background: rgba(91,45,132,0.65);
-      border: 1px solid rgba(160,120,220,0.35);
-      padding: 11px 18px;
-      border-radius: 16px;
-      transition: transform .08s ease, background .08s ease;
-      font-weight: 600;
-    }
-    .nav a:hover{
-      transform: translateY(-1px);
-      background: rgba(109,58,160,0.70);
-    }
-
-    h2{
-      font-size:1.6em;
-      margin: 24px 0 10px 0;
-      padding-bottom:10px;
-      border-bottom:2px solid rgba(255,255,255,0.1);
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    p{ margin-bottom:12px; color:#c4c4c4; }
-
-    a.link{
-      color:#00d4ff;
-      text-decoration:none;
-      font-weight:700;
-    }
-    a.link:hover{ text-decoration:underline; }
-
-    .kv{
-      margin: 8px 0;
-      color:#c4c4c4;
-    }
-    .kv strong{
-      color: rgba(255,255,255,0.90);
-    }
-
-    .footer{
-      text-align:center;
-      margin-top:40px;
-      padding-top:30px;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    .footer p{ color:#888; font-size:0.9em; margin:6px 0; }
-
-    @media (max-width:600px){
-      .container{ padding:25px 20px; }
-      h1{ font-size:2em; }
-      h2{ font-size:1.3em; }
-    }
-  </style>
-  <link rel="icon" href="/assets/images/_shared/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/assets/images/_shared/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="/assets/images/_shared/favicon/site.webmanifest">
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/images/_shared/favicon/site.webmanifest">
   <meta name="theme-color" content="#7b2cbf">
-  <link rel="stylesheet" href="/assets/css/boosted.css">
 </head>
 
 <body>
+  <!-- Header Bar -->
+  <div class="top-header-bar">
+    <div class="header-left offline">
+      <div class="bot-status-indicator"></div>
+      <span class="bot-status-text">CHARMSBOT OFFLINE</span>
+    </div>
+
+    <div class="header-center">
+      <span class="countdown-label">Time to Server Save</span>
+      <span id="serverSaveCountdown" class="countdown-timer">00:00:00</span>
+    </div>
+
+    <div class="header-right">
+      <span class="boosted-label">Today's Boosted</span>
+      <div class="boosted-pedestal">
+        <img class="pedestal-base" 
+             src="../assets/images/_shared/boosted/_ui/pedestal.png" 
+             alt="Pedestal">
+        
+        <img id="boostedCreatureImg" 
+             class="boosted-sprite-creature" 
+             alt="Boosted Creature" 
+             loading="lazy"
+             style="display:none;">
+        
+        <img id="boostedBossImg" 
+             class="boosted-sprite-boss" 
+             alt="Boosted Boss" 
+             loading="lazy"
+             style="display:none;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <div class="container">
     <h1>Contact</h1>
     <p class="subtitle">Get in touch</p>
@@ -136,7 +63,7 @@
       <a href="../">Home</a>
       <a href="../commands/">Commands</a>
       <a href="../changelog/">Changelog</a>
-      <a href="../contact/">Contact</a>
+      <a href="./">Contact</a>
       <a href="../legal/">Legal</a>
     </div>
 
@@ -182,18 +109,26 @@
     </p>
     <p class="kv"><strong>Language:</strong> English, Spanish</p>
 
+    <!-- Footer Note -->
     <div class="footer">
-      <p>CharmsBot</p>
-      <p>
-        Tibia is a trademark of
-        <a class="link" href="https://www.cipsoft.com" target="_blank" rel="noopener noreferrer">CipSoft GmbH</a>.
-        All rights to Tibia and its official content are owned by
-        <a class="link" href="https://www.tibia.com" target="_blank" rel="noopener noreferrer">CipSoft</a>.
-      </p>
-      <p>This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.</p>
+      <p>Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2025</p>
+      
+      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="line-height: 1.6; color: #ffffff;">
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
+          is a trademark of 
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
+          All rights to Tibia and its official content are owned by CipSoft.
+        </p>
+        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+          This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
+        </p>
+      </div>
     </div>
   </div>
-  <div id="boosted-widget"></div>
-  <script src="/assets/js/boosted.js"></script>
+
+  <!-- Header Bar JavaScript -->
+  <script src="../assets/js/header-bar.js"></script>
 </body>
 </html>

@@ -4,383 +4,56 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Commands</title>
-  <style>
-    * { margin:0; padding:0; box-sizing:border-box; }
 
-    body{
-      font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
-      color:#e4e4e4;
-      min-height:100vh;
-      padding:40px 20px;
-      line-height:1.6;
-    }
+  <!-- CSS en orden -->
+  <link rel="stylesheet" href="../assets/css/style.css">
+  <link rel="stylesheet" href="../assets/css/header-bar.css">
+  <link rel="stylesheet" href="../assets/css/commands.css">
 
-    .container{
-      max-width:900px;
-      margin:0 auto;
-      background: rgba(255,255,255,0.05);
-      border-radius:20px;
-      padding:40px;
-      backdrop-filter: blur(10px);
-      border:1px solid rgba(255,255,255,0.1);
-      box-shadow:0 8px 32px rgba(0,0,0,0.3);
-    }
-
-    h1{
-      text-align:center;
-      font-size:2.5em;
-      margin-bottom:10px;
-      background: linear-gradient(90deg, #00d4ff, #7b2cbf);
-      -webkit-background-clip:text;
-      -webkit-text-fill-color:transparent;
-      background-clip:text;
-    }
-
-    .subtitle{
-      text-align:center;
-      color:#888;
-      font-size:1.1em;
-      margin-bottom:30px;
-      padding-bottom:20px;
-      border-bottom:1px solid rgba(255,255,255,0.1);
-    }
-
-    /* Top navigation */
-    .nav {
-      display:flex;
-      gap:12px;
-      flex-wrap:wrap;
-      justify-content:center;
-      margin: 10px 0 30px 0;
-    }
-    .nav a{
-      text-decoration:none;
-      color: rgba(255,255,255,0.86);
-      background: rgba(91,45,132,0.65);
-      border: 1px solid rgba(160,120,220,0.35);
-      padding: 11px 18px;
-      border-radius: 16px;
-      transition: transform .08s ease, background .08s ease;
-      font-weight: 600;
-    }
-    .nav a:hover{
-      transform: translateY(-1px);
-      background: rgba(109,58,160,0.70);
-    }
-
-    h2{
-      font-size:1.6em;
-      margin: 30px 0 15px 0;
-      padding-bottom:10px;
-      border-bottom:2px solid rgba(255,255,255,0.1);
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    p{ margin-bottom:15px; color:#c4c4c4; }
-
-    table{
-      width:100%;
-      border-collapse:collapse;
-      margin: 15px 0 10px 0;
-      background: rgba(0,0,0,0.18);
-      border-radius: 12px;
-      overflow:hidden;
-      border: 1px solid rgba(255,255,255,0.06);
-      table-layout: fixed;
-    }
-
-    th:first-child, td:first-child { width: 240px; }
-    th:nth-child(2), td:nth-child(2) { width: auto; }
-
-    th{
-      background: rgba(0, 212, 255, 0.15);
-      color:#00d4ff;
-      padding: 14px 14px;
-      text-align:left;
-      font-weight:800;
-      font-size:0.95em;
-    }
-
-    td{
-      padding: 12px 14px;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      color:#c4c4c4;
-    }
-
-    table th:nth-child(2),
-    table td:nth-child(2){
-      text-align: left;
-    }
-
-    tr:last-child td{ border-bottom:none; }
-
-    code{
-      background: rgba(0, 212, 255, 0.15);
-      color:#00d4ff;
-      padding:2px 8px;
-      border-radius:4px;
-      font-family: 'Consolas','Monaco', monospace;
-      font-size:0.95em;
-      font-weight:700;
-    }
-
-    .footer{
-      text-align:center;
-      margin-top:40px;
-      padding-top:30px;
-      border-top:1px solid rgba(255,255,255,0.1);
-    }
-    .footer p{ color:#888; font-size:0.95em; margin:6px 0; }
-
-    /* Accordion trigger row styling */
-    .accordion-trigger{
-      cursor: pointer;
-      user-select: none;
-      transition: background .08s ease;
-      position: relative;
-    }
-    .accordion-trigger:hover td{
-      background: rgba(255,255,255,0.03);
-    }
-    .accordion-trigger td{
-      transition: background .08s ease;
-    }
-
-    /* Chevron hint */
-    .accordion-trigger td:nth-child(2){
-      position: relative;
-      padding-right: 42px;
-    }
-    .accordion-trigger .chevron{
-      position: absolute;
-      right: 16px;
-      top: 50%;
-      transform: translateY(-50%) rotate(0deg);
-      width: 18px;
-      height: 18px;
-      opacity: 0.85;
-      transition: transform .12s ease, opacity .12s ease;
-      pointer-events: none;
-      color: rgba(255,255,255,0.85);
-    }
-    .accordion-trigger[aria-expanded="true"] .chevron{
-      transform: translateY(-50%) rotate(180deg);
-      opacity: 1;
-    }
-
-    /* Accordion panel row */
-    .accordion-panel-row td{
-      padding: 0;
-      border-bottom: 1px solid rgba(255,255,255,0.06);
-      background: rgba(0,0,0,0.10);
-    }
-
-    .accordion-panel{
-      padding: 16px 14px 16px 14px;
-    }
-
-    .panel-title{
-      color:#e4e4e4;
-      font-weight:800;
-      margin-bottom: 10px;
-      display:flex;
-      align-items:center;
-      gap:10px;
-    }
-
-    .panel-subtitle{
-      color:#aeb3bb;
-      font-size:0.95em;
-      margin-bottom: 14px;
-    }
-
-    .panel-grid{
-      display:grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      gap: 14px;
-    }
-
-    .panel-card{
-      margin:0;
-      border-radius: 12px;
-      overflow:hidden;
-      background: rgba(0,0,0,0.18);
-      border: 1px solid rgba(255,255,255,0.06);
-    }
-
-    .panel-card img{
-      width: 100%;
-      max-height: 260px;
-      height: auto;
-      object-fit: contain;
-      background: rgba(0,0,0,0.12);
-      display: block;
-      padding: 10px;
-      cursor: zoom-in;
-    }
-
-    .panel-card figcaption{
-      padding: 10px 12px;
-      color:#c4c4c4;
-      font-size: 0.92em;
-      border-top: 1px solid rgba(255,255,255,0.06);
-    }
-
-    /* Lightbox */
-    .lightbox{
-      position: fixed;
-      inset: 0;
-      background: rgba(0,0,0,0.75);
-      display: none;
-      align-items: center;
-      justify-content: center;
-      padding: 24px;
-      z-index: 9999;
-    }
-    .lightbox.is-open{
-      display: flex;
-    }
-
-    /* 3-column layout so arrows never overlap the image */
-    .lightbox-content{
-      max-width: min(1100px, 96vw);
-      max-height: 92vh;
-      background: rgba(0,0,0,0.35);
-      border: 1px solid rgba(255,255,255,0.10);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 20px 60px rgba(0,0,0,0.6);
-
-      display: grid;
-      grid-template-columns: 58px 1fr 58px;
-      align-items: center;
-      position: relative;
-    }
-
-    .lightbox-main{
-      display: flex;
-      flex-direction: column;
-      max-height: 92vh;
-      min-width: 0;
-    }
-
-    .lightbox-img{
-      display: block;
-      width: 100%;
-      height: auto;
-      max-height: 82vh;
-      object-fit: contain;
-      background: rgba(0,0,0,0.25);
-    }
-
-    .lightbox-caption{
-      padding: 12px 14px;
-      color: #c4c4c4;
-      font-size: 0.95em;
-      border-top: 1px solid rgba(255,255,255,0.10);
-      background: rgba(0,0,0,0.35);
-      text-align: center;
-    }
-
-    .lightbox-close{
-      position: absolute;
-      top: 18px;
-      right: 18px;
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      color: rgba(255,255,255,0.9);
-      font-size: 22px;
-      line-height: 40px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform .08s ease, background .08s ease;
-      z-index: 10001;
-    }
-    .lightbox-close:hover{
-      transform: translateY(-1px);
-      background: rgba(0,0,0,0.5);
-    }
-
-    .lightbox-nav{
-      width: 46px;
-      height: 46px;
-      border-radius: 14px;
-      border: 1px solid rgba(255,255,255,0.14);
-      background: rgba(0,0,0,0.35);
-      color: rgba(255,255,255,0.92);
-      font-size: 26px;
-      line-height: 44px;
-      text-align: center;
-      cursor: pointer;
-      transition: transform .08s ease, background .08s ease, opacity .08s ease;
-      user-select: none;
-      justify-self: center;
-      z-index: 10001;
-    }
-    .lightbox-nav:hover{
-      transform: translateY(-1px);
-      background: rgba(0,0,0,0.5);
-    }
-    .lightbox-prev{ grid-column: 1; }
-    .lightbox-next{ grid-column: 3; }
-
-    @media (max-width:600px){
-      .container{ padding:25px 20px; }
-      h1{ font-size:2em; }
-      h2{ font-size:1.3em; }
-      th, td{ padding: 10px 10px; }
-      .accordion-panel{ padding: 14px 10px; }
-
-      .accordion-trigger td:nth-child(2){
-        padding-right: 34px;
-      }
-      .accordion-trigger .chevron{
-        right: 10px;
-      }
-
-      .panel-grid{
-        grid-template-columns: 1fr;
-      }
-
-      .panel-card img{
-        max-height: 220px;
-        padding: 8px;
-      }
-
-      .lightbox{
-        padding: 14px;
-      }
-      .lightbox-img{
-        max-height: 78vh;
-      }
-
-      .lightbox-content{
-        grid-template-columns: 52px 1fr 52px;
-      }
-
-      .lightbox-nav{
-        width: 42px;
-        height: 42px;
-        line-height: 40px;
-        border-radius: 12px;
-      }
-    }
-  </style>
-  <link rel="icon" href="/assets/images/_shared/favicon/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
-  <link rel="icon" type="image/png" href="/assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
-  <link rel="apple-touch-icon" href="/assets/images/_shared/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="/assets/images/_shared/favicon/site.webmanifest">
+  <!-- Favicons -->
+  <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
+  <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
+  <link rel="manifest" href="../assets/images/_shared/favicon/site.webmanifest">
   <meta name="theme-color" content="#7b2cbf">
-  <link rel="stylesheet" href="/assets/css/boosted.css">
 </head>
 <body>
+  <!-- Header Bar -->
+  <div class="top-header-bar">
+    <div class="header-left offline">
+      <div class="bot-status-indicator"></div>
+      <span class="bot-status-text">CHARMSBOT OFFLINE</span>
+    </div>
+
+    <div class="header-center">
+      <span class="countdown-label">Time to Server Save</span>
+      <span id="serverSaveCountdown" class="countdown-timer">00:00:00</span>
+    </div>
+
+    <div class="header-right">
+      <span class="boosted-label">Today's Boosted</span>
+      <div class="boosted-pedestal">
+        <img class="pedestal-base" 
+             src="../assets/images/_shared/boosted/_ui/pedestal.png" 
+             alt="Pedestal">
+        
+        <img id="boostedCreatureImg" 
+             class="boosted-sprite-creature" 
+             alt="Boosted Creature" 
+             loading="lazy"
+             style="display:none;">
+        
+        <img id="boostedBossImg" 
+             class="boosted-sprite-boss" 
+             alt="Boosted Boss" 
+             loading="lazy"
+             style="display:none;">
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content -->
   <div class="container">
     <h1>Commands</h1>
     <p class="subtitle">Complete command reference</p>
@@ -981,9 +654,22 @@
       </tbody>
     </table>
 
+    <!-- Footer -->
     <div class="footer">
-      <p>CharmsBot</p>
-      <p>Commands Reference</p>
+      <p>Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2025</p>
+      
+      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
+        <p style="line-height: 1.6; color: #ffffff;">
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
+          is a trademark of 
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
+          All rights to Tibia and its official content are owned by CipSoft.
+        </p>
+        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+          This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
+        </p>
+      </div>
     </div>
   </div>
 
@@ -1172,6 +858,11 @@
       if (e.key === 'ArrowRight') showNext();
     });
   </script>
+  </script>
+
+  <!-- Header Bar JavaScript -->
+  <script src="../assets/js/header-bar.js"></script>
+
   <div id="boosted-widget"></div>
   <script src="/assets/js/boosted.js"></script>
 </body>
