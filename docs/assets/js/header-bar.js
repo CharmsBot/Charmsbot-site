@@ -98,11 +98,11 @@
       const data = await res.json();
 
       if (data.boostedCreature) {
-        creatureImg.src = `assets/images/_shared/boosted/Creature/${toBoostedFilename(data.boostedCreature)}`;
+        creatureImg.src = `/assets/images/_shared/boosted/Creature/${toBoostedFilename(data.boostedCreature)}`;
         creatureImg.style.display = 'block';
       }
       if (data.boostedBoss) {
-        bossImg.src = `assets/images/_shared/boosted/Boss/${toBoostedFilename(data.boostedBoss)}`;
+        bossImg.src = `/assets/images/_shared/boosted/Boss/${toBoostedFilename(data.boostedBoss)}`;
         bossImg.style.display = 'block';
       }
     } catch (e) {}
