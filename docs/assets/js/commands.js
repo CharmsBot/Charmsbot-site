@@ -1,6 +1,6 @@
 // commands.js - CharmsBot Commands Page with Modal System & Image Zoom
 
-// Datos completos de TODOS los comandos
+// Datos completos de TODOS los comandos con CAPTIONS ORIGINALES
 const commandsData = {
   character: [
     {
@@ -67,12 +67,12 @@ const commandsData = {
       title: '📸 /analysis — Flow',
       subtitle: 'Upload your analyzer file, select a character, and get optimal charm suggestions.',
       images: [
-        {src: '/assets/images/commands/hunt_analysis/analysis/01-analysis.png', cap: '1) Upload your analyzer file and select a character.'},
-        {src: '/assets/images/commands/hunt_analysis/analysis/02-analysis.png', cap: '2) The bot shows the best charms to use from your saved character.'},
-        {src: '/assets/images/commands/hunt_analysis/analysis/03-analysis.png', cap: '3) Click one of the embeds to see creature details and percentages.'},
-        {src: '/assets/images/commands/hunt_analysis/analysis/04-analysis.png', cap: '4) You can save this analysis for later viewing.'},
-        {src: '/assets/images/commands/hunt_analysis/analysis/05-analysis.png', cap: '5) Analysis saved with a unique ID.'},
-        {src: '/assets/images/commands/hunt_analysis/analysis/06-analysis.png', cap: '6) Optionally provide a custom name for easy reference.'}
+        {src: '/assets/images/commands/hunt_analysis/analysis/01-analysis.png', cap: '1) Select a character to run the analysis.'},
+        {src: '/assets/images/commands/hunt_analysis/analysis/03-analysis.png', cap: '2) Paste your Hunt Analyzer data into the analysis form.'},
+        {src: '/assets/images/commands/hunt_analysis/analysis/04-analysis.png', cap: '3) Enter a hunt name if you want to save this configuration.'},
+        {src: '/assets/images/commands/hunt_analysis/analysis/05-analysis.png', cap: '4) Best elemental damage efficiencies for the analyzed spawn.'},
+        {src: '/assets/images/commands/hunt_analysis/analysis/06-analysis.png', cap: '5) Optimal charm assignment based on analyzed monsters stats and saved charms.'},
+        {src: '/assets/images/commands/hunt_analysis/analysis/07-analysis.png', cap: '6) If you entered a hunt name, this message confirms the analysis was saved successfully.'}
       ]
     },
     {
@@ -83,13 +83,13 @@ const commandsData = {
       title: '📸 /bestcharms — Flow',
       subtitle: 'Upload analyzer to see the absolute best charm setup possible.',
       images: [
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/01-bestcharms.png', cap: '1) Upload your analyzer file.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/02-bestcharms.png', cap: '2) The bot shows the best possible charm configuration using all charms.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/03-bestcharms.png', cap: '3) Click on a creature to see detailed breakdowns.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/04-bestcharms.png', cap: '4) Damage breakdown for each creature.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/05-bestcharms.png', cap: '5) You can save this bestcharms result.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png', cap: '6) Bestcharms saved with unique ID.'},
-        {src: '/assets/images/commands/hunt_analysis/bestcharms/07-bestcharms.png', cap: '7) Optionally add a custom name.'}
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/01-bestcharms.png', cap: '1) Select the character for the bestcharms analysis.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/02-bestcharms.png', cap: '2) Paste your Hunt Analyzer data into the form.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/03-bestcharms.png', cap: '3) Enter a hunt name if you want to save this configuration.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/04-bestcharms.png', cap: '4) Best elemental damage efficiencies for the analyzed spawn.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/05-bestcharms.png', cap: '5) Review the recommended charms, total cost, any missing charms, and the expected damage increase.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png', cap: '6) Detailed creature assignments with recommended charm level and damage efficiency breakdown.'},
+        {src: '/assets/images/commands/hunt_analysis/bestcharms/07-bestcharms.png', cap: '7) Bestcharms configuration saved successfully for the character.'}
       ]
     },
     {
@@ -100,8 +100,8 @@ const commandsData = {
       title: '📸 /element — Flow',
       subtitle: 'Upload analyzer to see element effectiveness.',
       images: [
-        {src: '/assets/images/commands/hunt_analysis/element/01-element.png', cap: '1) Upload your analyzer file.'},
-        {src: '/assets/images/commands/hunt_analysis/element/02-element.png', cap: '2) See element effectiveness percentages instantly.'}
+        {src: '/assets/images/commands/hunt_analysis/element/01-element.png', cap: '1) Paste the Hunt Analyzer for the hunt you want to check.'},
+        {src: '/assets/images/commands/hunt_analysis/element/02-element.png', cap: '2) View the overall best damage types for the spawn and a breakdown of each monster\'s elemental vulnerabilities.'}
       ]
     }
   ],
@@ -114,9 +114,9 @@ const commandsData = {
       title: '📸 /hunt view — Flow',
       subtitle: 'Select from your saved hunts to view details.',
       images: [
-        {src: '/assets/images/commands/hunt_management/hunt/view/01-huntview.png', cap: '1) Choose whether to view analyses or bestcharms.'},
-        {src: '/assets/images/commands/hunt_management/hunt/view/02-huntview.png', cap: '2) Select the saved hunt you want to see.'},
-        {src: '/assets/images/commands/hunt_management/hunt/view/03-huntview.png', cap: '3) Full hunt details are displayed.'}
+        {src: '/assets/images/commands/hunt_management/hunt/view/01-huntview.png', cap: '1) Select the character whose saved hunts you want to view.'},
+        {src: '/assets/images/commands/hunt_management/hunt/view/02-huntview.png', cap: '2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to open.'},
+        {src: '/assets/images/commands/hunt_management/hunt/view/03-huntview.png', cap: '3) The saved hunt details are displayed with its charm assignments.'}
       ]
     },
     {
@@ -127,17 +127,25 @@ const commandsData = {
       title: '📸 /hunt delete — Flow',
       subtitle: 'Select and confirm deletion of a saved hunt.',
       images: [
-        {src: '/assets/images/commands/hunt_management/hunt/delete/01-huntdelete.png', cap: '1) Choose analysis or bestcharms type.'},
-        {src: '/assets/images/commands/hunt_management/hunt/delete/02-huntdelete.png', cap: '2) Select the hunt to delete.'},
-        {src: '/assets/images/commands/hunt_management/hunt/delete/03-huntdelete.png', cap: '3) Confirm deletion.'},
-        {src: '/assets/images/commands/hunt_management/hunt/delete/04-huntdelete.png', cap: '4) Hunt deleted successfully.'}
+        {src: '/assets/images/commands/hunt_management/hunt/delete/01-huntdelete.png', cap: '1) Select the character whose saved hunt you want to delete.'},
+        {src: '/assets/images/commands/hunt_management/hunt/delete/02-huntdelete.png', cap: '2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to delete. This action cannot be undone.'},
+        {src: '/assets/images/commands/hunt_management/hunt/delete/03-huntdelete.png', cap: '3) Click Confirm Delete to remove the saved hunt.'},
+        {src: '/assets/images/commands/hunt_management/hunt/delete/04-huntdelete.png', cap: '4) A summary is shown with the deleted hunt name and the updated remaining-hunts counter.'}
       ]
     },
     {
       id: 'hunt-rename',
       name: '/hunt rename',
       desc: 'Rename a saved hunt',
-      hasImages: false
+      hasImages: true,
+      title: '📸 /hunt rename — Flow',
+      subtitle: 'Select a hunt and provide a new name.',
+      images: [
+        {src: '/assets/images/commands/hunt_management/hunt/rename/01-huntrename.png', cap: '1) Select a character from the list.'},
+        {src: '/assets/images/commands/hunt_management/hunt/rename/02-huntrename.png', cap: '2) Select the saved hunt type.'},
+        {src: '/assets/images/commands/hunt_management/hunt/rename/03-huntrename.png', cap: '3) Select the hunt and enter the new name.'},
+        {src: '/assets/images/commands/hunt_management/hunt/rename/04-huntrename.png', cap: '4) A summary is shown with the changes made.'}
+      ]
     }
   ],
   utilities: [
@@ -212,7 +220,6 @@ function openModal(cmd) {
   modal.classList.add('active');
   document.body.style.overflow = 'hidden';
   
-  // IMPORTANTE: Agregar event listeners después de crear las imágenes
   setTimeout(function() {
     attachImageZoomListeners();
   }, 100);
@@ -237,7 +244,6 @@ function navigateImage(direction) {
   }
   updateImageCounter();
   
-  // Re-attach listeners después de cambiar de imagen
   setTimeout(function() {
     attachImageZoomListeners();
   }, 50);
@@ -249,14 +255,12 @@ function updateImageCounter() {
   counter.textContent = (currentImageIndex + 1) + ' / ' + currentCommand.images.length;
 }
 
-// Image Zoom Lightbox Functions
 function openImageLightbox(imageSrc) {
   console.log('Opening lightbox with image:', imageSrc);
   
   var lightbox = document.getElementById('imageLightbox');
   
   if (!lightbox) {
-    // Crear lightbox si no existe
     console.log('Creating lightbox element');
     lightbox = document.createElement('div');
     lightbox.id = 'imageLightbox';
@@ -267,7 +271,6 @@ function openImageLightbox(imageSrc) {
       '<div class="lightbox-hint">Click image or press ESC to close</div>';
     document.body.appendChild(lightbox);
     
-    // Event listeners para cerrar
     document.getElementById('lightboxCloseBtn').addEventListener('click', function(e) {
       e.stopPropagation();
       closeImageLightbox();
@@ -299,11 +302,9 @@ function attachImageZoomListeners() {
   console.log('Attaching zoom listeners to', modalImages.length, 'images');
   
   for (var i = 0; i < modalImages.length; i++) {
-    // Remover listeners previos
     var newImage = modalImages[i].cloneNode(true);
     modalImages[i].parentNode.replaceChild(newImage, modalImages[i]);
     
-    // Agregar nuevo listener
     newImage.addEventListener('click', function(e) {
       e.stopPropagation();
       console.log('Image clicked!');
@@ -394,7 +395,6 @@ document.addEventListener('DOMContentLoaded', function() {
   document.addEventListener('keydown', function(e) {
     const lightbox = document.getElementById('imageLightbox');
     
-    // Si el lightbox está abierto
     if (lightbox && lightbox.classList.contains('active')) {
       if (e.key === 'Escape') {
         closeImageLightbox();
@@ -402,7 +402,6 @@ document.addEventListener('DOMContentLoaded', function() {
       }
     }
     
-    // Si el modal está abierto
     const modal = document.getElementById('commandModal');
     if (modal && modal.classList.contains('active')) {
       if (e.key === 'Escape') closeModal();
