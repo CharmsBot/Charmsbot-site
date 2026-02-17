@@ -4,13 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Commands</title>
-
-  <!-- CSS en orden -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header-bar.css">
   <link rel="stylesheet" href="../assets/css/commands.css">
-
-  <!-- Favicons -->
   <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
@@ -25,30 +21,16 @@
       <div class="bot-status-indicator"></div>
       <span class="bot-status-text">CHARMSBOT OFFLINE</span>
     </div>
-
     <div class="header-center">
       <span class="countdown-label">Time to Server Save</span>
       <span id="serverSaveCountdown" class="countdown-timer">00:00:00</span>
     </div>
-
     <div class="header-right">
       <span class="boosted-label">Today's Boosted</span>
       <div class="boosted-pedestal">
-        <img class="pedestal-base" 
-             src="../assets/images/_shared/boosted/_ui/pedestal.png" 
-             alt="Pedestal">
-        
-        <img id="boostedCreatureImg" 
-             class="boosted-sprite-creature" 
-             alt="Boosted Creature" 
-             loading="lazy"
-             style="display:none;">
-        
-        <img id="boostedBossImg" 
-             class="boosted-sprite-boss" 
-             alt="Boosted Boss" 
-             loading="lazy"
-             style="display:none;">
+        <img class="pedestal-base" src="../assets/images/_shared/boosted/_ui/pedestal.png" alt="Pedestal">
+        <img id="boostedCreatureImg" class="boosted-sprite-creature" alt="Boosted Creature" loading="lazy" style="display:none;">
+        <img id="boostedBossImg" class="boosted-sprite-boss" alt="Boosted Boss" loading="lazy" style="display:none;">
       </div>
     </div>
   </div>
@@ -57,608 +39,46 @@
   <div class="container">
     <h1>Commands</h1>
     <p class="subtitle">Complete command reference</p>
-
+    
     <div class="nav">
       <a href="../">Home</a>
-      <a href="../commands/">Commands</a>
+      <a href="./">Commands</a>
       <a href="../changelog/">Changelog</a>
       <a href="../contact/">Contact</a>
       <a href="../legal/">Legal</a>
     </div>
 
-    <h2>👤 Character Management</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- /character add (accordion) -->
-        <tr class="accordion-trigger" data-accordion="character-add" aria-expanded="false">
-          <td><code>/character add</code></td>
-          <td>
-            Add a new character with stats, charm points, and charms
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
+    <!-- Tabs Navigation -->
+    <div class="tabs-container">
+      <ul class="tabs-nav" role="tablist">
+        <li><button class="tab-button active" data-tab="character" role="tab"><span class="tab-icon">👤</span><span>Character</span></button></li>
+        <li><button class="tab-button" data-tab="analysis" role="tab"><span class="tab-icon">📊</span><span>Analysis</span></button></li>
+        <li><button class="tab-button" data-tab="hunt" role="tab"><span class="tab-icon">📋</span><span>Hunt</span></button></li>
+        <li><button class="tab-button" data-tab="utilities" role="tab"><span class="tab-icon">🧰</span><span>Utilities</span></button></li>
+      </ul>
 
-        <tr class="accordion-panel-row" data-accordion-panel="character-add" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/character add</code> — Flow</span></div>
-              <div class="panel-subtitle">Create a character, add charms by level, and save.</div>
+      <!-- Tab Contents (populated by JavaScript) -->
+      <div class="tab-content active" id="tab-character" role="tabpanel">
+        <div class="commands-grid"></div>
+      </div>
 
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/add/01-characteradd.png"
-                    alt="Character add - stats modal"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Fill character stats and submit the form.</figcaption>
-                </figure>
+      <div class="tab-content" id="tab-analysis" role="tabpanel">
+        <div class="commands-grid"></div>
+      </div>
 
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/add/02-characteradd.png"
-                    alt="Character add - add charms embed (initial)"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Click the dropdown below to select a charm level.</figcaption>
-                </figure>
+      <div class="tab-content" id="tab-hunt" role="tabpanel">
+        <div class="commands-grid"></div>
+      </div>
 
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/add/03-characteradd.png"
-                    alt="Character add - charm level dropdown"
-                    loading="lazy"
-                  />
-                  <figcaption>3) Select a level first, then add the appropriate charms for that level.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/add/04-characteradd.png"
-                    alt="Character add - selected charms"
-                    loading="lazy"
-                  />
-                  <figcaption>4) After adding charms, click Continue. Once everything looks correct, click Save.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/add/05-characteradd.png"
-                    alt="Character add - success embed"
-                    loading="lazy"
-                  />
-                  <figcaption>5) A summary is shown with character stats, charm points, saved charms, and usage limits.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /character view (accordion) -->
-        <tr class="accordion-trigger" data-accordion="character-view" aria-expanded="false">
-          <td><code>/character view</code></td>
-          <td>
-            View all your saved characters and their configurations
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="character-view" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/character view</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character to view its saved information.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/view/01-characterview.png"
-                    alt="Character view - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character you want to see from the list.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/view/02-characterview.png"
-                    alt="Character view - summary"
-                    loading="lazy"
-                  />
-                  <figcaption>2) A summary is shown with character stats, charm points, saved charms, and usage limits.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /character edit (accordion) -->
-        <tr class="accordion-trigger" data-accordion="character-edit" aria-expanded="false">
-          <td><code>/character edit</code></td>
-          <td>
-            Edit an existing character's stats and charms
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="character-edit" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/character edit</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, update stats, optionally update charms, and save.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/edit/01-characteredit.png"
-                    alt="Character edit - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character you want to edit from the list.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/edit/02-characteredit.png"
-                    alt="Character edit - edit stats modal"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Fill in the character stats you want to update.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/edit/03-characteredit.png"
-                    alt="Character edit - edit charms view"
-                    loading="lazy"
-                  />
-                  <figcaption>3) Update your charms if needed, then click Save to finish.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/edit/04-characteredit.png"
-                    alt="Character edit - updated summary"
-                    loading="lazy"
-                  />
-                  <figcaption>4) At the end, a summary is shown with the updated stats, charm points, and selected charms.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /character delete (accordion) -->
-        <tr class="accordion-trigger" data-accordion="character-delete" aria-expanded="false">
-          <td><code>/character delete</code></td>
-          <td>
-            Delete a character and all associated data
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="character-delete" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/character delete</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, confirm deletion, and see the result.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/delete/01-characterdelete.png"
-                    alt="Character delete - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character you want to delete from the list.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/delete/02-characterdelete.png"
-                    alt="Character delete - confirm deletion"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Click Confirm Delete to remove the character, including all saved stats, analyses, and bestcharms. This action cannot be undone.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/character_management/character/delete/03-characterdelete.png"
-                    alt="Character delete - deleted"
-                    loading="lazy"
-                  />
-                  <figcaption>3) The character was deleted successfully. A counter shows how many character slots are available.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>📊 Hunt Analysis</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- /analysis (accordion) -->
-        <tr class="accordion-trigger" data-accordion="analysis" aria-expanded="false">
-          <td><code>/analysis</code></td>
-          <td>
-            Analyze your hunt using your character's saved charms
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="analysis" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/analysis</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, paste your Hunt Analyzer, view results, and save.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/01-analysis.png"
-                    alt="Analysis - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select a character to run the analysis.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/03-analysis.png"
-                    alt="Analysis - pasted session"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Paste your Hunt Analyzer data into the analysis form.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/04-analysis.png"
-                    alt="Analysis - optional hunt name"
-                    loading="lazy"
-                  />
-                  <figcaption>3) Enter a hunt name if you want to save this configuration.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/05-analysis.png"
-                    alt="Analysis - best elements"
-                    loading="lazy"
-                  />
-                  <figcaption>4) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/06-analysis.png"
-                    alt="Analysis - optimal charm assignment"
-                    loading="lazy"
-                  />
-                  <figcaption>5) Optimal charm assignment based on analyzed monsters stats and saved charms.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/analysis/07-analysis.png"
-                    alt="Analysis - saved"
-                    loading="lazy"
-                  />
-                  <figcaption>6) If you entered a hunt name, this message confirms the analysis was saved successfully.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /bestcharms (accordion) -->
-        <tr class="accordion-trigger" data-accordion="bestcharms" aria-expanded="false">
-          <td><code>/bestcharms</code></td>
-          <td>
-            Find the optimal charm configuration using ALL available charms
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="bestcharms" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/bestcharms</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, paste your Hunt Analyzer, view the best setup, and save.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/01-bestcharms.png"
-                    alt="Bestcharms - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character for the bestcharms analysis.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/02-bestcharms.png"
-                    alt="Bestcharms - paste hunt analyzer"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Paste your Hunt Analyzer data into the form.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/03-bestcharms.png"
-                    alt="Bestcharms - save name required to save"
-                    loading="lazy"
-                  />
-                  <figcaption>3) Enter a hunt name if you want to save this configuration.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/04-bestcharms.png"
-                    alt="Bestcharms - best elements"
-                    loading="lazy"
-                  />
-                  <figcaption>4) Best elemental damage efficiencies for the analyzed spawn.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/05-bestcharms.png"
-                    alt="Bestcharms - optimal charm assignment summary"
-                    loading="lazy"
-                  />
-                  <figcaption>5) Review the recommended charms, total cost, any missing charms, and the expected damage increase.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png"
-                    alt="Bestcharms - detailed assignments"
-                    loading="lazy"
-                  />
-                  <figcaption>6) Detailed creature assignments with recommended charm level and damage efficiency breakdown.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/bestcharms/07-bestcharms.png"
-                    alt="Bestcharms - saved successfully"
-                    loading="lazy"
-                  />
-                  <figcaption>7) Bestcharms configuration saved successfully for the character.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /element (accordion) -->
-        <tr class="accordion-trigger" data-accordion="element" aria-expanded="false">
-          <td><code>/element</code></td>
-          <td>
-            Quick element efficiency checker (no character required)
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="element" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/element</code> — Flow</span></div>
-              <div class="panel-subtitle">Paste your Hunt Analyzer and check element weaknesses for the spawn.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/element/01-element.png"
-                    alt="Element - paste hunt analyzer"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Paste the Hunt Analyzer for the hunt you want to check.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_analysis/element/02-element.png"
-                    alt="Element - results"
-                    loading="lazy"
-                  />
-                  <figcaption>2) View the overall best damage types for the spawn and a breakdown of each monster's elemental vulnerabilities.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>📋 Hunt Management</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- /hunt view (accordion) -->
-        <tr class="accordion-trigger" data-accordion="hunt-view" aria-expanded="false">
-          <td><code>/hunt view</code></td>
-          <td>
-            View your saved analyses and bestcharms configurations
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="hunt-view" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/hunt view</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, choose the hunt type, then open a saved hunt.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/view/01-huntview.png"
-                    alt="Hunt view - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character whose saved hunts you want to view.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/view/02-huntview.png"
-                    alt="Hunt view - select hunt type"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to open.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/view/03-huntview.png"
-                    alt="Hunt view - hunt details"
-                    loading="lazy"
-                  />
-                  <figcaption>3) The saved hunt details are displayed with its charm assignments.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <!-- /hunt delete (accordion) -->
-        <tr class="accordion-trigger" data-accordion="hunt-delete" aria-expanded="false">
-          <td><code>/hunt delete</code></td>
-          <td>
-            Delete a specific saved hunt
-            <svg class="chevron" viewBox="0 0 24 24" aria-hidden="true">
-              <path fill="currentColor" d="M7.41 8.59 12 13.17l4.59-4.58L18 10l-6 6-6-6z"></path>
-            </svg>
-          </td>
-        </tr>
-
-        <tr class="accordion-panel-row" data-accordion-panel="hunt-delete" hidden>
-          <td colspan="2">
-            <div class="accordion-panel">
-              <div class="panel-title">📸 <span><code>/hunt delete</code> — Flow</span></div>
-              <div class="panel-subtitle">Select a character, choose the hunt type, confirm deletion, and see the result.</div>
-
-              <div class="panel-grid">
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/delete/01-huntdelete.png"
-                    alt="Hunt delete - select character"
-                    loading="lazy"
-                  />
-                  <figcaption>1) Select the character whose saved hunt you want to delete.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/delete/02-huntdelete.png"
-                    alt="Hunt delete - select hunt type"
-                    loading="lazy"
-                  />
-                  <figcaption>2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to delete. This action cannot be undone.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/delete/03-huntdelete.png"
-                    alt="Hunt delete - confirm deletion"
-                    loading="lazy"
-                  />
-                  <figcaption>3) Click Confirm Delete to remove the saved hunt.</figcaption>
-                </figure>
-
-                <figure class="panel-card">
-                  <img
-                    src="/assets/images/commands/hunt_management/hunt/delete/04-huntdelete.png"
-                    alt="Hunt delete - deleted summary"
-                    loading="lazy"
-                  />
-                  <figcaption>4) A summary is shown with the deleted hunt name and the updated remaining-hunts counter.</figcaption>
-                </figure>
-              </div>
-            </div>
-          </td>
-        </tr>
-
-        <tr>
-          <td><code>/hunt rename</code></td>
-          <td>Rename a saved hunt</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <h2>🧰 Utilities</h2>
-    <table>
-      <thead>
-        <tr>
-          <th>Command</th>
-          <th>Description</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td><code>/splitloot</code></td>
-          <td>Split party hunt loot with optional extra expenses</td>
-        </tr>
-        <tr>
-          <td><code>/weaponxp</code></td>
-          <td>Calculate weapon proficiency XP from your hunt</td>
-        </tr>
-        <tr>
-          <td><code>/hotcuisine</code></td>
-          <td>Calculate ingredients for Hot Cuisine Quest</td>
-        </tr>
-        <tr>
-          <td><code>/help</code></td>
-          <td>Get detailed information about all commands</td>
-        </tr>
-      </tbody>
-    </table>
+      <div class="tab-content" id="tab-utilities" role="tabpanel">
+        <div class="commands-grid"></div>
+      </div>
+    </div>
 
     <!-- Footer -->
     <div class="footer">
       <p>Made with ❤️ for the Tibia community</p>
       <p>CharmsBot © 2025</p>
-      
       <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
         <p style="line-height: 1.6; color: #ffffff;">
           <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
@@ -673,197 +93,33 @@
     </div>
   </div>
 
-  <!-- Lightbox modal -->
-  <div class="lightbox" id="lightbox" aria-hidden="true">
-    <button class="lightbox-close" id="lightboxClose" aria-label="Close">×</button>
-
-    <div class="lightbox-content" role="dialog" aria-modal="true">
-      <button class="lightbox-nav lightbox-prev" id="lightboxPrev" aria-label="Previous image">‹</button>
-
-      <div class="lightbox-main">
-        <img class="lightbox-img" id="lightboxImg" alt="">
-        <div class="lightbox-caption" id="lightboxCaption"></div>
+  <!-- Modal for Command Details -->
+  <div class="command-modal" id="commandModal">
+    <div class="modal-content">
+      <div class="modal-header">
+        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-subtitle" id="modalSubtitle"></div>
+        <button class="modal-close" id="modalClose">×</button>
       </div>
-
-      <button class="lightbox-nav lightbox-next" id="lightboxNext" aria-label="Next image">›</button>
+      <div class="modal-body">
+        <div class="modal-image-container" id="modalImageContainer"></div>
+        <div class="modal-navigation">
+          <button class="modal-nav-btn prev" id="modalPrev">
+            <span>←</span>
+            <span>Previous</span>
+          </button>
+          <div class="image-counter" id="imageCounter">1 / 1</div>
+          <button class="modal-nav-btn next" id="modalNext">
+            <span>Next</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <script>
-    // Accordion: only one panel open at a time
-    function closeAllAccordions(exceptKey) {
-      document.querySelectorAll('[data-accordion]').forEach((row) => {
-        const key = row.getAttribute('data-accordion');
-        if (key === exceptKey) return;
-
-        row.setAttribute('aria-expanded', 'false');
-        const panel = document.querySelector(`[data-accordion-panel="${key}"]`);
-        if (panel) panel.hidden = true;
-      });
-    }
-
-    document.querySelectorAll('[data-accordion]').forEach((trigger) => {
-      trigger.addEventListener('click', () => {
-        const key = trigger.getAttribute('data-accordion');
-        const panelRow = document.querySelector(`[data-accordion-panel="${key}"]`);
-        const isExpanded = trigger.getAttribute('aria-expanded') === 'true';
-
-        if (!isExpanded) closeAllAccordions(key);
-
-        trigger.setAttribute('aria-expanded', String(!isExpanded));
-        if (panelRow) panelRow.hidden = isExpanded;
-      });
-    });
-
-    // Lightbox
-    const lightbox = document.getElementById('lightbox');
-    const lightboxImg = document.getElementById('lightboxImg');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxPrev = document.getElementById('lightboxPrev');
-    const lightboxNext = document.getElementById('lightboxNext');
-
-    let savedScrollY = 0;
-
-    function lockScroll() {
-      savedScrollY = window.scrollY || 0;
-      document.body.style.position = 'fixed';
-      document.body.style.top = `-${savedScrollY}px`;
-      document.body.style.left = '0';
-      document.body.style.right = '0';
-      document.body.style.width = '100%';
-    }
-
-    function unlockScroll() {
-      const top = document.body.style.top;
-      document.body.style.position = '';
-      document.body.style.top = '';
-      document.body.style.left = '';
-      document.body.style.right = '';
-      document.body.style.width = '';
-      const y = top ? Math.abs(parseInt(top, 10)) : savedScrollY;
-      window.scrollTo(0, y);
-    }
-
-    // Scope gallery to the currently open accordion only
-    function getOpenAccordionKey() {
-      const open = document.querySelector('[data-accordion][aria-expanded="true"]');
-      return open ? open.getAttribute('data-accordion') : null;
-    }
-
-    function collectGalleryItemsFromOpenAccordion() {
-      const key = getOpenAccordionKey();
-      if (!key) return [];
-
-      const panel = document.querySelector(`[data-accordion-panel="${key}"]`);
-      if (!panel) return [];
-
-      const items = [];
-      panel.querySelectorAll('.panel-card img').forEach((img) => {
-        const figure = img.closest('figure');
-        const captionEl = figure ? figure.querySelector('figcaption') : null;
-
-        items.push({
-          src: img.getAttribute('src') || '',
-          alt: img.getAttribute('alt') || 'Screenshot',
-          caption: captionEl ? captionEl.textContent : ''
-        });
-      });
-
-      return items;
-    }
-
-    let galleryItems = [];
-    let currentIndex = -1;
-
-    function renderLightboxByIndex(idx) {
-      if (!galleryItems.length) return;
-
-      const safeIdx = ((idx % galleryItems.length) + galleryItems.length) % galleryItems.length;
-      currentIndex = safeIdx;
-
-      const item = galleryItems[safeIdx];
-      lightboxImg.src = item.src;
-      lightboxImg.alt = item.alt;
-      lightboxCaption.textContent = item.caption || '';
-    }
-
-    function openLightboxForImage(clickedImgEl) {
-      galleryItems = collectGalleryItemsFromOpenAccordion();
-
-      if (!galleryItems.length) {
-        galleryItems = [{
-          src: clickedImgEl.getAttribute('src') || '',
-          alt: clickedImgEl.getAttribute('alt') || 'Screenshot',
-          caption: (clickedImgEl.closest('figure')?.querySelector('figcaption')?.textContent) || ''
-        }];
-      }
-
-      const clickedSrc = clickedImgEl.getAttribute('src') || '';
-      const idx = galleryItems.findIndex((it) => it.src === clickedSrc);
-      renderLightboxByIndex(idx >= 0 ? idx : 0);
-
-      lightbox.classList.add('is-open');
-      lightbox.setAttribute('aria-hidden', 'false');
-      lockScroll();
-    }
-
-    function closeLightbox() {
-      lightbox.classList.remove('is-open');
-      lightbox.setAttribute('aria-hidden', 'true');
-      lightboxImg.src = '';
-      lightboxCaption.textContent = '';
-      currentIndex = -1;
-      galleryItems = [];
-      unlockScroll();
-    }
-
-    function showPrev() {
-      if (currentIndex < 0) return;
-      renderLightboxByIndex(currentIndex - 1);
-    }
-
-    function showNext() {
-      if (currentIndex < 0) return;
-      renderLightboxByIndex(currentIndex + 1);
-    }
-
-    document.addEventListener('click', (e) => {
-      const img = e.target.closest('.panel-card img');
-      if (!img) return;
-
-      const key = getOpenAccordionKey();
-      if (key) {
-        const openPanel = document.querySelector(`[data-accordion-panel="${key}"]`);
-        if (openPanel && !openPanel.contains(img)) return;
-      }
-
-      openLightboxForImage(img);
-    });
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightboxPrev.addEventListener('click', (e) => { e.stopPropagation(); showPrev(); });
-    lightboxNext.addEventListener('click', (e) => { e.stopPropagation(); showNext(); });
-
-    lightbox.addEventListener('click', (e) => {
-      const clickedInside = e.target.closest('.lightbox-content');
-      if (!clickedInside) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (e) => {
-      if (!lightbox.classList.contains('is-open')) return;
-
-      if (e.key === 'Escape') closeLightbox();
-      if (e.key === 'ArrowLeft') showPrev();
-      if (e.key === 'ArrowRight') showNext();
-    });
-  </script>
-  </script>
-
-  <!-- Header Bar JavaScript -->
+  <!-- JavaScript -->
   <script src="../assets/js/header-bar.js"></script>
-
-  <div id="boosted-widget"></div>
-  <script src="/assets/js/boosted.js"></script>
+  <script src="../assets/js/commands.js"></script>
 </body>
 </html>
