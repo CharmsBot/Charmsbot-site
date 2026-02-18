@@ -150,16 +150,41 @@ const commandsData = {
   ],
   utilities: [
     {
+      id: 'help',
+      name: '/help',
+      desc: 'Get detailed information about all commands',
+      hasImages: true,
+      title: '📸 /help — Output',
+      subtitle: 'Display all available commands and usage information.',
+      images: [
+        {src: '/assets/images/commands/utilities/help/01-help.png', cap: '1) A detailed list of available commands and information on how to use them is displayed.'}
+      ]
+    },
+    {
       id: 'splitloot',
       name: '/splitloot',
       desc: 'Split party hunt loot with optional extra expenses',
-      hasImages: false
+      hasImages: true,
+      title: '📸 /splitloot — Flow',
+      subtitle: 'Calculate loot distribution for your party hunt.',
+      images: [
+        {src: '/assets/images/commands/utilities/splitloot/01-splitloot.png', cap: '1) Paste the Party Hunt Analyzer.'},
+        {src: '/assets/images/commands/utilities/splitloot/02-splitloot.png', cap: '2) A summary of the party is displayed including damage, healing, waste, and a button to add extra expenses (e.g. prey cost) if needed.'},
+        {src: '/assets/images/commands/utilities/splitloot/03-splitloot.png', cap: '3) If you clicked the "Extra Expenses" button, a modal shows party members where you can enter the extra amount to deduct for each member. The amount is in "k\'s" (e.g., 1000 for 1kk, 500 for 500k).'},
+        {src: '/assets/images/commands/utilities/splitloot/04-splitloot.png', cap: '4) The new summary is shown with updated transfer instructions, clearly indicating the extra expense amount added to each player.'}
+      ]
     },
     {
       id: 'weaponxp',
       name: '/weaponxp',
       desc: 'Calculate weapon proficiency XP from your hunt',
-      hasImages: false
+      hasImages: true,
+      title: '📸 /weaponxp — Flow',
+      subtitle: 'Analyze weapon proficiency XP gained during your hunt.',
+      images: [
+        {src: '/assets/images/commands/utilities/weaponxp/01-weaponxp.png', cap: '1) Paste your Hunt Analyzer.'},
+        {src: '/assets/images/commands/utilities/weaponxp/02-weaponxp.png', cap: '2) A summary is displayed with the number of monsters and bosses encountered, total Proficiency XP gained in the hunt, and XP contribution from each monster and boss.'}
+      ]
     },
     {
       id: 'hotcuisine',
@@ -168,9 +193,9 @@ const commandsData = {
       hasImages: false
     },
     {
-      id: 'help',
-      name: '/help',
-      desc: 'Get detailed information about all commands',
+      id: 'deliverytask',
+      name: '/deliverytask',
+      desc: 'Search for Delivery Task items in your Hunt Analyzer and get price and NPC information',
       hasImages: false
     }
   ]

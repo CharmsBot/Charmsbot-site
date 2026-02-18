@@ -194,7 +194,7 @@
   border-radius: 20px;
   width: 90%;
   max-width: 1000px;
-  max-height: 85vh;
+  height: 85vh;
   display: flex;
   flex-direction: column;
   position: relative;
@@ -308,7 +308,7 @@
 .modal-image-slide img {
   width: 100%;
   height: auto;
-  max-height: 50vh;
+  max-height: 45vh;
   object-fit: contain;
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -491,7 +491,7 @@
 
   .modal-content {
     width: 95%;
-    max-height: 90vh;
+    height: 90vh;
   }
 
   .modal-header {
