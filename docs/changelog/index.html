@@ -1,226 +1,115 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Changelog • CharmsBot</title>
-
-  <!-- CSS en orden -->
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header-bar.css">
   <link rel="stylesheet" href="../assets/css/general-pages.css">
-
-  <!-- Favicons -->
   <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="../assets/images/_shared/favicon/site.webmanifest">
-  <meta name="theme-color" content="#7b2cbf">
-
-  <style>
-    /* Estilos específicos de changelog */
-    :root {
-      --bg: #0b1020;
-      --card: rgba(255,255,255,0.06);
-      --card2: rgba(255,255,255,0.08);
-      --border: rgba(255,255,255,0.10);
-      --text: rgba(255,255,255,0.86);
-      --muted: rgba(255,255,255,0.58);
-      --accent: #49a6ff;
-      --btn: #5b2d84;
-      --btn2: #6d3aa0;
-      --shadow: 0 16px 60px rgba(0,0,0,.45);
-      --radius: 18px;
-    }
-
-    body {
-      background:
-        radial-gradient(1200px 600px at 50% -100px, rgba(90,60,140,.45), transparent 60%),
-        radial-gradient(1000px 700px at 50% 120%, rgba(0,160,255,.20), transparent 55%),
-        var(--bg);
-    }
-
-    h1 {
-      margin: 6px 0 8px;
-      text-align: center;
-      font-size: 48px;
-      line-height: 1.05;
-      color: var(--accent);
-      font-weight: 800;
-    }
-
-    .subtitle {
-      text-align: center;
-      margin: 0 0 18px;
-      color: var(--muted);
-      font-size: 18px;
-    }
-  </style>
+    <meta name="theme-color" content="#7b2cbf">
 </head>
-
 <body>
-  <!-- Header Bar -->
 
-
-  <!-- Main Content -->
-  <div class="wrap">
-    <h1>Changelog</h1>
-    <p class="subtitle">Release history</p>
-
+  <div class="container">
+    <h1 data-i18n="changelog_title">Changelog</h1>
+    <p class="subtitle" data-i18n="changelog_subtitle">Release history</p>
     <div class="divider"></div>
 
-    <div class="nav">
-      <a href="../">Home</a>
-      <a href="../commands/">Commands</a>
-      <a href="./">Changelog</a>
-      <a href="../contact/">Contact</a>
-      <a href="../legal/">Legal</a>
-    </div>
+    <nav class="nav">
+      <a href="../"          data-i18n="nav_home">Home</a>
+      <a href="./"           data-i18n="nav_changelog">Changelog</a>
+      <a href="../contact/"  data-i18n="nav_contact">Contact</a>
+      <a href="../legal/"    data-i18n="nav_legal">Legal</a>
+    </nav>
 
-    <div class="acc" id="acc">
-      <!-- v0.1.0 -->
-      <div class="acc-item" data-open="false">
-        <button class="acc-btn" type="button" data-target="v010">
-          <span class="left">v0.1.0 <span class="pill">Early 2025</span></span>
-          <span class="chev" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel" id="v010">
-          <iframe class="frame" src="../changelog_html/v0.1.0.html" loading="lazy"></iframe>
-        </div>
-      </div>
+    <div class="acc" id="acc"></div>
 
-      <!-- v1.0.0 -->
-      <div class="acc-item" data-open="false">
-        <button class="acc-btn" type="button" data-target="v100">
-          <span class="left">v1.0.0 <span class="pill">2025</span></span>
-          <span class="chev" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel" id="v100">
-          <iframe class="frame" src="../changelog_html/v1.0.0.html" loading="lazy"></iframe>
-        </div>
-      </div>
+    
 
-      <!-- v1.5.0 -->
-      <div class="acc-item" data-open="false">
-        <button class="acc-btn" type="button" data-target="v150">
-          <span class="left">v1.5.0 <span class="pill">2025</span></span>
-          <span class="chev" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel" id="v150">
-          <iframe class="frame" src="../changelog_html/v1.5.0.html" loading="lazy"></iframe>
-        </div>
-      </div>
-
-      <!-- v2.0.0 -->
-      <div class="acc-item" data-open="false">
-        <button class="acc-btn" type="button" data-target="v200">
-          <span class="left">v2.0.0 <span class="pill">Feb 2026</span></span>
-          <span class="chev" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>
-          </span>
-        </button>
-        <div class="acc-panel" id="v200">
-          <iframe class="frame" src="../changelog_html/v2.0.0.html" loading="lazy"></iframe>
-        </div>
-      </div>
-    </div>
-
-    <p class="hint">Tip: click a version to expand/collapse. Only one stays open.</p>
-
-    <!-- Footer -->
     <div class="footer">
-      <p>Made with ❤️ for the Tibia community</p>
-      <p>CharmsBot © 2025</p>
-      
-      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-        <p style="line-height: 1.6; color: #ffffff;">
-          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
-          is a trademark of 
-          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
-          All rights to Tibia and its official content are owned by CipSoft.
+      <p data-i18n="footer_made">Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2026</p>
+      <div style="margin-top:16px;padding-top:16px;border-top:1px solid rgba(255,255,255,.08);">
+        <p>
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a>
+          <span data-i18n="footer_trademark"> is a trademark of </span>
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>.
+          <span data-i18n="footer_rights"> All rights to Tibia and its official content are owned by CipSoft.</span>
         </p>
-        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+        <p style="margin-top:6px;" data-i18n="footer_fansite">
           This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
         </p>
       </div>
     </div>
   </div>
 
-  <script>
-    // Only one open at a time + auto-resize iframes to their content height (same-origin)
-    const acc = document.getElementById("acc");
-    const items = Array.from(acc.querySelectorAll(".acc-item"));
-
-    function closeAll(exceptItem){
-      for (const it of items){
-        if (it !== exceptItem) it.dataset.open = "false";
-      }
-    }
-
-    function resizeFrame(frame){
-      try{
-        const doc = frame.contentDocument || frame.contentWindow.document;
-        if (!doc) return;
-        // wait a tick for layout
-        requestAnimationFrame(() => {
-          const h = Math.max(
-            doc.documentElement.scrollHeight || 0,
-            doc.body ? doc.body.scrollHeight : 0
-          );
-          if (h && h > 50) frame.style.height = (h + 12) + "px";
-        });
-      }catch(e){
-        // If not same-origin, ignore
-      }
-    }
-
-    // Click handling
-    acc.addEventListener("click", (e) => {
-      const btn = e.target.closest(".acc-btn");
-      if (!btn) return;
-
-      const item = btn.closest(".acc-item");
-      const isOpen = item.dataset.open === "true";
-
-      if (isOpen){
-        item.dataset.open = "false";
-        return;
-      }
-
-      closeAll(item);
-      item.dataset.open = "true";
-
-      // Resize iframe when opening
-      const frame = item.querySelector("iframe.frame");
-      if (frame){
-        if (frame.dataset.bound !== "1"){
-          frame.addEventListener("load", () => resizeFrame(frame));
-          frame.dataset.bound = "1";
-        }
-        // If already loaded, try now too
-        resizeFrame(frame);
-      }
-    });
-
-    // Optional: resize all loaded frames on window resize
-    window.addEventListener("resize", () => {
-      for (const it of items){
-        if (it.dataset.open === "true"){
-          const frame = it.querySelector("iframe.frame");
-          if (frame) resizeFrame(frame);
-        }
-      }
-    });
-  </script>
-
-  <!-- Header Bar JavaScript -->
+  <script src="../assets/js/i18n.js"></script>
+  <script src="../assets/js/changelog-versions.js"></script>
   <script src="../assets/js/header-bar.js"></script>
+
+  <script>
+    (function () {
+      var acc       = document.getElementById('acc');
+      var openIndex = -1;
+
+      function getLang() {
+        return (typeof getCurrentLang === 'function') ? getCurrentLang() : 'en';
+      }
+
+      function buildAccordion() {
+        var lang    = getLang();
+        var wasOpen = openIndex;
+        acc.innerHTML = '';
+        openIndex = -1;
+
+        CHANGELOG_VERSIONS.forEach(function (v, idx) {
+          var content = (lang === 'es' && v.es) ? v.es : v.en;
+
+          var item = document.createElement('div');
+          item.className = 'acc-item';
+          item.dataset.open = (idx === wasOpen) ? 'true' : 'false';
+          if (idx === wasOpen) openIndex = idx;
+
+          item.innerHTML =
+            '<button class="acc-btn" type="button">' +
+              '<span class="left">' + v.version +
+                ' <span class="pill">' + v.pill + '</span>' +
+              '</span>' +
+              '<span class="chev" aria-hidden="true">' +
+                '<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>' +
+              '</span>' +
+            '</button>' +
+            '<div class="acc-panel">' +
+              '<div class="version-content">' + content + '</div>' +
+            '</div>';
+
+          item.querySelector('.acc-btn').addEventListener('click', function () {
+            var isOpen = item.dataset.open === 'true';
+            // Cerrar todos
+            Array.from(acc.querySelectorAll('.acc-item')).forEach(function (it) {
+              it.dataset.open = 'false';
+            });
+            openIndex = -1;
+            if (!isOpen) {
+              item.dataset.open = 'true';
+              openIndex = idx;
+            }
+          });
+
+          acc.appendChild(item);
+        });
+      }
+
+      buildAccordion();
+
+      // Re-renderizar al cambiar idioma — sin fetch, instantáneo
+      window.addEventListener('langchange', buildAccordion);
+    })();
+  </script>
 </body>
 </html>

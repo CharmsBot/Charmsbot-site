@@ -4,104 +4,84 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Commands</title>
+
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header-bar.css">
   <link rel="stylesheet" href="../assets/css/commands.css">
+
   <link rel="icon" href="../assets/images/_shared/favicon/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
-  <link rel="manifest" href="../assets/images/_shared/favicon/site.webmanifest">
   <meta name="theme-color" content="#7b2cbf">
 </head>
-<body>  
-  <!-- Header Bar -->
+<body>
 
-
-  <!-- Main Content -->
   <div class="container">
-    <h1>Commands</h1>
-    <p class="subtitle">Complete command reference</p>
-    
+    <h1 data-i18n="commands_title">Commands</h1>
+    <p class="subtitle" data-i18n="commands_subtitle">Complete command reference</p>
+
     <div class="nav">
-      <a href="../">Home</a>
-      <a href="./">Commands</a>
-      <a href="../changelog/">Changelog</a>
-      <a href="../contact/">Contact</a>
-      <a href="../legal/">Legal</a>
+      <a href="../"          data-i18n="nav_home">Home</a>
+      <a href="./"           data-i18n="nav_commands">Commands</a>
+      <a href="../changelog/" data-i18n="nav_changelog">Changelog</a>
+      <a href="../contact/"  data-i18n="nav_contact">Contact</a>
+      <a href="../legal/"    data-i18n="nav_legal">Legal</a>
     </div>
 
-    <!-- Tabs Navigation -->
+    <!-- Tabs -->
     <div class="tabs-container">
       <ul class="tabs-nav" role="tablist">
-        <li><button class="tab-button active" data-tab="character" role="tab"><span class="tab-icon">👤</span><span>Character Management</span></button></li>
-        <li><button class="tab-button" data-tab="analysis" role="tab"><span class="tab-icon">📊</span><span>Hunt Analysis</span></button></li>
-        <li><button class="tab-button" data-tab="hunt" role="tab"><span class="tab-icon">📋</span><span>Hunt Management</span></button></li>
-        <li><button class="tab-button" data-tab="utilities" role="tab"><span class="tab-icon">🧰</span><span>Tools</span></button></li>
+        <li><button class="tab-button active" data-tab="character" role="tab"><span class="tab-icon">👤</span><span data-i18n="commands_tab_character">Character Management</span></button></li>
+        <li><button class="tab-button"         data-tab="analysis"  role="tab"><span class="tab-icon">📊</span><span data-i18n="commands_tab_analysis">Hunt Analysis</span></button></li>
+        <li><button class="tab-button"         data-tab="hunt"      role="tab"><span class="tab-icon">📋</span><span data-i18n="commands_tab_hunt">Hunt Management</span></button></li>
+        <li><button class="tab-button"         data-tab="utilities" role="tab"><span class="tab-icon">🧰</span><span data-i18n="commands_tab_utilities">Tools</span></button></li>
       </ul>
 
-      <!-- Tab Contents (populated by JavaScript) -->
-      <div class="tab-content active" id="tab-character" role="tabpanel">
-        <div class="commands-grid"></div>
-      </div>
-
-      <div class="tab-content" id="tab-analysis" role="tabpanel">
-        <div class="commands-grid"></div>
-      </div>
-
-      <div class="tab-content" id="tab-hunt" role="tabpanel">
-        <div class="commands-grid"></div>
-      </div>
-
-      <div class="tab-content" id="tab-utilities" role="tabpanel">
-        <div class="commands-grid"></div>
-      </div>
+      <div class="tab-content active" id="tab-character" role="tabpanel"><div class="commands-grid"></div></div>
+      <div class="tab-content"        id="tab-analysis"  role="tabpanel"><div class="commands-grid"></div></div>
+      <div class="tab-content"        id="tab-hunt"      role="tabpanel"><div class="commands-grid"></div></div>
+      <div class="tab-content"        id="tab-utilities" role="tabpanel"><div class="commands-grid"></div></div>
     </div>
 
     <!-- Footer -->
     <div class="footer">
-      <p>Made with ❤️ for the Tibia community</p>
-      <p>CharmsBot © 2025</p>
-      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-        <p style="line-height: 1.6; color: #ffffff;">
-          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
-          is a trademark of 
-          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
-          All rights to Tibia and its official content are owned by CipSoft.
+      <p data-i18n="footer_made">Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2026</p>
+      <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="line-height:1.6;color:#ffffff;">
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a>
+          <span data-i18n="footer_trademark"> is a trademark of </span>
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>.
+          <span data-i18n="footer_rights"> All rights to Tibia and its official content are owned by CipSoft.</span>
         </p>
-        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+        <p style="line-height:1.6;margin-top:8px;color:#ffffff;" data-i18n="footer_fansite">
           This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
         </p>
       </div>
     </div>
   </div>
 
-  <!-- Modal for Command Details -->
+  <!-- Modal -->
   <div class="command-modal" id="commandModal">
     <div class="modal-content">
       <div class="modal-header">
-        <div class="modal-title" id="modalTitle"></div>
+        <div class="modal-title"    id="modalTitle"></div>
         <div class="modal-subtitle" id="modalSubtitle"></div>
         <button class="modal-close" id="modalClose">×</button>
       </div>
       <div class="modal-body">
         <div class="modal-image-container" id="modalImageContainer"></div>
         <div class="modal-navigation">
-          <button class="modal-nav-btn prev" id="modalPrev">
-            <span>←</span>
-            <span>Previous</span>
-          </button>
+          <button class="modal-nav-btn prev" id="modalPrev"><span>←</span><span data-i18n="commands_modal_prev">Previous</span></button>
           <div class="image-counter" id="imageCounter">1 / 1</div>
-          <button class="modal-nav-btn next" id="modalNext">
-            <span>Next</span>
-            <span>→</span>
-          </button>
+          <button class="modal-nav-btn next" id="modalNext"><span data-i18n="commands_modal_next">Next</span><span>→</span></button>
         </div>
       </div>
     </div>
   </div>
 
-  <!-- JavaScript -->
+  <script src="../assets/js/i18n.js"></script>
   <script src="../assets/js/header-bar.js"></script>
   <script src="../assets/js/commands.js"></script>
 </body>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>CharmsBot - Optimize Your Tibia Hunts</title>
-  
+
   <meta name="description" content="Discord bot for Tibia players. Optimize charm assignments, analyze hunts, calculate damage, and manage your characters efficiently.">
   <meta name="keywords" content="Tibia, Discord bot, charm calculator, hunt analyzer, Tibia tools">
 
@@ -17,349 +17,261 @@
   <link rel="icon" type="image/png" href="assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="assets/images/_shared/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#7b2cbf">
-
 </head>
 <body>
-  <!-- Header Bar -->
-  
 
   <div class="container">
     <!-- Header Box: Logo + Navigation + Hero -->
     <div class="header-box">
-      <!-- Top row: Logo + Nav -->
       <div class="header-top">
         <div class="logo-wrap">
           <img class="logo" src="assets/images/_shared/general/CharmsBot_logo.png" alt="CharmsBot Logo" />
         </div>
-
         <div class="nav">
-          <a href="./">Home</a>
-          <a href="changelog/">Changelog</a>
-          <a href="contact/">Contact</a>
-          <a href="legal/">Legal</a>
+          <a href="./"        data-i18n="nav_home">Home</a>
+          <a href="commands/" data-i18n="nav_commands">Commands</a>
+          <a href="changelog/" data-i18n="nav_changelog">Changelog</a>
+          <a href="contact/"  data-i18n="nav_contact">Contact</a>
+          <a href="legal/"    data-i18n="nav_legal">Legal</a>
         </div>
       </div>
 
-      <!-- Hero Content -->
+      <!-- Hero -->
       <div class="hero-content">
         <h1>CharmsBot</h1>
-        <p class="tagline">Your Tibia Hunting Companion</p>
-        <p class="description">
-          Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. 
+        <p class="tagline"    data-i18n="index_tagline">Your Tibia Hunting Companion</p>
+        <p class="description" data-i18n="index_description">
+          Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord.
           Built by hunters, for hunters.
         </p>
-        
         <div class="cta-buttons">
-          <a href="https://discord.com/oauth2/authorize?client_id=1324908850431791184&scope=bot%20applications.commands&permissions=0" 
-             class="cta-button primary" 
-             target="_blank" 
-             rel="noopener noreferrer">
-             Add to Discord
-          </a>
-          <a href="commands/" class="cta-button secondary">
-            View Commands
-          </a>
+          <a href="https://discord.com/oauth2/authorize?client_id=1324908850431791184&scope=bot%20applications.commands&permissions=0"
+             class="cta-button primary"
+             target="_blank"
+             rel="noopener noreferrer"
+             data-i18n="index_cta_discord">Add to Discord</a>
+          <a href="commands/" class="cta-button secondary" data-i18n="index_cta_commands">View Commands</a>
         </div>
       </div>
     </div>
 
     <!-- How It Works -->
     <section class="how-it-works">
-      <h2>🚀 How It Works</h2>
-      <p class="subtitle">Get started in 3 simple steps</p>
-
+      <h2 data-i18n="index_hiw_title">🚀 How It Works</h2>
+      <p class="subtitle" data-i18n="index_hiw_subtitle">Get started in 3 simple steps</p>
       <div class="steps-container">
         <div class="step-card">
           <div class="step-number">1</div>
-          <h3>Create Your Character</h3>
-          <p>Add your character with stats, charm points budget, and unlocked charms with their levels.</p>
+          <h3 data-i18n="index_step1_title">Create Your Character</h3>
+          <p  data-i18n="index_step1_desc">Add your character with stats, charm points budget, and unlocked charms with their levels.</p>
           <code>/character add</code>
         </div>
-
         <div class="step-card">
           <div class="step-number">2</div>
-          <h3>Paste Hunt Data</h3>
-          <p>Copy your Hunt Analyzer data from Tibia and paste it into the bot. Use <code>/analysis</code> to optimize your current charms or <code>/bestcharms</code> to find the absolute best setup.</p>
+          <h3 data-i18n="index_step2_title">Paste Hunt Data</h3>
+          <p  data-i18n="index_step2_desc">Copy your Hunt Analyzer data from Tibia and paste it into the bot. Use <code>/analysis</code> to optimize your current charms or <code>/bestcharms</code> to find the absolute best setup.</p>
         </div>
-
         <div class="step-card">
           <div class="step-number">3</div>
-          <h3>Get Optimized Results</h3>
-          <p>Receive optimal charm assignments, damage calculations, and element efficiency analysis instantly.</p>
+          <h3 data-i18n="index_step3_title">Get Optimized Results</h3>
+          <p  data-i18n="index_step3_desc">Receive optimal charm assignments, damage calculations, and element efficiency analysis instantly.</p>
           <code>✨ Results</code>
         </div>
       </div>
     </section>
 
-    <!-- Main Features -->
+    <!-- Key Features -->
     <section>
-      <h2>✨ Key Features</h2>
-      
+      <h2 data-i18n="index_feat_title">✨ Key Features</h2>
       <div class="features-grid">
+
         <div class="feature-card">
           <span class="feature-icon">🎯</span>
-          <h3>Optimal Charm Assignments</h3>
-          <p>Uses the Hungarian Algorithm to calculate the absolute best charm-to-creature assignments for maximum damage output.</p>
+          <h3 data-i18n="index_feat1_title">Optimal Charm Assignments</h3>
+          <p  data-i18n="index_feat1_desc">Uses the Hungarian Algorithm to calculate the absolute best charm-to-creature assignments for maximum damage output.</p>
           <ul>
-            <li>Multi-level charm support (Lvl 1-3)</li>
-            <li>Multiple optimal combinations</li>
-            <li>Damage per proc breakdown</li>
-            <li>Save up to 20 <code>/analysis</code> per character</li>
+            <li data-i18n="index_feat1_li1">Multi-level charm support (Lvl 1-3)</li>
+            <li data-i18n="index_feat1_li2">Multiple optimal combinations</li>
+            <li data-i18n="index_feat1_li3">Damage per proc breakdown</li>
+            <li data-i18n="index_feat1_li4">Save up to 20 <code>/analysis</code> per character</li>
           </ul>
         </div>
 
         <div class="feature-card">
           <span class="feature-icon">⚡</span>
-          <h3>Best Charms Calculator</h3>
-          <p>Find out which charms you SHOULD have for any spawn, regardless of what you currently own.</p>
+          <h3 data-i18n="index_feat2_title">Best Charms Calculator</h3>
+          <p  data-i18n="index_feat2_desc">Find out which charms you SHOULD have for any spawn, including the reset cost and charm point requirements.</p>
           <ul>
-            <li>Evaluates all 9 damage charms</li>
-            <li>Optimizes charm levels based on your budget</li>
-            <li>Shows required unlocks and reset costs</li>
-            <li>Save up to 20 <code>/bestcharms</code> per character</li>
+            <li data-i18n="index_feat2_li1">All 9 damage charms evaluated</li>
+            <li data-i18n="index_feat2_li2">Charm reset cost included</li>
+            <li data-i18n="index_feat2_li3">Save up to 20 <code>/bestcharms</code> per character</li>
           </ul>
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon">🔥</span>
-          <h3>Element Efficiency Analysis</h3>
-          <p>Understand which elements work best for your hunting spot before you even go there.</p>
+          <span class="feature-icon">📊</span>
+          <h3 data-i18n="index_feat3_title">Element Analysis</h3>
+          <p  data-i18n="index_feat3_desc">See which elements deal bonus damage or are resisted by the creatures in your spawn. No character required.</p>
           <ul>
-            <li>Overall spawn element efficiency</li>
-            <li>Per-monster weaknesses & resistances</li>
-            <li>No character required—quick lookup</li>
-            <li>Color-coded effectiveness ratings</li>
+            <li data-i18n="index_feat3_li1">Full vulnerability breakdown</li>
+            <li data-i18n="index_feat3_li2">Mitigation values included</li>
+            <li data-i18n="index_feat3_li3">Quick spawn scouting</li>
           </ul>
         </div>
 
         <div class="feature-card">
-          <span class="feature-icon">👥</span>
-          <h3>Smart Loot Splitting</h3>
-          <p>Divide party loot equitably based on damage, healing, and custom expenses.</p>
+          <span class="feature-icon">💰</span>
+          <h3 data-i18n="index_feat4_title">Loot & Utilities</h3>
+          <p  data-i18n="index_feat4_desc">Tools for the whole party — loot splitting, weapon XP tracking, and quest calculators.</p>
           <ul>
-            <li>Automatic balance calculation</li>
-            <li>Damage & healing percentages</li>
-            <li>Extra expenses (imbuements, prey)</li>
-            <li>In-game transfer instructions</li>
+            <li data-i18n="index_feat4_li1">Split loot with transfer instructions</li>
+            <li data-i18n="index_feat4_li2">Weapon proficiency XP calculator</li>
+            <li data-i18n="index_feat4_li3">Hot Cuisine Quest ingredient list</li>
           </ul>
         </div>
 
-        <div class="feature-card">
-          <span class="feature-icon">⚔️</span>
-          <h3>Weapon Proficiency XP</h3>
-          <p>Track your weapon proficiency gains with detailed breakdowns by creature difficulty and boss category.</p>
-          <ul>
-            <li>XP by difficulty tier</li>
-            <li>Boss XP (Bane, Archfoe, Nemesis)</li>
-            <li>XP per hour calculation</li>
-            <li>Session time tracking</li>
-          </ul>
-        </div>
-
-        <div class="feature-card">
-          <span class="feature-icon">🍳</span>
-          <h3>Hot Cuisine Quest Helper</h3>
-          <p>Calculate exact ingredients needed for the Hot Cuisine Quest with city and NPC grouping.</p>
-          <ul>
-            <li>First-time & repeat completions</li>
-            <li>Multi-character multiplier</li>
-            <li>Grouped by city & NPC</li>
-            <li>Links to TibiaWiki</li>
-          </ul>
-        </div>
       </div>
     </section>
 
     <!-- Use Cases -->
     <section class="use-cases">
-      <h2>💡 Common Use Cases</h2>
-      
+      <h2 data-i18n="index_usecases_title">🎮 Common Use Cases</h2>
       <div class="use-case-grid">
+
         <div class="use-case">
-          <div class="use-case-title">📊 "What charms should I use here?"</div>
+          <div class="use-case-title" data-i18n="index_uc1_title">🔮 "Are my current charms optimal?"</div>
           <div class="use-case-command">/analysis</div>
-          <p class="use-case-desc">Analyzes your current charm setup and shows optimal assignments for the spawn you're hunting.</p>
+          <p class="use-case-desc" data-i18n="index_uc1_desc">Analyzes your current charm setup and shows optimal assignments for the spawn you're hunting.</p>
         </div>
 
         <div class="use-case">
-          <div class="use-case-title">🎯 "What are the absolute best charms for this spawn?"</div>
+          <div class="use-case-title" data-i18n="index_uc2_title">🎯 "What are the absolute best charms for this spawn?"</div>
           <div class="use-case-command">/bestcharms</div>
-          <p class="use-case-desc">Evaluates ALL damage charms in the game and tells you which ones to unlock/upgrade, plus the reset cost.</p>
+          <p class="use-case-desc" data-i18n="index_uc2_desc">Evaluates ALL damage charms in the game and tells you which ones to unlock/upgrade, plus the reset cost.</p>
         </div>
 
         <div class="use-case">
-          <div class="use-case-title">🔥 "Which elements work here?"</div>
+          <div class="use-case-title" data-i18n="index_uc3_title">🔥 "Which elements work here?"</div>
           <div class="use-case-command">/element</div>
-          <p class="use-case-desc">Quick element efficiency check—no character needed. Perfect for scouting new spawns.</p>
+          <p class="use-case-desc" data-i18n="index_uc3_desc">Quick element efficiency check—no character needed. Perfect for scouting new spawns.</p>
         </div>
 
         <div class="use-case">
-          <div class="use-case-title">💰 "How do we split this party loot?"</div>
+          <div class="use-case-title" data-i18n="index_uc4_title">💰 "How do we split this party loot?"</div>
           <div class="use-case-command">/splitloot</div>
-          <p class="use-case-desc">Equitable loot distribution with damage/healing breakdown and transfer instructions.</p>
+          <p class="use-case-desc" data-i18n="index_uc4_desc">Equitable loot distribution with damage/healing breakdown and transfer instructions.</p>
         </div>
 
         <div class="use-case">
-          <div class="use-case-title">⚔️ "How much weapon XP did I earn?"</div>
+          <div class="use-case-title" data-i18n="index_uc5_title">⚔️ "How much weapon XP did I earn?"</div>
           <div class="use-case-command">/weaponxp</div>
-          <p class="use-case-desc">Calculate proficiency XP from your hunt with breakdowns by creature difficulty and bosses.</p>
+          <p class="use-case-desc" data-i18n="index_uc5_desc">Calculate proficiency XP from your hunt with breakdowns by creature difficulty and bosses.</p>
         </div>
 
         <div class="use-case">
-          <div class="use-case-title">🍳 "What do I need for Hot Cuisine Quest?"</div>
+          <div class="use-case-title" data-i18n="index_uc6_title">🍳 "What do I need for Hot Cuisine Quest?"</div>
           <div class="use-case-command">/hotcuisine</div>
-          <p class="use-case-desc">Ingredient list grouped by city and NPC, with optional character multiplier.</p>
+          <p class="use-case-desc" data-i18n="index_uc6_desc">Ingredient list grouped by city and NPC, with optional character multiplier.</p>
         </div>
+
       </div>
     </section>
 
-    <!-- Charm System Explained -->
+    <!-- Charm System -->
     <section>
-      <h2>🎓 Understanding the Charm System</h2>
+      <h2 data-i18n="index_charm_title">🎓 Understanding the Charm System</h2>
 
       <div class="highlight-box">
-        <h3>💎 Charm Points Budget</h3>
-        <p>
-          CharmsBot works within YOUR charm points budget. When you set up your character, you tell the bot 
-          your total charm points (found in <code>Cyclopedia → Bosstiary/Charms</code>). 
+        <h3 data-i18n="index_charm_budget_title">💎 Charm Points Budget</h3>
+        <p data-i18n="index_charm_budget_desc">
+          CharmsBot works within YOUR charm points budget. When you set up your character, you tell the bot
+          your total charm points (found in <code>Cyclopedia → Bosstiary/Charms</code>).
           The bot then optimizes charm assignments and levels to maximize damage without exceeding your budget.
         </p>
       </div>
 
-      <div class="tech-info">
-        <h4>Charm Level System</h4>
-        <p>All charms can be upgraded to three levels, each with different proc rates and damage multipliers:</p>
-        <ul style="margin-top: 12px;">
-          <li>🔹 <strong>Level 1</strong> — Proc Rate: 5% — Damage Multiplier: 0.5×</li>
-          <li>✨ <strong>Level 2</strong> — Proc Rate: 10% — Damage Multiplier: 1.0×</li>
-          <li>⭐ <strong>Level 3</strong> — Proc Rate: 11% — Damage Multiplier: 1.1×</li>
-        </ul>
-      </div>
-
-      <div class="tech-info">
-        <h4>Damage Calculations</h4>
-        <p><strong>Elemental Charms</strong> (Enflame, Freeze, Zap, Poison, Curse, Wound, Divine Wrath):</p>
-        <ul style="margin-top: 8px;">
-          <li>Base: <code>min(5% × creature_health, player_level × 2)</code></li>
-          <li>Final: <code>base × vulnerability × (1 - mitigation/100)</code></li>
-        </ul>
-        <br>
-        <p><strong>Physical Charms</strong> (Overpower, Overflux):</p>
-        <ul style="margin-top: 8px;">
-          <li>Overpower: <code>min(5% × max_hp, player_level × 2)</code> capped at <code>8% × creature_health</code></li>
-          <li>Overflux: <code>min(2.5% × max_mana, player_level × 2)</code> capped at <code>8% × creature_health</code></li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- Character Management -->
-    <section>
-      <h2>👤 Character Management Made Easy</h2>
-      
-      <div class="feature-box">
-        <h3>Save Multiple Characters</h3>
-        <p>Store up to <strong>15 characters</strong>, each with their own stats, charm configurations, and hunting data.</p>
-        
-        <div class="command-preview">
-          <span class="prompt">&gt;</span>/character add
-          <br><span class="prompt">&gt;</span>/character view
-          <br><span class="prompt">&gt;</span>/character edit
-          <br><span class="prompt">&gt;</span>/character delete
-        </div>
-
-        <p style="margin-top: 16px;">Each character can store:</p>
+      <div class="highlight-box">
+        <h3 data-i18n="index_charm_levels_title">⭐ Charm Levels</h3>
+        <p data-i18n="index_charm_levels_desc">
+          Each charm can be unlocked at three levels, each with a different proc rate and charm point cost.
+          CharmsBot accounts for all three levels when calculating optimal assignments.
+        </p>
         <ul>
-          <li>📊 Character stats (Name, Level, HP, Mana)</li>
-          <li>💎 Charm Points</li>
-          <li>⚡ Unlocked charms with levels</li>
-          <li>📁 Up to 20 saved <code>/analysis</code> results</li>
-          <li>📁 Up to 20 saved <code>/bestcharms</code> configurations</li>
+          <li data-i18n="index_charm_lvl1">🔹 Level 1 — 5% proc rate</li>
+          <li data-i18n="index_charm_lvl2">✨ Level 2 — 10% proc rate</li>
+          <li data-i18n="index_charm_lvl3">⭐ Level 3 — 11% proc rate</li>
         </ul>
-        
       </div>
     </section>
 
     <!-- Security -->
     <section>
-      <h2>🛡️ Built-in Protection</h2>
-      
+      <h2 data-i18n="index_security_title">🛡️ Security & Reliability</h2>
       <div class="features-grid">
         <div class="feature-box">
-          <h3>Rate Limiting</h3>
-          <p>Smart rate limits prevent spam and ensure fair usage for everyone:</p>
+          <h3 data-i18n="index_sec1_title">Rate Limiting</h3>
+          <p data-i18n="index_sec1_desc">Smart rate limits prevent spam and ensure fair usage for everyone:</p>
           <ul>
-            <li>Per-user command cooldowns</li>
-            <li>Per-server command cooldowns</li>
-            <li>Global heavy command throttling</li>
+            <li data-i18n="index_sec1_li1">Per-user command cooldowns</li>
+            <li data-i18n="index_sec1_li2">Per-server command cooldowns</li>
+            <li data-i18n="index_sec1_li3">Global heavy command throttling</li>
           </ul>
         </div>
-
         <div class="feature-box">
-          <h3>Input Validation</h3>
-          <p>All data is validated before processing:</p>
+          <h3 data-i18n="index_sec2_title">Input Validation</h3>
+          <p data-i18n="index_sec2_desc">All data is validated before processing:</p>
           <ul>
-            <li>Hunt Analyzer format checking</li>
-            <li>Character stats validation</li>
-            <li>Creature limit enforcement</li>
+            <li data-i18n="index_sec2_li1">Hunt Analyzer format checking</li>
+            <li data-i18n="index_sec2_li2">Character stats validation</li>
+            <li data-i18n="index_sec2_li3">Creature limit enforcement</li>
           </ul>
         </div>
-
         <div class="feature-box">
-          <h3>Account Security</h3>
-          <p>Basic security measures to prevent abuse:</p>
+          <h3 data-i18n="index_sec3_title">Account Security</h3>
+          <p data-i18n="index_sec3_desc">Basic security measures to prevent abuse:</p>
           <ul>
-            <li>Minimum account age required</li>
-            <li>Bot accounts blocked</li>
-            <li>Spam detection</li>
+            <li data-i18n="index_sec3_li1">Minimum account age required</li>
+            <li data-i18n="index_sec3_li2">Bot accounts blocked</li>
+            <li data-i18n="index_sec3_li3">Spam detection</li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Add to Discord CTA -->
+    <!-- CTA -->
     <section>
       <div class="discord-card">
-        <h3>🤖 Ready to Optimize Your Hunts?</h3>
-        <p style="color:#c4c4c4;">
-          Add CharmsBot to your Discord server and start maximizing your damage today.
-        </p>
-
+        <h3 data-i18n="index_cta2_title">🤖 Ready to Optimize Your Hunts?</h3>
+        <p style="color:#c4c4c4;" data-i18n="index_cta2_desc">Add CharmsBot to your Discord server and start maximizing your damage today.</p>
         <div class="discord-badge-wrap">
-          <a
-            href="https://discord.com/oauth2/authorize?client_id=1324908850431791184&scope=bot%20applications.commands&permissions=0"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <img
-              src="https://img.shields.io/badge/Add%20to%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"
-              alt="Add to Discord"
-            />
+          <a href="https://discord.com/oauth2/authorize?client_id=1324908850431791184&scope=bot%20applications.commands&permissions=0"
+             target="_blank" rel="noopener noreferrer">
+            <img src="https://img.shields.io/badge/Add%20to%20Discord-5865F2?style=for-the-badge&logo=discord&logoColor=white"
+                 alt="Add to Discord" />
           </a>
         </div>
-
-
       </div>
     </section>
 
-        <!-- Footer Note -->
+    <!-- Footer -->
     <div class="footer">
-      <p>Made with ❤️ for the Tibia community</p>
-      <p>CharmsBot © 2025</p>
-      
-      <div style="margin-top: 24px; padding-top: 24px; border-top: 1px solid rgba(255, 255, 255, 0.1);">
-        <p style="line-height: 1.6; color: #ffffff;">
-          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a> 
-          is a trademark of 
-          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>. 
-          All rights to Tibia and its official content are owned by CipSoft.
+      <p data-i18n="footer_made">Made with ❤️ for the Tibia community</p>
+      <p>CharmsBot © 2026</p>
+      <div style="margin-top:24px;padding-top:24px;border-top:1px solid rgba(255,255,255,0.1);">
+        <p style="line-height:1.6;color:#ffffff;">
+          <a href="https://www.tibia.com/" target="_blank" rel="noopener noreferrer" class="footer-link">Tibia</a>
+          <span data-i18n="footer_trademark"> is a trademark of </span>
+          <a href="https://www.cipsoft.com/" target="_blank" rel="noopener noreferrer" class="footer-link">CipSoft GmbH</a>.
+          <span data-i18n="footer_rights"> All rights to Tibia and its official content are owned by CipSoft.</span>
         </p>
-        <p style="line-height: 1.6; margin-top: 8px; color: #ffffff;">
+        <p style="line-height:1.6;margin-top:8px;color:#ffffff;" data-i18n="footer_fansite">
           This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.
         </p>
       </div>
     </div>
   </div>
 
+  <script src="assets/js/i18n.js"></script>
   <script src="assets/js/header-bar.js"></script>
 </body>
 </html>
