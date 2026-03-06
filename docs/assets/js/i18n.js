@@ -25,7 +25,7 @@
 
       // ── index.html ──
       index_tagline:     'Your Tibia Hunting Companion',
-      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by hunters, for hunters.',
+      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by active players, for players.',
       index_cta_discord: 'Add to Discord',
       index_cta_commands:'View Commands',
 
@@ -223,6 +223,7 @@
       legal_terms_link:         'Terms of Service',
       legal_privacy_link:       'Privacy Policy',
       legal_fansite_title:      '⚖️ Fansite Disclaimer',
+      legal_fansite_intro:      'Tibia is a trademark of ',
       legal_fansite_body1:      ' All rights to Tibia and its official content are owned by ',
       legal_fansite_body2:      'This fansite is not affiliated with CipSoft. Content on this site is fan-made unless stated otherwise.',
       legal_monetisation_title: '💰 Monetisation',
@@ -462,7 +463,7 @@
 
       // ── index.html ──
       index_tagline:     'Tu Compañero de Caza en Tibia',
-      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por cazadores, para cazadores.',
+      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por jugadores activos, para jugadores.',
       index_cta_discord: 'Añadir a Discord',
       index_cta_commands:'Ver Comandos',
 
@@ -659,6 +660,7 @@
       legal_terms_link:         'Términos de Servicio',
       legal_privacy_link:       'Política de Privacidad',
       legal_fansite_title:      '⚖️ Aviso del Fansite',
+      legal_fansite_intro:      'Tibia es una marca registrada de ',
       legal_fansite_body1:      ' Todos los derechos sobre Tibia y su contenido oficial pertenecen a ',
       legal_fansite_body2:      'Este fansite no está afiliado con CipSoft. El contenido es creado por fans salvo que se indique lo contrario.',
       legal_monetisation_title: '💰 Monetización',
