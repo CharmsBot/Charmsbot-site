@@ -40,10 +40,11 @@ function getCommandsData() {
         title: '📸 /character edit — Flow',
         subtitle: _t('cmd_character_edit_sub', 'Select a character, update stats, optionally update charms, and save.'),
         images: [
-          {src:'/assets/images/commands/character_management/character/edit/01-characteredit.png', cap:_t('cmd_character_edit_cap1','1) Select the character you want to edit from the list.')},
-          {src:'/assets/images/commands/character_management/character/edit/02-characteredit.png', cap:_t('cmd_character_edit_cap2','2) Fill in the character stats you want to update.')},
-          {src:'/assets/images/commands/character_management/character/edit/03-characteredit.png', cap:_t('cmd_character_edit_cap3','3) Update your charms if needed, then click Save to finish.')},
-          {src:'/assets/images/commands/character_management/character/edit/04-characteredit.png', cap:_t('cmd_character_edit_cap4','4) At the end, a summary is shown with the updated stats, charm points, and selected charms.')}
+          {src:'/assets/images/commands/character_management/character/edit/01-characteredit.png', cap:_t('cmd_character_edit_cap1','1) Select a character to edit.')},
+          {src:'/assets/images/commands/character_management/character/edit/02-characteredit.png', cap:_t('cmd_character_edit_cap2','2) Update the character stats in the form.')},
+          {src:'/assets/images/commands/character_management/character/edit/03-characteredit.png', cap:_t('cmd_character_edit_cap3','3) Click Keep Charms to keep the current charms, or update them by selecting a charm level.')},
+          {src:'/assets/images/commands/character_management/character/edit/04-characteredit.png', cap:_t('cmd_character_edit_cap4','4) After confirming charms, click Save to apply all changes.')},
+          {src:'/assets/images/commands/character_management/character/edit/05-characteredit.png', cap:_t('cmd_character_edit_cap5','5) A summary is shown with the updated character stats, charm points, and saved charms.')}
         ]
       },
       {
@@ -51,11 +52,11 @@ function getCommandsData() {
         desc: _t('cmd_character_delete_desc', 'Delete a character and all associated data'),
         hasImages: true,
         title: '📸 /character delete — Flow',
-        subtitle: _t('cmd_character_delete_sub', 'Select a character, confirm deletion, and see the result.'),
+        subtitle: _t('cmd_character_delete_sub', 'Select a character, confirm deletion, and remove it permanently.'),
         images: [
           {src:'/assets/images/commands/character_management/character/delete/01-characterdelete.png', cap:_t('cmd_character_delete_cap1','1) Select the character you want to delete from the list.')},
-          {src:'/assets/images/commands/character_management/character/delete/02-characterdelete.png', cap:_t('cmd_character_delete_cap2','2) Click Confirm Delete to remove the character, including all saved stats, analyses, and bestcharms. This action cannot be undone.')},
-          {src:'/assets/images/commands/character_management/character/delete/03-characterdelete.png', cap:_t('cmd_character_delete_cap3','3) The character was deleted successfully. A counter shows how many character slots are available.')}
+          {src:'/assets/images/commands/character_management/character/delete/02-characterdelete.png', cap:_t('cmd_character_delete_cap2','2) Click Confirm Delete to permanently delete the character and all of its hunt data.')},
+          {src:'/assets/images/commands/character_management/character/delete/03-characterdelete.png', cap:_t('cmd_character_delete_cap3','3) A confirmation message is shown. A counter shows how many character slots are available.')}
         ]
       }
     ],
@@ -88,19 +89,18 @@ function getCommandsData() {
           {src:'/assets/images/commands/hunt_analysis/bestcharms/03-bestcharms.png', cap:_t('cmd_bestcharms_cap3','3) Enter a hunt name if you want to save this configuration.')},
           {src:'/assets/images/commands/hunt_analysis/bestcharms/04-bestcharms.png', cap:_t('cmd_bestcharms_cap4','4) Best elemental damage efficiencies for the analyzed spawn.')},
           {src:'/assets/images/commands/hunt_analysis/bestcharms/05-bestcharms.png', cap:_t('cmd_bestcharms_cap5','5) Review the recommended charms, total cost, any missing charms, and the expected damage increase.')},
-          {src:'/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png', cap:_t('cmd_bestcharms_cap6','6) Detailed creature assignments with recommended charm level and damage efficiency breakdown.')},
-          {src:'/assets/images/commands/hunt_analysis/bestcharms/07-bestcharms.png', cap:_t('cmd_bestcharms_cap7','7) Bestcharms configuration saved successfully for the character.')}
+          {src:'/assets/images/commands/hunt_analysis/bestcharms/06-bestcharms.png', cap:_t('cmd_bestcharms_cap6','6) If you entered a hunt name, this message confirms the bestcharms was saved successfully.')}
         ]
       },
       {
         id: 'element', name: '/element',
-        desc: _t('cmd_element_desc', 'Quick element efficiency checker (no character required)'),
+        desc: _t('cmd_element_desc', 'Check elemental vulnerabilities and resistances for any spawn'),
         hasImages: true,
         title: '📸 /element — Flow',
-        subtitle: _t('cmd_element_sub', 'Paste Hunt Analyzer data to see element effectiveness.'),
+        subtitle: _t('cmd_element_sub', 'Paste Hunt Analyzer data to get a full elemental breakdown.'),
         images: [
-          {src:'/assets/images/commands/hunt_analysis/element/01-element.png', cap:_t('cmd_element_cap1','1) Paste the Hunt Analyzer for the hunt you want to check.')},
-          {src:'/assets/images/commands/hunt_analysis/element/02-element.png', cap:_t('cmd_element_cap2',"2) View the overall best damage types for the spawn and a breakdown of each monster's elemental vulnerabilities.")}
+          {src:'/assets/images/commands/hunt_analysis/element/01-element.png', cap:_t('cmd_element_cap1','1) Paste your Hunt Analyzer data into the form.')},
+          {src:'/assets/images/commands/hunt_analysis/element/02-element.png', cap:_t('cmd_element_cap2','2) A full elemental breakdown is shown for every creature in the spawn, including vulnerabilities and resistances.')}
         ]
       }
     ],
@@ -108,14 +108,14 @@ function getCommandsData() {
     hunt: [
       {
         id: 'hunt-view', name: '/hunt view',
-        desc: _t('cmd_hunt_view_desc', 'View your saved analyses and bestcharms configurations'),
+        desc: _t('cmd_hunt_view_desc', 'View a saved hunt analysis or bestcharms configuration'),
         hasImages: true,
         title: '📸 /hunt view — Flow',
-        subtitle: _t('cmd_hunt_view_sub', 'Select from your saved hunts to view details.'),
+        subtitle: _t('cmd_hunt_view_sub', 'Select a character and hunt to review saved data.'),
         images: [
           {src:'/assets/images/commands/hunt_management/hunt/view/01-huntview.png', cap:_t('cmd_hunt_view_cap1','1) Select the character whose saved hunts you want to view.')},
           {src:'/assets/images/commands/hunt_management/hunt/view/02-huntview.png', cap:_t('cmd_hunt_view_cap2','2) Select the hunt type (Analysis/Bestcharms), then choose the saved hunt you want to open.')},
-          {src:'/assets/images/commands/hunt_management/hunt/view/03-huntview.png', cap:_t('cmd_hunt_view_cap3','3) The saved hunt details are displayed with its charm assignments.')}
+          {src:'/assets/images/commands/hunt_management/hunt/view/03-huntview.png', cap:_t('cmd_hunt_view_cap3','3) The saved hunt details are shown with its charm assignments.')}
         ]
       },
       {
@@ -189,6 +189,16 @@ function getCommandsData() {
       {
         id: 'deliverytask', name: '/deliverytask',
         desc: _t('cmd_deliverytask_desc', 'Search for Delivery Task items in your Hunt Analyzer and get price and NPC information'),
+        hasImages: false
+      },
+      {
+        id: 'lang-personal', name: '/lang personal',
+        desc: _t('cmd_lang_personal_desc', 'Set your personal language preference (English or Spanish). Your choice overrides the server default and is saved permanently.'),
+        hasImages: false
+      },
+      {
+        id: 'lang-server', name: '/lang server',
+        desc: _t('cmd_lang_server_desc', 'Set the default language for all users in this server (requires Manage Server permission). Users with a personal preference keep theirs.'),
         hasImages: false
       }
     ]
@@ -266,30 +276,30 @@ document.addEventListener('DOMContentLoaded', function () {
   document.querySelectorAll('.tab-button').forEach(btn => {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));
-      document.querySelectorAll('.tab-content').forEach(c=>c.classList.remove('active'));
+      document.querySelectorAll('.tab-content').forEach(t=>t.classList.remove('active'));
       this.classList.add('active');
-      document.getElementById('tab-'+this.dataset.tab).classList.add('active');
+      const tab = this.dataset.tab;
+      const content = document.getElementById('tab-' + tab);
+      if (content) content.classList.add('active');
     });
   });
-  document.addEventListener('click', function(e) {
-    const card = e.target.closest('.command-card'); if (!card) return;
-    const data = getCommandsData();
-    const all  = [...data.character,...data.analysis,...data.hunt,...data.utilities];
-    const cmd  = all.find(c=>c.id===card.dataset.commandId);
-    if (cmd && cmd.hasImages) openModal(cmd);
+  document.getElementById('modalClose').addEventListener('click', closeModal);
+  document.getElementById('modalPrev').addEventListener('click', ()=>navigateImage(-1));
+  document.getElementById('modalNext').addEventListener('click', ()=>navigateImage(1));
+  document.getElementById('commandModal').addEventListener('click', e=>{
+    if (e.target === document.getElementById('commandModal')) closeModal();
   });
-  const mc=document.getElementById('modalClose'); if(mc) mc.addEventListener('click',closeModal);
-  const mp=document.getElementById('modalPrev');  if(mp) mp.addEventListener('click',()=>navigateImage(-1));
-  const mn=document.getElementById('modalNext');  if(mn) mn.addEventListener('click',()=>navigateImage(1));
-  document.addEventListener('keydown', function(e) {
-    const lb=document.getElementById('imageLightbox'), m=document.getElementById('commandModal');
-    if(lb&&lb.classList.contains('active')){if(e.key==='Escape'){closeImageLightbox();return;}}
-    if(m&&m.classList.contains('active')){
-      if(e.key==='Escape') closeModal();
-      if(e.key==='ArrowLeft') navigateImage(-1);
-      if(e.key==='ArrowRight') navigateImage(1);
-    }
+  document.addEventListener('keydown', e=>{
+    if (e.key === 'Escape') { closeModal(); closeImageLightbox(); }
+    if (e.key === 'ArrowLeft')  navigateImage(-1);
+    if (e.key === 'ArrowRight') navigateImage(1);
   });
-  const modal=document.getElementById('commandModal');
-  if(modal) modal.addEventListener('click',e=>{if(e.target.id==='commandModal')closeModal();});
+  document.querySelectorAll('.command-card').forEach(card => {
+    card.addEventListener('click', function() {
+      const id = this.dataset.commandId;
+      const all = getCommandsData();
+      const cmd = [...all.character,...all.analysis,...all.hunt,...all.utilities].find(c=>c.id===id);
+      if (cmd) openModal(cmd);
+    });
+  });
 });

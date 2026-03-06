@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Changelog • CharmsBot</title>
+  <title data-i18n="changelog_title">Changelog • CharmsBot</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header-bar.css">
   <link rel="stylesheet" href="../assets/css/general-pages.css">
@@ -12,21 +12,89 @@
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#7b2cbf">
+  <style>
+    /* ── Accordion ─────────────────────────────────────────── */
+    .acc{display:flex;flex-direction:column;gap:12px;margin-top:24px}
+    .acc-item{border:1px solid rgba(255,255,255,.08);border-radius:14px;overflow:hidden;transition:border-color .2s}
+    .acc-item[data-open="true"]{border-color:rgba(123,44,191,.5)}
+    .acc-btn{width:100%;background:rgba(255,255,255,.04);border:none;color:#e0e0e0;padding:18px 22px;display:flex;justify-content:space-between;align-items:center;cursor:pointer;font-size:1.05em;font-weight:600;gap:12px;transition:background .15s}
+    .acc-btn:hover{background:rgba(255,255,255,.08)}
+    .acc-btn .left{display:flex;align-items:center;gap:10px}
+    .acc-btn .pill{font-size:.75em;font-weight:500;color:#a0a0a0;background:rgba(255,255,255,.08);border-radius:10px;padding:2px 10px}
+    .acc-btn .chev svg{width:20px;height:20px;fill:#a0a0a0;transition:transform .2s}
+    .acc-item[data-open="true"] .chev svg{transform:rotate(180deg)}
+    .acc-panel{max-height:0;overflow:hidden;transition:max-height .35s ease}
+    .acc-item[data-open="true"] .acc-panel{max-height:9999px}
+    .version-content{padding:24px 28px 32px}
+
+    /* ── Typography ─────────────────────────────────────────── */
+    .version-content h2{color:#c77dff;font-size:1.2em;margin:28px 0 10px;padding-bottom:8px;border-bottom:1px solid rgba(255,255,255,.08);display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+    .version-content h2:first-child{margin-top:0}
+    .version-content h3{color:#00d4ff;font-size:1em;margin:18px 0 6px}
+    .version-content p{color:#c4c4c4;line-height:1.65;margin:6px 0 10px}
+    .version-content ul,.version-content ol{color:#c4c4c4;padding-left:22px;line-height:1.7;margin:8px 0 12px}
+    .version-content li{margin-bottom:4px}
+    .version-content code{background:rgba(0,212,255,.12);color:#00d4ff;padding:2px 7px;border-radius:5px;font-size:.88em;font-family:'Courier New',monospace}
+
+    /* ── Badges ─────────────────────────────────────────────── */
+    .new-badge{display:inline-flex;align-items:center;font-size:.68em;font-weight:800;letter-spacing:.06em;background:linear-gradient(135deg,#22c55e,#16a34a);color:#fff;padding:3px 10px;border-radius:6px;vertical-align:middle;box-shadow:0 0 12px rgba(34,197,94,.5);text-transform:uppercase;animation:badgePulse 2.5s ease-in-out infinite;white-space:nowrap}
+    .updated-badge{display:inline-flex;align-items:center;font-size:.68em;font-weight:800;letter-spacing:.06em;background:linear-gradient(135deg,#f59e0b,#d97706);color:#fff;padding:3px 10px;border-radius:6px;vertical-align:middle;box-shadow:0 0 12px rgba(245,158,11,.5);text-transform:uppercase;white-space:nowrap}
+    @keyframes badgePulse{0%,100%{box-shadow:0 0 8px rgba(34,197,94,.45)}50%{box-shadow:0 0 20px rgba(34,197,94,.85)}}
+
+    /* ── Boxes ──────────────────────────────────────────────── */
+    .feature-box{background:rgba(0,212,255,.07);border:1px solid rgba(0,212,255,.2);border-left:4px solid #00d4ff;border-radius:10px;padding:16px 20px;margin:12px 0}
+    .feature-box.green{background:rgba(34,197,94,.07);border-color:rgba(34,197,94,.2);border-left-color:#22c55e}
+    .feature-box ul{margin:6px 0 0}
+    .note-box{background:rgba(251,191,36,.07);border:1px solid rgba(251,191,36,.25);border-left:4px solid #fbbf24;border-radius:10px;padding:16px 20px;margin:12px 0;color:#c4c4c4}
+    .security-box{background:rgba(239,68,68,.07);border:1px solid rgba(239,68,68,.2);border-left:4px solid #ef4444;border-radius:10px;padding:16px 20px;margin:12px 0}
+    .security-box p{color:#c4c4c4;margin:0 0 10px}
+    .setup-guide{background:rgba(34,197,94,.07);border:1px solid rgba(34,197,94,.2);border-left:4px solid #22c55e;border-radius:10px;padding:16px 20px;margin:12px 0}
+    .setup-guide p{color:#c4c4c4;margin:0 0 8px}
+    .setup-guide ol{color:#c4c4c4;padding-left:22px}
+    .setup-guide li{margin-bottom:6px}
+    .highlight-box{background:linear-gradient(135deg,rgba(123,44,191,.15),rgba(94,23,235,.1));border:2px solid rgba(123,44,191,.4);border-radius:12px;padding:20px 24px;margin:12px 0}
+    .highlight-box h3{color:#c77dff;margin:0 0 8px}
+    .highlight-box p{color:#c4c4c4}
+    .channel-restriction{background:rgba(249,115,22,.07);border:1px solid rgba(249,115,22,.25);border-left:4px solid #f97316;border-radius:10px;padding:16px 20px;margin:12px 0;color:#c4c4c4}
+    .bug-fix-box{background:rgba(168,85,247,.07);border:1px solid rgba(168,85,247,.22);border-left:4px solid #a855f7;border-radius:10px;padding:16px 20px;margin:12px 0}
+    .bug-fix-box h3{color:#c77dff;margin:0 0 10px;font-size:.95em}
+    .bug-fix-box ul{margin:0;color:#c4c4c4;padding-left:20px}
+    .bug-fix-box li{margin-bottom:4px}
+
+    /* ── Command tags ───────────────────────────────────────── */
+    .command-list{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+    .command-tag{background:rgba(0,212,255,.12);color:#00d4ff;padding:4px 10px;border-radius:6px;font-size:.82em;font-family:'Courier New',monospace;border:1px solid rgba(0,212,255,.2)}
+
+    /* ── Table ──────────────────────────────────────────────── */
+    .table-wrapper{overflow-x:auto;margin:14px 0;border-radius:10px;border:1px solid rgba(255,255,255,.1)}
+    .table-wrapper table{width:100%;border-collapse:collapse;min-width:380px}
+    .table-wrapper thead tr{background:rgba(123,44,191,.25)}
+    .table-wrapper th{color:#c77dff;font-size:.85em;font-weight:700;letter-spacing:.04em;padding:12px 18px;text-align:left;white-space:nowrap;border-bottom:1px solid rgba(255,255,255,.1)}
+    .table-wrapper td{color:#c4c4c4;padding:11px 18px;font-size:.9em;border-bottom:1px solid rgba(255,255,255,.05);vertical-align:middle}
+    .table-wrapper tbody tr:last-child td{border-bottom:none}
+    .table-wrapper tbody tr:hover{background:rgba(255,255,255,.03)}
+    .table-wrapper td code{background:rgba(0,212,255,.12);color:#00d4ff;padding:2px 7px;border-radius:5px;font-size:.85em;white-space:nowrap}
+    .table-wrapper td:not(:first-child),.table-wrapper th:not(:first-child){text-align:center}
+
+    /* ── Hint ───────────────────────────────────────────────── */
+    .changelog-hint{text-align:center;color:#606060;font-size:.85em;margin:4px 0 20px}
+  </style>
 </head>
 <body>
 
   <div class="container">
     <h1 data-i18n="changelog_title">Changelog</h1>
     <p class="subtitle" data-i18n="changelog_subtitle">Release history</p>
-    <div class="divider"></div>
 
-    <nav class="nav">
+    <div class="nav">
       <a href="../"           data-i18n="nav_home">Home</a>
       <a href="../commands/"  data-i18n="nav_commands">Commands</a>
       <a href="./"            data-i18n="nav_changelog">Changelog</a>
       <a href="../contact/"   data-i18n="nav_contact">Contact</a>
       <a href="../legal/"     data-i18n="nav_legal">Legal</a>
-    </nav>
+    </div>
+
+    <p class="changelog-hint" data-i18n="changelog_hint">Click a version to expand it.</p>
 
     <div class="acc" id="acc"></div>
 
@@ -105,7 +173,6 @@
       }
 
       buildAccordion();
-
       window.addEventListener('langchange', buildAccordion);
     })();
   </script>

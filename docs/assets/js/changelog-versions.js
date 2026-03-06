@@ -3,7 +3,7 @@
 // CÓMO AGREGAR UNA VERSIÓN NUEVA:
 //   1. Copia cualquier objeto del array como plantilla
 //   2. Pégalo AL INICIO del array (más reciente primero)
-//   3. Actualiza: version, pill, en (HTML inglés), es (HTML español)
+//   3. Actualiza: version, pill, pill_es, en (HTML inglés), es (HTML español)
 //   4. Guarda — el index.html lo renderiza automáticamente
 //
 // CLASES CSS DISPONIBLES:
@@ -14,6 +14,7 @@
 //   .highlight-box            → caja púrpura
 //   .setup-guide              → caja verde (guía paso a paso)
 //   .channel-restriction      → caja naranja
+//   .bug-fix-box              → caja púrpura (bug fixes)
 //   .command-list + .command-tag → fila de badges de comandos
 //   .table-wrapper > table    → tabla estilizada
 //   .new-badge                → badge verde "NEW" / "NUEVO"
@@ -26,6 +27,7 @@ const CHANGELOG_VERSIONS = [
   {
     version: 'v2.5.0',
     pill: 'Mar 2026',
+    pill_es: 'Mar 2026',
     en: `
 <h2>🌟 Major Update</h2>
 <p>v2.5.0 brings full bilingual support to both the CharmsBot Discord bot and the website, a new command, and several bug fixes.</p>
@@ -54,17 +56,21 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>🐛 Bug Fixes</h2>
-<h3>Discord Bot</h3>
-<ul>
-  <li>Fixed an issue where some modal submissions could fail silently</li>
-  <li>Fixed incorrect error messages when pasting invalid Hunt Analyzer data</li>
-  <li>Fixed edge cases in charm assignment calculations for certain spawn compositions</li>
-</ul>
-<h3>Website</h3>
-<ul>
-  <li>Fixed bot status showing raw text instead of the translated label on some pages</li>
-  <li>Fixed boosted creature and boss images not loading on subpages</li>
-</ul>
+<div class="bug-fix-box">
+  <h3>Discord Bot</h3>
+  <ul>
+    <li>Fixed an issue where some modal submissions could fail silently</li>
+    <li>Fixed incorrect error messages when pasting invalid Hunt Analyzer data</li>
+    <li>Fixed edge cases in charm assignment calculations for certain spawn compositions</li>
+  </ul>
+</div>
+<div class="bug-fix-box">
+  <h3>Website</h3>
+  <ul>
+    <li>Fixed bot status showing raw text instead of the translated label on some pages</li>
+    <li>Fixed boosted creature and boss images not loading on subpages</li>
+  </ul>
+</div>
 `,
     es: `
 <h2>🌟 Actualización Mayor</h2>
@@ -94,17 +100,21 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>🐛 Corrección de Bugs</h2>
-<h3>Bot de Discord</h3>
-<ul>
-  <li>Corregido un problema donde algunos envíos de formularios podían fallar silenciosamente</li>
-  <li>Corregidos mensajes de error incorrectos al pegar datos de Hunt Analyzer inválidos</li>
-  <li>Corregidos casos límite en los cálculos de asignación de charms para ciertas composiciones de spawn</li>
-</ul>
-<h3>Sitio Web</h3>
-<ul>
-  <li>Corregido el estado del bot mostrando texto sin traducir en algunas páginas</li>
-  <li>Corregidas las imágenes de criatura y boss del día que no cargaban en subpáginas</li>
-</ul>
+<div class="bug-fix-box">
+  <h3>Bot de Discord</h3>
+  <ul>
+    <li>Corregido un problema donde algunos envíos de formularios podían fallar silenciosamente</li>
+    <li>Corregidos mensajes de error incorrectos al pegar datos de Hunt Analyzer inválidos</li>
+    <li>Corregidos casos límite en los cálculos de asignación de charms para ciertas composiciones de spawn</li>
+  </ul>
+</div>
+<div class="bug-fix-box">
+  <h3>Sitio Web</h3>
+  <ul>
+    <li>Corregido el estado del bot mostrando texto sin traducir en algunas páginas</li>
+    <li>Corregidas las imágenes de criatura y boss del día que no cargaban en subpáginas</li>
+  </ul>
+</div>
 `
   },
 
@@ -112,6 +122,7 @@ const CHANGELOG_VERSIONS = [
   {
     version: 'v2.0.0',
     pill: 'Feb 2026',
+    pill_es: 'Feb 2026',
     en: `
 <h2>🌟 Major Update</h2>
 <p>v2.0.0 introduces the full charm points budget system, multi-level charm support, account security gates, and rate limiting.</p>
@@ -180,7 +191,9 @@ const CHANGELOG_VERSIONS = [
 <h2>📊 Commands Summary</h2>
 <div class="table-wrapper">
   <table>
-    <thead><tr><th>Command</th><th>Security Gate</th><th>Rate Limited</th></tr></thead>
+    <thead>
+      <tr><th>Command</th><th>Security Gate</th><th>Rate Limited</th></tr>
+    </thead>
     <tbody>
       <tr><td><code>/character add</code></td><td>✅</td><td>—</td></tr>
       <tr><td><code>/character view</code></td><td>✅</td><td>—</td></tr>
@@ -200,11 +213,13 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>🐛 Bug Fixes</h2>
-<ul>
-  <li>Fixed unhandled exceptions in modal submissions</li>
-  <li>Improved error messages for invalid Hunt Analyzer data</li>
-  <li>Better edge case handling across all commands</li>
-</ul>
+<div class="bug-fix-box">
+  <ul>
+    <li>Fixed unhandled exceptions in modal submissions</li>
+    <li>Improved error messages for invalid Hunt Analyzer data</li>
+    <li>Better edge case handling across all commands</li>
+  </ul>
+</div>
 `,
     es: `
 <h2>🌟 Actualización Mayor</h2>
@@ -274,7 +289,9 @@ const CHANGELOG_VERSIONS = [
 <h2>📊 Resumen de Comandos</h2>
 <div class="table-wrapper">
   <table>
-    <thead><tr><th>Comando</th><th>Verificación de Seguridad</th><th>Rate Limited</th></tr></thead>
+    <thead>
+      <tr><th>Comando</th><th>Verificación de Seguridad</th><th>Rate Limited</th></tr>
+    </thead>
     <tbody>
       <tr><td><code>/character add</code></td><td>✅</td><td>—</td></tr>
       <tr><td><code>/character view</code></td><td>✅</td><td>—</td></tr>
@@ -294,11 +311,13 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>🐛 Corrección de Bugs</h2>
-<ul>
-  <li>Corregidas excepciones no manejadas en envíos de modales</li>
-  <li>Mejorados los mensajes de error para datos de Hunt Analyzer inválidos</li>
-  <li>Mejor manejo de casos límite en todos los comandos</li>
-</ul>
+<div class="bug-fix-box">
+  <ul>
+    <li>Corregidas excepciones no manejadas en envíos de modales</li>
+    <li>Mejorados los mensajes de error para datos de Hunt Analyzer inválidos</li>
+    <li>Mejor manejo de casos límite en todos los comandos</li>
+  </ul>
+</div>
 `
   },
 
@@ -306,6 +325,7 @@ const CHANGELOG_VERSIONS = [
   {
     version: 'v1.5.0',
     pill: '2025',
+    pill_es: '2025',
     en: `
 <h2>🆕 New Commands</h2>
 
@@ -394,6 +414,7 @@ const CHANGELOG_VERSIONS = [
   {
     version: 'v1.0.0',
     pill: '2025',
+    pill_es: '2025',
     en: `
 <h2>🆕 New Commands</h2>
 
@@ -498,59 +519,62 @@ const CHANGELOG_VERSIONS = [
   {
     version: 'v0.1.0',
     pill: 'Early 2025',
+    pill_es: 'Principios de 2025',
     en: `
 <h2>🚀 Initial Release</h2>
-<p>CharmsBot is a Discord bot designed to help Tibia players optimize their charm assignments for hunting.</p>
+<p>CharmsBot launches with core character and hunt analysis functionality.</p>
 
-<h2>📊 Available Commands</h2>
+<h2>🆕 Commands</h2>
 
-<h3><code>/analysis</code></h3>
-<p>Analyze your hunt using your selected charms.</p>
+<h3><code>/character add</code></h3>
+<p>Register a Tibia character with your stats and unlocked charms.</p>
 <div class="feature-box">
   <ul>
-    <li>Paste Hunt Analyzer data from Tibia</li>
-    <li>Optimal charm assignment calculation</li>
-    <li>Element efficiency analysis</li>
+    <li>Name, level, max HP, max mana</li>
+    <li>Charm points total</li>
+    <li>Unlocked charms selection</li>
   </ul>
 </div>
 
-<h3><code>/character add</code> / <code>/character view</code> / <code>/character edit</code> / <code>/character delete</code></h3>
-<p>Full character management — add characters with their stats and charm selections, and manage them at any time.</p>
+<h3><code>/character view</code> / <code>/character edit</code> / <code>/character delete</code></h3>
+<p>Manage your registered characters — view stats, update data, or remove characters.</p>
 
-<h2>📌 Notes</h2>
-<div class="note-box">
+<h3><code>/analysis</code></h3>
+<p>Analyze a hunt session using your Hunt Analyzer data.</p>
+<div class="feature-box">
   <ul>
-    <li>All charm calculations use a fixed <strong>10% proc rate</strong></li>
-    <li>No charm points budget system</li>
-    <li>No charm level selection</li>
+    <li>Damage dealt per creature with charm efficiency</li>
+    <li>Optimal charm assignments for the spawn</li>
+    <li>Loot and balance summary</li>
   </ul>
 </div>
 `,
     es: `
 <h2>🚀 Lanzamiento Inicial</h2>
-<p>CharmsBot es un bot de Discord diseñado para ayudar a los jugadores de Tibia a optimizar sus asignaciones de charms para cazar.</p>
+<p>CharmsBot se lanza con funcionalidad principal de gestión de personajes y análisis de hunts.</p>
 
-<h2>📊 Comandos Disponibles</h2>
+<h2>🆕 Comandos</h2>
 
-<h3><code>/analysis</code></h3>
-<p>Analiza tu hunt usando tus charms seleccionados.</p>
+<h3><code>/character add</code></h3>
+<p>Registra un personaje de Tibia con tus estadísticas y charms desbloqueados.</p>
 <div class="feature-box">
   <ul>
-    <li>Pega los datos del Hunt Analyzer de Tibia</li>
-    <li>Cálculo de asignación óptima de charms</li>
-    <li>Análisis de eficiencia elemental</li>
+    <li>Nombre, nivel, HP máximo, mana máximo</li>
+    <li>Total de charm points</li>
+    <li>Selección de charms desbloqueados</li>
   </ul>
 </div>
 
-<h3><code>/character add</code> / <code>/character view</code> / <code>/character edit</code> / <code>/character delete</code></h3>
-<p>Gestión completa de personajes — agrega personajes con sus estadísticas y selección de charms, y gestiónalos en cualquier momento.</p>
+<h3><code>/character view</code> / <code>/character edit</code> / <code>/character delete</code></h3>
+<p>Administra tus personajes registrados — consulta estadísticas, actualiza datos o elimina personajes.</p>
 
-<h2>📌 Notas</h2>
-<div class="note-box">
+<h3><code>/analysis</code></h3>
+<p>Analiza una sesión de hunt usando tus datos del Hunt Analyzer.</p>
+<div class="feature-box">
   <ul>
-    <li>Todos los cálculos de charms usan un proc rate fijo de <strong>10%</strong></li>
-    <li>Sin sistema de presupuesto de charm points</li>
-    <li>Sin selección de nivel de charm</li>
+    <li>Daño por criatura con eficiencia de charms</li>
+    <li>Asignación óptima de charms para el spawn</li>
+    <li>Resumen de loot y balance</li>
   </ul>
 </div>
 `
