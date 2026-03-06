@@ -11,7 +11,7 @@
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-32x32.png" sizes="32x32">
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
-    <meta name="theme-color" content="#7b2cbf">
+  <meta name="theme-color" content="#7b2cbf">
 </head>
 <body>
 
@@ -21,15 +21,14 @@
     <div class="divider"></div>
 
     <nav class="nav">
-      <a href="../"          data-i18n="nav_home">Home</a>
-      <a href="./"           data-i18n="nav_changelog">Changelog</a>
-      <a href="../contact/"  data-i18n="nav_contact">Contact</a>
-      <a href="../legal/"    data-i18n="nav_legal">Legal</a>
+      <a href="../"           data-i18n="nav_home">Home</a>
+      <a href="../commands/"  data-i18n="nav_commands">Commands</a>
+      <a href="./"            data-i18n="nav_changelog">Changelog</a>
+      <a href="../contact/"   data-i18n="nav_contact">Contact</a>
+      <a href="../legal/"     data-i18n="nav_legal">Legal</a>
     </nav>
 
     <div class="acc" id="acc"></div>
-
-    
 
     <div class="footer">
       <p data-i18n="footer_made">Made with ❤️ for the Tibia community</p>
@@ -69,6 +68,7 @@
 
         CHANGELOG_VERSIONS.forEach(function (v, idx) {
           var content = (lang === 'es' && v.es) ? v.es : v.en;
+          var pill    = (lang === 'es' && v.pill_es) ? v.pill_es : v.pill;
 
           var item = document.createElement('div');
           item.className = 'acc-item';
@@ -78,7 +78,7 @@
           item.innerHTML =
             '<button class="acc-btn" type="button">' +
               '<span class="left">' + v.version +
-                ' <span class="pill">' + v.pill + '</span>' +
+                ' <span class="pill">' + pill + '</span>' +
               '</span>' +
               '<span class="chev" aria-hidden="true">' +
                 '<svg viewBox="0 0 24 24"><path d="M7 10l5 5 5-5z"/></svg>' +
@@ -90,7 +90,6 @@
 
           item.querySelector('.acc-btn').addEventListener('click', function () {
             var isOpen = item.dataset.open === 'true';
-            // Cerrar todos
             Array.from(acc.querySelectorAll('.acc-item')).forEach(function (it) {
               it.dataset.open = 'false';
             });
@@ -107,7 +106,6 @@
 
       buildAccordion();
 
-      // Re-renderizar al cambiar idioma — sin fetch, instantáneo
       window.addEventListener('langchange', buildAccordion);
     })();
   </script>
