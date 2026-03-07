@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CharmsBot - Contact</title>
+  <title data-i18n="contact_title">Contact • CharmsBot</title>
   <link rel="stylesheet" href="../assets/css/style.css">
   <link rel="stylesheet" href="../assets/css/header-bar.css">
   <link rel="stylesheet" href="../assets/css/general-pages.css">
@@ -12,6 +12,58 @@
   <link rel="icon" type="image/png" href="../assets/images/_shared/favicon/favicon-16x16.png" sizes="16x16">
   <link rel="apple-touch-icon" href="../assets/images/_shared/favicon/apple-touch-icon.png">
   <meta name="theme-color" content="#7b2cbf">
+  <style>
+    .discord-community-card {
+      background: linear-gradient(135deg, rgba(88,101,242,.12) 0%, rgba(88,101,242,.06) 100%);
+      border: 2px solid rgba(88,101,242,.35);
+      border-radius: 16px;
+      padding: 28px 32px;
+      margin: 24px 0;
+      text-align: center;
+    }
+    .discord-community-card h2 {
+      color: #e0e0e0;
+      margin: 0 0 10px;
+      font-size: 1.25em;
+    }
+    .discord-community-card p {
+      color: #a0a0a0;
+      margin: 0 0 20px;
+      line-height: 1.6;
+    }
+    .feature-box {
+      background: rgba(0,212,255,.07);
+      border: 1px solid rgba(0,212,255,.2);
+      border-left: 4px solid #00d4ff;
+      border-radius: 10px;
+      padding: 20px 24px;
+      margin: 16px 0;
+    }
+    .feature-box h2 {
+      color: #e0e0e0;
+      border-bottom: 1px solid rgba(255,255,255,.08);
+      padding-bottom: 10px;
+    }
+    .cta-button {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 32px;
+      border-radius: 8px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 1.05em;
+      transition: all 0.3s ease;
+      border: 2px solid transparent;
+    }
+    .cta-button.primary {
+      background: linear-gradient(135deg, #7b2cbf 0%, #9d4edd 100%);
+      color: white;
+    }
+    .cta-button.primary:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(123,44,191,.4);
+    }
+  </style>
 </head>
 <body>
 
@@ -29,45 +81,60 @@
 
     <hr class="divider">
 
-    <h2 data-i18n="contact_creator_title">🤖 Bot Creator</h2>
-    <p class="kv"><strong data-i18n="contact_nickname">Nickname:</strong> Nugro01</p>
-    <p class="kv">
-      <strong data-i18n="contact_character_label">Character:</strong>
-      <a class="link" href="https://www.tibia.com/community/?name=Copex" target="_blank" rel="noopener noreferrer">Copex</a>
-    </p>
-    <p class="kv">
-      <strong>Email:</strong>
-      <a class="link" href="mailto:charmsbotapp+admin@gmail.com">charmsbotapp+admin@gmail.com</a>
-    </p>
-    <p class="kv"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    <!-- Discord Community -->
+    <div class="discord-community-card">
+      <h2 data-i18n="contact_discord_title">💬 Discord Community</h2>
+      <p data-i18n="contact_discord_desc">Join our server to report bugs, share suggestions, and get your questions answered by the community.</p>
+      <a href="https://discord.gg/kW3PbCfWzX" target="_blank" rel="noopener noreferrer"
+         class="cta-button primary" style="display:inline-flex;align-items:center;gap:10px;margin-top:8px;text-decoration:none;">
+        <img src="../assets/images/_shared/general/discord_logo.png" alt="" style="width:26px;height:26px;filter:brightness(0) invert(1);flex-shrink:0;">
+        <span data-i18n="contact_discord_btn">Join Our Server</span>
+      </a>
+    </div>
 
     <hr class="divider">
 
-    <h2 data-i18n="contact_fansite_title">📜 Fansite Contact Person</h2>
-    <p class="kv"><strong data-i18n="contact_name">Name:</strong> Sirpants</p>
-    <p class="kv">
-      <strong data-i18n="contact_character_label">Character:</strong>
-      <a class="link" href="https://www.tibia.com/community/?name=Gasik" target="_blank" rel="noopener noreferrer">Gasik</a>
-    </p>
-    <p class="kv">
-      <strong>Email:</strong>
-      <a class="link" href="mailto:charmsbotapp@gmail.com">charmsbotapp@gmail.com</a>
-    </p>
-    <p class="kv"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    <div class="feature-box" style="margin-bottom:0;">
+      <h2 data-i18n="contact_creator_title" style="margin:0 0 12px;font-size:1.1em;">🤖 Bot Creator</h2>
+      <p class="kv"><strong data-i18n="contact_nickname">Nickname:</strong> Nugro01</p>
+      <p class="kv">
+        <strong data-i18n="contact_character_label">Character:</strong>
+        <a class="link" href="https://www.tibia.com/community/?name=Copex" target="_blank" rel="noopener noreferrer">Copex</a>
+      </p>
+      <p class="kv">
+        <strong>Email:</strong>
+        <a class="link" href="mailto:charmsbotapp+admin@gmail.com">charmsbotapp+admin@gmail.com</a>
+      </p>
+      <p class="kv" style="margin-bottom:0;"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    </div>
 
-    <hr class="divider">
+    <div class="feature-box" style="margin-bottom:0;">
+      <h2 data-i18n="contact_fansite_title" style="margin:0 0 12px;font-size:1.1em;">📜 Fansite Contact Person</h2>
+      <p class="kv"><strong data-i18n="contact_name">Name:</strong> Sirpants</p>
+      <p class="kv">
+        <strong data-i18n="contact_character_label">Character:</strong>
+        <a class="link" href="https://www.tibia.com/community/?name=Gasik" target="_blank" rel="noopener noreferrer">Gasik</a>
+      </p>
+      <p class="kv">
+        <strong>Email:</strong>
+        <a class="link" href="mailto:charmsbotapp@gmail.com">charmsbotapp@gmail.com</a>
+      </p>
+      <p class="kv" style="margin-bottom:0;"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    </div>
 
-    <h2 data-i18n="contact_webmaster_title">🛠️ Webmaster</h2>
-    <p class="kv"><strong data-i18n="contact_nickname">Nickname:</strong> Shimmbo</p>
-    <p class="kv">
-      <strong data-i18n="contact_character_label">Character:</strong>
-      <a class="link" href="https://www.tibia.com/community/?name=Mechenophobia" target="_blank" rel="noopener noreferrer">Mechenophobia</a>
-    </p>
-    <p class="kv">
-      <strong>Email:</strong>
-      <a class="link" href="mailto:charmsbotapp+web@gmail.com">charmsbotapp+web@gmail.com</a>
-    </p>
-    <p class="kv"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    <div class="feature-box" style="margin-bottom:0;">
+      <h2 data-i18n="contact_webmaster_title" style="margin:0 0 12px;font-size:1.1em;">🛠️ Webmaster</h2>
+      <p class="kv"><strong data-i18n="contact_nickname">Nickname:</strong> Shimmbo</p>
+      <p class="kv">
+        <strong data-i18n="contact_character_label">Character:</strong>
+        <a class="link" href="https://www.tibia.com/community/?name=Mechenophobia" target="_blank" rel="noopener noreferrer">Mechenophobia</a>
+      </p>
+      <p class="kv">
+        <strong>Email:</strong>
+        <a class="link" href="mailto:charmsbotapp+web@gmail.com">charmsbotapp+web@gmail.com</a>
+      </p>
+      <p class="kv" style="margin-bottom:0;"><strong data-i18n="contact_language">Language:</strong> English, Spanish</p>
+    </div>
 
     <!-- Footer -->
     <div class="footer">

@@ -25,7 +25,7 @@
 
       // ── index.html ──
       index_tagline:     'Your Tibia Hunting Companion',
-      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by active players, for players.',
+      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by hunters, for hunters.',
       index_cta_discord: 'Add to Discord',
       index_cta_commands:'View Commands',
 
@@ -47,7 +47,7 @@
       index_feat1_li4:    'Save up to 20 <code>/analysis</code> per character',
       index_feat2_title:  'Best Charms Calculator',
       index_feat2_desc:   'Find out which charms you SHOULD have for any spawn, including the reset cost and charm points requirements.',
-      index_feat2_li1:    'All 9 elemental charms evaluated',
+      index_feat2_li1:    'All 9 damage charms evaluated',
       index_feat2_li2:    'Charm reset cost included',
       index_feat2_li3:    'Save up to 20 <code>/bestcharms</code> per character',
       index_feat3_title:  'Element Analysis',
@@ -71,7 +71,7 @@
       index_uc1_title: '🔮 "Are my current charms optimal?"',
       index_uc1_desc:  "Analyzes your current charm setup and shows optimal assignments for the spawn you're hunting.",
       index_uc2_title: '🎯 "What are the absolute best charms for this spawn?"',
-      index_uc2_desc:  'Evaluates ALL elemental charms in the game and tells you which ones to unlock/upgrade, plus the reset cost.',
+      index_uc2_desc:  'Evaluates ALL damage charms in the game and tells you which ones to unlock/upgrade, plus the reset cost.',
       index_uc3_title: '🔥 "Which elements work here?"',
       index_uc3_desc:  'Quick element efficiency check—no character needed. Perfect for scouting new spawns.',
       index_uc4_title: '💰 "How do we split this party loot?"',
@@ -111,6 +111,10 @@
 
       index_cta2_title: '🤖 Ready to Optimize Your Hunts?',
       index_cta2_desc:  'Add CharmsBot to your Discord server and start maximizing your damage today.',
+
+      index_community_title: '💬 Join Our Discord Community',
+      index_community_desc:  'Report bugs, share suggestions, and get your questions answered by the community.',
+      index_community_btn:   'Join Our Server',
 
       // ── commands/index.html ──
       commands_title:         'Commands',
@@ -217,6 +221,9 @@
       contact_name:            'Name:',
       contact_character_label: 'Character:',
       contact_language:        'Language:',
+      contact_discord_title:   '💬 Discord Community',
+      contact_discord_desc:    'Join our server to report bugs, share suggestions, and get your questions answered by the community.',
+      contact_discord_btn:     'Join Our Server',
 
       // ── legal/index.html ──
       legal_title:              'Legal',
@@ -364,7 +371,7 @@
 
       // ── index.html ──
       index_tagline:     'Tu Compañero de Caza en Tibia',
-      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por juagadores activos, para jugadores.',
+      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por cazadores, para cazadores.',
       index_cta_discord: 'Añadir a Discord',
       index_cta_commands:'Ver Comandos',
 
@@ -386,7 +393,7 @@
       index_feat1_li4:    'Guarda hasta 20 <code>/analysis</code> por personaje',
       index_feat2_title:  'Calculadora de Mejores Charms',
       index_feat2_desc:   'Descubre qué charms DEBERÍAS tener para cualquier spawn, incluyendo el costo de reset y charm points requeridos.',
-      index_feat2_li1:    'Los 9 charms elementales evaluados',
+      index_feat2_li1:    'Los 9 charms de daño evaluados',
       index_feat2_li2:    'Costo de reset incluido',
       index_feat2_li3:    'Guarda hasta 20 <code>/bestcharms</code> por personaje',
       index_feat3_title:  'Análisis Elemental',
@@ -394,9 +401,9 @@
       index_feat3_li1:    'Desglose completo de vulnerabilidades',
       index_feat3_li2:    'Valores de mitigación incluidos',
       index_feat3_li3:    'Exploración rápida de spawn',
-      index_feat4_title:  'Loot y Utilidades',
-      index_feat4_desc:   'Herramientas para todo el party — reparto de loot, seguimiento de weapon proficiency XP y calculadoras de quests.',
-      index_feat4_li1:    'Reparte el loot con instrucciones de transferencia',
+      index_feat4_title:  'Botín y Utilidades',
+      index_feat4_desc:   'Herramientas para todo el party — reparto de botín, seguimiento de weapon proficiency XP y calculadoras de quests.',
+      index_feat4_li1:    'Reparte el botín con instrucciones de transferencia',
       index_feat4_li2:    'Calculadora de weapon proficiency XP',
       index_feat4_li3:    'Lista de ingredientes para Hot Cuisine Quest',
       index_feat4_li4:    'Identificador de ítems para Delivery Tasks con precios de NPC',
@@ -410,11 +417,11 @@
       index_uc1_title: '🔮 "¿Son óptimos mis charms actuales?"',
       index_uc1_desc:  'Analiza tu configuración actual de charms y muestra las asignaciones óptimas para el spawn donde cazas.',
       index_uc2_title: '🎯 "¿Cuáles son los mejores charms para este spawn?"',
-      index_uc2_desc:  'Evalúa TODOS los charms elementales del juego y te dice cuáles desbloquear o mejorar, más el costo de reset.',
+      index_uc2_desc:  'Evalúa TODOS los charms de daño del juego y te dice cuáles desbloquear o mejorar, más el costo de reset.',
       index_uc3_title: '🔥 "¿Qué elementos funcionan aquí?"',
       index_uc3_desc:  'Revisión rápida de eficiencia elemental—sin necesidad de personaje. Perfecto para explorar nuevos spawns.',
-      index_uc4_title: '💰 "¿Cómo repartimos el loot del party?"',
-      index_uc4_desc:  'Distribución equitativa del loot con desglose de daño/curación e instrucciones de transferencia.',
+      index_uc4_title: '💰 "¿Cómo repartimos el botín del party?"',
+      index_uc4_desc:  'Distribución equitativa del botín con desglose de daño/curación e instrucciones de transferencia.',
       index_uc5_title: '⚔️ "¿Cuánto weapon XP gané?"',
       index_uc5_desc:  'Calcula el weapon proficiency XP de tu hunt con desglose por dificultad de criatura y bosses.',
       index_uc6_title: '🍳 "¿Qué necesito para Hot Cuisine Quest?"',
@@ -450,6 +457,10 @@
 
       index_cta2_title: '🤖 ¿Listo para Optimizar tus Hunts?',
       index_cta2_desc:  'Añade CharmsBot a tu servidor de Discord y empieza a maximizar tu daño hoy.',
+
+      index_community_title: '💬 Únete a Nuestra Comunidad de Discord',
+      index_community_desc:  'Reporta bugs, comparte sugerencias y resuelve tus dudas con la comunidad.',
+      index_community_btn:   'Únete a Nuestro Server',
 
       // ── commands/index.html ──
       commands_title:         'Comandos',
@@ -555,6 +566,9 @@
       contact_name:            'Nombre:',
       contact_character_label: 'Personaje:',
       contact_language:        'Idioma:',
+      contact_discord_title:   '💬 Comunidad de Discord',
+      contact_discord_desc:    'Únete a nuestro server para reportar bugs, compartir sugerencias y resolver tus dudas con la comunidad.',
+      contact_discord_btn:     'Únete a Nuestro Server',
 
       // ── legal/index.html ──
       legal_title:              'Legal',
