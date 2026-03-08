@@ -43,8 +43,18 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<h2>🚚 New Command: <code>/deliverytask</code> <span class="new-badge">NEW</span></h2>
+<h2>⚔️ Command Updates</h2>
+
+<h3><code>/deliverytask</code> <span class="new-badge">NEW</span></h3>
 <p>Search for Delivery Task items directly from your Hunt Analyzer data and get instant price and NPC information — no manual lookup needed.</p>
+
+<h3><code>/splitloot</code> <span class="updated-badge">UPDATED</span></h3>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Exclude players</strong> from the split — their loot and waste are removed from the pool entirely</li>
+    <li>Raw session data attached as <code>session.txt</code> for reference</li>
+  </ul>
+</div>
 
 <h2>🌍 Website — Now in English &amp; Spanish <span class="new-badge">NEW</span></h2>
 <p>The CharmsBot website is now fully bilingual. Use the flag buttons in the header bar to switch languages — your preference is saved automatically.</p>
@@ -87,8 +97,18 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<h2>🚚 Nuevo Comando: <code>/deliverytask</code> <span class="new-badge">NUEVO</span></h2>
+<h2>⚔️ Actualizaciones de Comandos</h2>
+
+<h3><code>/deliverytask</code> <span class="new-badge">NUEVO</span></h3>
 <p>Busca ítems de Delivery Task directamente desde tu Hunt Analyzer y obtén precios e información del NPC al instante — sin búsqueda manual.</p>
+
+<h3><code>/splitloot</code> <span class="updated-badge">ACTUALIZADO</span></h3>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Excluir jugadores</strong> del split — su loot y waste se eliminan completamente del pool</li>
+    <li>Datos de sesión adjuntos como <code>session.txt</code> para referencia</li>
+  </ul>
+</div>
 
 <h2>🌍 Sitio Web — Ahora en Inglés y Español <span class="new-badge">NUEVO</span></h2>
 <p>El sitio web de CharmsBot es ahora completamente bilingüe. Usa los botones de banderas en la barra superior para cambiar de idioma — tu preferencia se guarda automáticamente.</p>
