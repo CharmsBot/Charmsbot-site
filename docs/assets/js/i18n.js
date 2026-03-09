@@ -75,7 +75,7 @@
       index_uc3_title: '🔥 "Which elements work here?"',
       index_uc3_desc:  'Quick element efficiency check—no character needed. Perfect for scouting new spawns.',
       index_uc4_title: '💰 "How do we split this party loot?"',
-      index_uc4_desc:  'Equitable loot distribution with damage/healing breakdown, extra expenses, and player exclusion.',
+      index_uc4_desc:  'Equitable loot distribution with damage/healing breakdown, extra expenses, and player exclusion. Only available in channels named <code>hunt-analyser</code>, <code>hunt-analyzer</code>, or <code>split-loot</code>.',
       index_uc5_title: '⚔️ "How much weapon XP did I earn?"',
       index_uc5_desc:  'Calculate proficiency XP from your hunt with breakdowns by creature difficulty and bosses.',
       index_uc6_title: '🍳 "What do I need for Hot Cuisine Quest?"',
@@ -238,21 +238,17 @@
       legal_monetisation_body1: 'This fansite does not use crypto mining, hidden tracking, or any deceptive monetisation methods.',
       legal_monetisation_body2: 'If monetisation is added in the future (e.g., sponsorships or ads), it will be clearly disclosed to visitors.',
 
-      // Página Términos de Servicio
       tos_page_title:    'Terms of Service',
       tos_effective:     'Effective Date: August 4, 2025',
       tos_intro:         'Welcome to <strong>CharmsBot</strong> ("the Bot,\u201d "we,\u201d "us,\u201d or "our\u201d), a Discord bot designed to assist players of the game Tibia with character management and hunt analysis. By using the Bot, you agree to be bound by these Terms of Service. If you do not agree with these terms, please do not use the Bot.',
 
-      // Página Privacy Policy
       priv_page_title:   'Privacy Policy',
       priv_effective:    'Effective Date: August 4, 2025',
       priv_intro:        'This Privacy Policy describes how <strong>CharmsBot</strong> ("the Bot,\u201d "we,\u201d or "us\u201d) collects, uses, stores, and protects your data when you interact with it on Discord. By using the Bot, you agree to the practices outlined in this policy. If you do not agree, please refrain from using the Bot.',
 
-      // Subnav compartido
       subnav_terms:      'Terms of Service',
       subnav_privacy:    'Privacy Policy',
 
-      // ToS — títulos de secciones (accordion)
       tos_s1_p1:   'By adding CharmsBot to a Discord server, using its commands, or interacting with its features, you acknowledge that you have read, understood, and agree to comply with these Terms of Service. These terms apply to all users, whether you are an individual player or a server administrator. We reserve the right to update these terms at any time, and changes will be posted on this page with an updated "Effective Date." Your continued use of the Bot after changes constitutes acceptance of the updated terms.',
       tos_s2_intro:       'CharmsBot is a tool designed to enhance your Tibia gaming experience by providing features such as:',
       tos_s2_feat1_label: 'Character Management:',
@@ -304,7 +300,6 @@
       tos_s9_title:  '9. Termination',
       tos_s10_title: '10. Changes to These Terms',
 
-      // Privacy — títulos de secciones
       priv_s1_title: '1. Data We Collect',
       priv_s1_intro: "To provide the Bot's functionality, we collect the following data:",
       priv_s1_r1:    '<strong>Discord User ID:</strong> A unique identifier provided by Discord to associate your data with your account, ensuring it is accessible only to you.',
@@ -421,7 +416,7 @@
       index_uc3_title: '🔥 "¿Qué elementos funcionan aquí?"',
       index_uc3_desc:  'Revisión rápida de eficiencia elemental—sin necesidad de personaje. Perfecto para explorar nuevos spawns.',
       index_uc4_title: '💰 "¿Cómo repartimos el botín del party?"',
-      index_uc4_desc:  'Distribución equitativa del hunt con desglose de daño/curación, gastos extra y exclusión de jugadores.',
+      index_uc4_desc:  'Distribución equitativa del hunt con desglose de daño/curación, gastos extra y exclusión de jugadores. Solo disponible en canales llamados <code>hunt-analyser</code>, <code>hunt-analyzer</code> o <code>split-loot</code>.',
       index_uc5_title: '⚔️ "¿Cuánto weapon XP gané?"',
       index_uc5_desc:  'Calcula el weapon proficiency XP de tu hunt con desglose por dificultad de criatura y bosses.',
       index_uc6_title: '🍳 "¿Qué necesito para Hot Cuisine Quest?"',
@@ -583,21 +578,17 @@
       legal_monetisation_body1: 'Este fansite no usa minería de criptomonedas, rastreo oculto ni métodos de monetización engañosos.',
       legal_monetisation_body2: 'Si en el futuro se añade monetización (p. ej. patrocinios o anuncios), se informará claramente a los visitantes.',
 
-      // Página Términos de Servicio
       tos_page_title:    'Términos de Servicio',
       tos_effective:     'Fecha de Vigencia: 4 de agosto de 2025',
       tos_intro:         'Bienvenido a <strong>CharmsBot</strong>, un bot de Discord diseñado para ayudar a jugadores de Tibia con la gestión de personajes y el análisis de hunts. Al usar el Bot, aceptas estos Términos de Servicio. Si no estás de acuerdo, por favor no uses el Bot.',
 
-      // Página Privacy Policy
       priv_page_title:   'Política de Privacidad',
       priv_effective:    'Fecha de Vigencia: 4 de agosto de 2025',
       priv_intro:        'Esta Política de Privacidad describe cómo <strong>CharmsBot</strong> ("el Bot", "nosotros" o "nuestro") recopila, usa, almacena y protege tus datos cuando interactúas con él en Discord. Al usar el Bot, aceptas las prácticas descritas en esta política. Si no estás de acuerdo, por favor abstente de usar el Bot.',
 
-      // Subnav compartido
       subnav_terms:      'Términos de Servicio',
       subnav_privacy:    'Política de Privacidad',
 
-      // ToS — títulos de secciones (accordion)
       tos_s1_p1:   'Al agregar CharmsBot a un servidor de Discord, usar sus comandos o interactuar con sus funciones, reconoces que has leído, entendido y aceptas cumplir con estos Términos de Servicio. Estos términos aplican a todos los usuarios, ya seas un jugador individual o un administrador de servidor. Nos reservamos el derecho de actualizar estos términos en cualquier momento; los cambios se publicarán en esta página con una "Fecha de Vigencia" actualizada. El uso continuo del Bot después de los cambios constituye la aceptación de los términos actualizados.',
       tos_s2_intro:       'CharmsBot es una herramienta diseñada para mejorar tu experiencia en Tibia proporcionando funciones como:',
       tos_s2_feat1_label: 'Gestión de Personajes:',
@@ -649,7 +640,6 @@
       tos_s9_title:  '9. Terminación',
       tos_s10_title: '10. Cambios en estos Términos',
 
-      // Privacy — títulos de secciones
       priv_s1_title: '1. Datos que Recopilamos',
       priv_s1_intro: 'Para proporcionar la funcionalidad del Bot, recopilamos los siguientes datos:',
       priv_s1_r1:    '<strong>ID de Usuario de Discord:</strong> Un identificador único proporcionado por Discord para asociar tus datos con tu cuenta, garantizando que solo tú puedas acceder a ellos.',
@@ -703,7 +693,6 @@
   let currentLang = localStorage.getItem('charmsbot_lang') || 'en';
 
   // ─── API pública ──────────────────────────────────────────
-  // Expuesta para que header-bar.js pueda re-aplicar tras insertar el header
   window.applyHeaderTranslations = function() { applyTranslations(); };
 
   window.t = function (key, fallback) {
