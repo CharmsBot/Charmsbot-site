@@ -25,7 +25,7 @@
 
       // ── index.html ──
       index_tagline:     'Your Tibia Hunting Companion',
-      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by hunters, for hunters.',
+      index_description: 'Optimize your charm assignments, analyze hunt efficiency, calculate damage, and manage your characters—all from Discord. Built by active players, for players.',
       index_cta_discord: 'Add to Discord',
       index_cta_commands:'View Commands',
 
@@ -366,7 +366,7 @@
 
       // ── index.html ──
       index_tagline:     'Tu Compañero de Caza en Tibia',
-      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por cazadores, para cazadores.',
+      index_description: 'Optimiza tus asignaciones de charms, analiza eficiencia de hunt, calcula daño y gestiona tus personajes—todo desde Discord. Hecho por jugadores activos, para jugadores .',
       index_cta_discord: 'Añadir a Discord',
       index_cta_commands:'Ver Comandos',
 
