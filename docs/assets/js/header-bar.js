@@ -9,9 +9,6 @@
 
   // ── Rutas relativas (se ajustan solos según la profundidad del directorio) ──
   function getPathPrefix() {
-    // /index.html          → ''
-    // /commands/index.html → '../'
-    // /privacy/index.html  → '../'
     const parts = window.location.pathname
       .replace(/\/[^\/]*$/, '')
       .split('/')
@@ -98,7 +95,6 @@
 
   // ═══════════════════════════════════════════════════════════════════════════
   // SERVER SAVE COUNTDOWN
-  // Tibia server save: 10:00 AM hora de Alemania (Europe/Berlin, DST auto)
   // ═══════════════════════════════════════════════════════════════════════════
   function updateServerSaveCountdown() {
     const timerEl = document.getElementById('serverSaveCountdown');
@@ -125,12 +121,6 @@
 
   // ═══════════════════════════════════════════════════════════════════════════
   // BOT STATUS
-  // ─────────────────────────────────────────────────────────────────────────
-  // Fix del bug "siempre offline en primer cargado":
-  //   El Worker corregido ya hace await refreshCache() antes de responder,
-  //   pero si el cache falla por algún motivo el retry aquí actúa como
-  //   segunda línea de defensa: si la primera respuesta es offline,
-  //   reintentamos UNA sola vez después de 4 segundos.
   // ═══════════════════════════════════════════════════════════════════════════
   let _retryDone = false;
 
@@ -156,17 +146,13 @@
 
   async function updateBotStatus(isRetry) {
     try {
-      const res    = await fetch(`${BOT_STATUS_API}?t=${Date.now()}`, {
-        cache: 'no-store',
-        mode:  'cors'
-      });
-      const data   = await res.json();
+      // Sin cache: 'no-store' ni ?t=Date.now() — usa CF Cache del Worker
+      const res  = await fetch(BOT_STATUS_API, { mode: 'cors' });
+      const data = await res.json();
       const online = data.online === true || data.online === 'true';
 
       _applyBotStatus(online);
 
-      // Retry único si responde offline y es el primer intento.
-      // Cubre el caso donde el Worker estaba en cold-start.
       if (!online && !isRetry && !_retryDone) {
         _retryDone = true;
         setTimeout(() => updateBotStatus(true), 4000);
@@ -180,8 +166,6 @@
   // ═══════════════════════════════════════════════════════════════════════════
   // BOOSTED CREATURES / BOSSES
   // ═══════════════════════════════════════════════════════════════════════════
-
-  // Excepciones: nombres cuyo archivo en disco difiere del nombre de la API
   const NAME_EXCEPTIONS = {
     'the Enraged Thorn Knight': 'The_Enraged_Thorn_Knight.gif',
     'the Percht Queen':         'The_Percht_Queen.gif',
@@ -190,7 +174,6 @@
     'the Time Guardian':        'The_Time_Guardian.gif',
   };
 
-  // Artículos / preposiciones que no se capitalizan en posición media
   const SMALL_WORDS = new Set(['of','the','and','to','a','an','in','on','at','for','from','with']);
 
   function toBoostedFilename(name) {
@@ -199,8 +182,8 @@
 
     return String(name)
       .trim()
-      .replace(/[\u200B\u200C\u200D\uFEFF]/g, '') // caracteres invisibles
-      .replace(/[\u2018\u2019]/g, "'")              // comillas tipográficas → ASCII
+      .replace(/[\u200B\u200C\u200D\uFEFF]/g, '')
+      .replace(/[\u2018\u2019]/g, "'")
       .replace(/\s+/g, ' ')
       .split(' ')
       .map((w, i) => {
@@ -220,10 +203,8 @@
     const p = getPathPrefix();
 
     try {
-      const res  = await fetch(`${BOOSTED_API}?t=${Date.now()}`, {
-        cache: 'no-store',
-        mode:  'cors'
-      });
+      // Sin cache: 'no-store' ni ?t=Date.now() — usa CF Cache del Worker
+      const res  = await fetch(BOOSTED_API, { mode: 'cors' });
       const data = await res.json();
 
       if (data.boostedCreature) {
@@ -255,17 +236,13 @@
   function init() {
     insertHeaderHTML();
 
-    // Traducir inmediatamente — i18n.js carga ANTES que header-bar.js
-    // así que window.t() ya existe en este punto.
     translateHeader();
 
-    // Seguridad: si por algún timing t() aún no existe, reintentamos en 50ms
     if (typeof window.t !== 'function') {
       setTimeout(translateHeader, 50);
       setTimeout(translateHeader, 200);
     }
 
-    // Marcar bandera activa según idioma actual
     function updateActiveLangBtn() {
       var lang = typeof getCurrentLang === 'function' ? getCurrentLang() : 'en';
       document.querySelectorAll('.lang-btn').forEach(function(btn) {
@@ -275,11 +252,9 @@
 
     updateActiveLangBtn();
 
-    // Re-traducir cuando el usuario cambia de idioma
     window.addEventListener('langchange', function() {
       translateHeader();
       updateActiveLangBtn();
-      // También re-aplicar el status del bot con la nueva traducción
       var container = document.getElementById('botStatusContainer');
       var textEl = container && container.querySelector('.bot-status-text');
       if (!textEl) return;
@@ -289,15 +264,14 @@
       }
     });
 
-    // Pequeño delay para que el DOM termine de insertar el header
     setTimeout(function () {
       updateBotStatus(false);
       updateBoosted();
       updateServerSaveCountdown();
 
-      setInterval(function () { updateBotStatus(false); }, 30_000); // cada 30 s
-      setInterval(updateServerSaveCountdown, 1_000);                 // cada 1 s
-      setInterval(updateBoosted, 300_000);                           // cada 5 min
+      setInterval(function () { updateBotStatus(false); }, 300_000); // cada 5 min
+      setInterval(updateServerSaveCountdown, 1_000);                  // cada 1 s
+      setInterval(updateBoosted, 3_600_000);                          // cada 1 hora
     }, 50);
   }
 
