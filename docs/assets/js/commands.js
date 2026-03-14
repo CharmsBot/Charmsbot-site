@@ -273,6 +273,7 @@ function renderAllCommands() {
 document.addEventListener('DOMContentLoaded', function () {
   renderAllCommands();
 
+  // Re-render al cambiar idioma
   window.addEventListener('langchange', () => {
     renderAllCommands();
   });
@@ -301,14 +302,14 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') navigateImage(1);
   });
 
-  
+  // ✅ Delegación de eventos (clave para que siga funcionando tras renderAllCommands)
   document.addEventListener('click', function (e) {
     const card = e.target.closest('.command-card');
     if (!card) return;
 
     const id = card.dataset.commandId;
     const all = getCommandsData();
-    const cmd = [...all.character, ...all.analysis, ...all.hunt, ...all.utilities].find(c => c.id === id);
+    const cmd = [...all.character,...all.analysis,...all.hunt,...all.utilities].find(c=>c.id===id);
     if (cmd) openModal(cmd);
   });
 });
