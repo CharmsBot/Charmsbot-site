@@ -272,7 +272,11 @@ function renderAllCommands() {
 
 document.addEventListener('DOMContentLoaded', function () {
   renderAllCommands();
-  window.addEventListener('langchange', renderAllCommands);
+
+  window.addEventListener('langchange', () => {
+    renderAllCommands();
+  });
+
   document.querySelectorAll('.tab-button').forEach(btn => {
     btn.addEventListener('click', function () {
       document.querySelectorAll('.tab-button').forEach(b=>b.classList.remove('active'));
@@ -283,23 +287,28 @@ document.addEventListener('DOMContentLoaded', function () {
       if (content) content.classList.add('active');
     });
   });
+
   document.getElementById('modalClose').addEventListener('click', closeModal);
   document.getElementById('modalPrev').addEventListener('click', ()=>navigateImage(-1));
   document.getElementById('modalNext').addEventListener('click', ()=>navigateImage(1));
   document.getElementById('commandModal').addEventListener('click', e=>{
     if (e.target === document.getElementById('commandModal')) closeModal();
   });
+
   document.addEventListener('keydown', e=>{
     if (e.key === 'Escape') { closeModal(); closeImageLightbox(); }
     if (e.key === 'ArrowLeft')  navigateImage(-1);
     if (e.key === 'ArrowRight') navigateImage(1);
   });
-  document.querySelectorAll('.command-card').forEach(card => {
-    card.addEventListener('click', function() {
-      const id = this.dataset.commandId;
-      const all = getCommandsData();
-      const cmd = [...all.character,...all.analysis,...all.hunt,...all.utilities].find(c=>c.id===id);
-      if (cmd) openModal(cmd);
-    });
+
+  
+  document.addEventListener('click', function (e) {
+    const card = e.target.closest('.command-card');
+    if (!card) return;
+
+    const id = card.dataset.commandId;
+    const all = getCommandsData();
+    const cmd = [...all.character, ...all.analysis, ...all.hunt, ...all.utilities].find(c => c.id === id);
+    if (cmd) openModal(cmd);
   });
 });
