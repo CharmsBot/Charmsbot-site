@@ -66,7 +66,6 @@ const CHANGELOG_VERSIONS = [
     <li>Run <code>/setup splitloot</code> inside the desired channel to configure it</li>
     <li>Clear error when used in the wrong channel, with a mention of the correct one</li>
     <li>Clear error when no channel has been configured yet</li>
-    <li>Pasting a solo Hunt Analyser now shows a descriptive error with a <strong>Try Again</strong> button</li>
   </ul>
 </div>
 
@@ -126,7 +125,6 @@ const CHANGELOG_VERSIONS = [
     <li>Ejecuta <code>/setup splitloot</code> dentro del canal deseado para configurarlo</li>
     <li>Error claro al usar el comando en el canal incorrecto, con mención del canal correcto</li>
     <li>Error claro cuando aún no se ha configurado ningún canal</li>
-    <li>Al pegar un Hunt Analyser individual se muestra un error descriptivo con botón <strong>Intentar de nuevo</strong></li>
   </ul>
 </div>
 
