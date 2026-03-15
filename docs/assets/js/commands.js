@@ -192,6 +192,11 @@ function getCommandsData() {
         hasImages: false
       },
       {
+        id: 'soulcore', name: '/soulcore',
+        desc: _t('cmd_soulcore_desc', 'Track your completed Soul Cores per character and monitor your Animus Mastery EXP bonuses'),
+        hasImages: false
+      },
+      {
         id: 'lang-personal', name: '/lang personal',
         desc: _t('cmd_lang_personal_desc', 'Set your personal language preference (English or Spanish). Your choice overrides the server default and is saved permanently.'),
         hasImages: false

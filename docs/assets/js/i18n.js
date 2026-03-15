@@ -205,6 +205,7 @@
       cmd_weaponxp_cap2:   '2) A summary is displayed with the number of monsters and bosses encountered, total proficiency XP gained in the hunt, and XP contribution from each monster and boss.',
       cmd_hotcuisine_desc: 'Calculate ingredients for Hot Cuisine Quest',
       cmd_deliverytask_desc:'Search for Delivery Task items in your Hunt Analyzer and get price and NPC information',
+      cmd_soulcore_desc:   'Track your completed Soul Cores per character and monitor your Animus Mastery EXP bonuses',
 
       // ── changelog/index.html ──
       changelog_title:    'Changelog',
@@ -545,6 +546,7 @@
       cmd_weaponxp_cap2:   '2) Se muestra un resumen con el número de monstruos y bosses encontrados, el weapon proficiency XP total ganado en el hunt, y la contribución de XP de cada monstruo y boss.',
       cmd_hotcuisine_desc: 'Calcula los ingredientes para Hot Cuisine Quest',
       cmd_deliverytask_desc:'Busca ítems de Delivery Task en tu Hunt Analyzer y obtén información de precio y NPC',
+      cmd_soulcore_desc:   'Lleva el registro de tus Soul Cores completados por personaje y monitorea tus bonuses de EXP del Animus Mastery',
 
       // ── changelog/index.html ──
       changelog_title:    'Changelog',
