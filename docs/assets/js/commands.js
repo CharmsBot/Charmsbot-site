@@ -1,12 +1,7 @@
-// docs/assets/js/commands.js — CharmsBot
-// Captions descriptivos reales. Títulos de tabs y descripciones usan i18n.
-
-function _t(key, fallback) {
-  return (typeof t === 'function') ? t(key) : (fallback !== undefined ? fallback : key);
-}
-
 function getCommandsData() {
+  const _t = window.t || ((k, fb) => fb);
   return {
+
     character: [
       {
         id: 'character-add', name: '/character add',
@@ -195,15 +190,23 @@ function getCommandsData() {
         id: 'soulcore', name: '/soulcore',
         desc: _t('cmd_soulcore_desc', 'Track your completed Soul Cores per character and monitor your Animus Mastery EXP bonuses'),
         hasImages: false
-      },
+      }
+    ],
+
+    setup: [
       {
-        id: 'lang-personal', name: '/lang personal',
-        desc: _t('cmd_lang_personal_desc', 'Set your personal language preference (English or Spanish). Your choice overrides the server default and is saved permanently.'),
+        id: 'setup-lang', name: '/setup lang',
+        desc: _t('cmd_setup_lang_desc', 'Set your personal language preference. Your choice overrides the server default.'),
         hasImages: false
       },
       {
-        id: 'lang-server', name: '/lang server',
-        desc: _t('cmd_lang_server_desc', 'Set the default language for all users in this server (requires Manage Server permission). Users with a personal preference keep theirs.'),
+        id: 'setup-lang-server', name: '/setup lang-server',
+        desc: _t('cmd_setup_lang_server_desc', 'Set the default language for all users in this server (requires Manage Server permission). Users with a personal preference keep theirs.'),
+        hasImages: false
+      },
+      {
+        id: 'setup-splitloot', name: '/setup splitloot',
+        desc: _t('cmd_setup_splitloot_desc', 'Set the channel where /splitloot can be used. Run this command inside the desired channel. Requires Manage Server permission.'),
         hasImages: false
       }
     ]
@@ -269,7 +272,7 @@ function attachImageZoomListeners() {
 }
 function renderAllCommands() {
   const data = getCommandsData();
-  ['character','analysis','hunt','utilities'].forEach(cat => {
+  ['character','analysis','hunt','utilities','setup'].forEach(cat => {
     const c = document.querySelector(`#tab-${cat} .commands-grid`);
     if (c) c.innerHTML = data[cat].map(createCommandCard).join('');
   });
@@ -278,7 +281,6 @@ function renderAllCommands() {
 document.addEventListener('DOMContentLoaded', function () {
   renderAllCommands();
 
-  // Re-render al cambiar idioma
   window.addEventListener('langchange', () => {
     renderAllCommands();
   });
@@ -307,14 +309,12 @@ document.addEventListener('DOMContentLoaded', function () {
     if (e.key === 'ArrowRight') navigateImage(1);
   });
 
-  // ✅ Delegación de eventos (clave para que siga funcionando tras renderAllCommands)
   document.addEventListener('click', function (e) {
     const card = e.target.closest('.command-card');
     if (!card) return;
-
     const id = card.dataset.commandId;
     const all = getCommandsData();
-    const cmd = [...all.character,...all.analysis,...all.hunt,...all.utilities].find(c=>c.id===id);
+    const cmd = [...all.character,...all.analysis,...all.hunt,...all.utilities,...all.setup].find(c=>c.id===id);
     if (cmd) openModal(cmd);
   });
 });
