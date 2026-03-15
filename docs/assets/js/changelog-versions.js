@@ -23,6 +23,133 @@
 
 const CHANGELOG_VERSIONS = [
 
+  // ── v2.6.0 ────────────────────────────────────────────────────────────────
+  {
+    version: 'v2.6.0',
+    pill: 'Mar 2026',
+    pill_es: 'Mar 2026',
+    en: `
+<h2>🏗️ Infrastructure Migration</h2>
+<div class="highlight-box">
+  <h3>Migrated to a new cloud server</h3>
+  <p>CharmsBot and its database have been migrated to a new cloud infrastructure for improved reliability, performance, and long-term stability. No data was lost during the migration.</p>
+</div>
+
+<h2>⚙️ New /setup Command Group <span class="new-badge">NEW</span></h2>
+<p>Language and configuration commands have been reorganized under a new <code>/setup</code> group.</p>
+<div class="feature-box">
+  <ul>
+    <li><code>/setup lang</code> — Set your personal language (anyone)</li>
+    <li><code>/setup lang-server</code> — Set the server default language (Manage Server required)</li>
+    <li><code>/setup splitloot</code> — Configure the channel where <code>/splitloot</code> can be used (Manage Server required)</li>
+  </ul>
+</div>
+<div class="note-box">
+  <strong>Migration:</strong> <code>/lang personal</code> → <code>/setup lang</code> &nbsp;|&nbsp; <code>/lang server</code> → <code>/setup lang-server</code>
+</div>
+
+<h2>🧿 /soulcore <span class="new-badge">NEW</span></h2>
+<p>Track your completed Soul Cores per character and monitor your Animus Mastery EXP bonuses.</p>
+<div class="feature-box green">
+  <ul>
+    <li>Toggle soul cores as completed per character</li>
+    <li>Tracks global EXP bonus (+1% at 100 completed, +2% at 200 completed)</li>
+    <li>Shows creatures that give +4% EXP bonus</li>
+    <li>🔍 Search soul cores by creature name</li>
+  </ul>
+</div>
+
+<h2>🔀 /splitloot — Channel Configuration <span class="updated-badge">UPDATED</span></h2>
+<p>Admins can now configure exactly which channel <code>/splitloot</code> is allowed in.</p>
+<div class="feature-box green">
+  <ul>
+    <li>Run <code>/setup splitloot</code> inside the desired channel to configure it</li>
+    <li>Clear error when used in the wrong channel, with a mention of the correct one</li>
+    <li>Clear error when no channel has been configured yet</li>
+    <li>Pasting a solo Hunt Analyser now shows a descriptive error with a <strong>Try Again</strong> button</li>
+  </ul>
+</div>
+
+<h2>🐛 Bug Fixes</h2>
+<div class="bug-fix-box">
+  <h3>Discord Bot</h3>
+  <ul>
+    <li>Fixed Hunt Analyser being silently accepted by <code>/splitloot</code> instead of showing an error</li>
+    <li>Fixed <code>/soulcore</code> timeout not preserving the embed when there were unsaved changes</li>
+    <li>Fixed language preference not being applied correctly on first interaction after a server restart</li>
+    <li>Fixed rare case where modal submission could fail silently under high load</li>
+  </ul>
+</div>
+<div class="bug-fix-box">
+  <h3>Website</h3>
+  <ul>
+    <li>Fixed command cards not re-rendering when switching languages</li>
+    <li>Fixed tab layout breaking to a second line in Spanish</li>
+    <li>Fixed <code>/soulcore</code> missing from the Tools tab</li>
+  </ul>
+</div>`,
+    es: `
+<h2>🏗️ Migración de Infraestructura</h2>
+<div class="highlight-box">
+  <h3>Migración a un nuevo servidor en la nube</h3>
+  <p>CharmsBot y su base de datos han sido migrados a una nueva infraestructura en la nube para mejorar la fiabilidad, el rendimiento y la estabilidad a largo plazo. No se perdió ningún dato durante la migración.</p>
+</div>
+
+<h2>⚙️ Nuevo Grupo de Comandos /setup <span class="new-badge">NUEVO</span></h2>
+<p>Los comandos de idioma y configuración se reorganizaron bajo el nuevo grupo <code>/setup</code>.</p>
+<div class="feature-box">
+  <ul>
+    <li><code>/setup lang</code> — Configura tu idioma personal (cualquier usuario)</li>
+    <li><code>/setup lang-server</code> — Configura el idioma del servidor (requiere Administrar Servidor)</li>
+    <li><code>/setup splitloot</code> — Configura el canal donde se puede usar <code>/splitloot</code> (requiere Administrar Servidor)</li>
+  </ul>
+</div>
+<div class="note-box">
+  <strong>Migración:</strong> <code>/lang personal</code> → <code>/setup lang</code> &nbsp;|&nbsp; <code>/lang server</code> → <code>/setup lang-server</code>
+</div>
+
+<h2>🧿 /soulcore <span class="new-badge">NUEVO</span></h2>
+<p>Lleva el registro de tus Soul Cores completados por personaje y monitorea tus bonuses de EXP del Animus Mastery.</p>
+<div class="feature-box green">
+  <ul>
+    <li>Marca soul cores como completados por personaje</li>
+    <li>Rastrea el bonus global de EXP (+1% al completar 100, +2% al completar 200)</li>
+    <li>Muestra criaturas que otorgan +4% de bonus de EXP</li>
+    <li>🔍 Búsqueda de soul cores por nombre de criatura</li>
+  </ul>
+</div>
+
+<h2>🔀 /splitloot — Configuración de Canal <span class="updated-badge">ACTUALIZADO</span></h2>
+<p>Los admins ahora pueden configurar exactamente en qué canal se permite usar <code>/splitloot</code>.</p>
+<div class="feature-box green">
+  <ul>
+    <li>Ejecuta <code>/setup splitloot</code> dentro del canal deseado para configurarlo</li>
+    <li>Error claro al usar el comando en el canal incorrecto, con mención del canal correcto</li>
+    <li>Error claro cuando aún no se ha configurado ningún canal</li>
+    <li>Al pegar un Hunt Analyser individual se muestra un error descriptivo con botón <strong>Intentar de nuevo</strong></li>
+  </ul>
+</div>
+
+<h2>🐛 Corrección de Bugs</h2>
+<div class="bug-fix-box">
+  <h3>Discord Bot</h3>
+  <ul>
+    <li>Corregido el Hunt Analyser siendo aceptado silenciosamente por <code>/splitloot</code> en lugar de mostrar un error</li>
+    <li>Corregido el timeout de <code>/soulcore</code> que no preservaba el embed cuando había cambios sin guardar</li>
+    <li>Corregida la preferencia de idioma que no se aplicaba correctamente en la primera interacción tras reiniciar el servidor</li>
+    <li>Corregido un caso raro donde el envío de un modal podía fallar silenciosamente bajo carga alta</li>
+  </ul>
+</div>
+<div class="bug-fix-box">
+  <h3>Sitio Web</h3>
+  <ul>
+    <li>Corregido el re-renderizado de las tarjetas de comandos al cambiar de idioma</li>
+    <li>Corregido el layout de tabs que se rompía a una segunda línea en español</li>
+    <li>Corregido <code>/soulcore</code> que no aparecía en la pestaña Herramientas</li>
+  </ul>
+</div>`
+  },
+  
   // ── v2.5.0 ────────────────────────────────────────────────────────────────
   {
     version: 'v2.5.0',
