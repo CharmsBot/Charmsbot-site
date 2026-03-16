@@ -61,6 +61,7 @@
       index_feat4_li2:    'Weapon proficiency XP calculator',
       index_feat4_li3:    'Hot Cuisine Quest ingredient list',
       index_feat4_li4:    'Delivery Task item identifier with NPC prices',
+      index_feat4_li5:    'Soul Core tracker with Animus Mastery EXP bonus monitor',
       index_feat5_title:  'English & Spanish',
       index_feat5_desc:   'CharmsBot is fully bilingual. Every response, menu, button, and error message is available in both languages.',
       index_feat5_li1:    'Set your personal language with <code>/setup lang</code>',
@@ -82,6 +83,8 @@
       index_uc6_desc:  'Ingredient list grouped by city and NPC, with optional character multiplier.',
       index_uc7_title: '📦 "Which looted items are worth selling to NPCs?"',
       index_uc7_desc:  'Scans your Hunt Analyzer loot and identifies Delivery Task items with the best NPC sell price.',
+      index_uc8_title: '🧿 "How many Soul Cores have I completed?"',
+      index_uc8_desc:  'Track your Soul Core progress per character and monitor your Animus Mastery EXP bonuses — including which creatures give +4% EXP.',
 
       index_charm_title:        '🎓 Understanding the Charm System',
       index_charm_budget_title: '💎 Charm Points Budget',
@@ -407,6 +410,7 @@
       index_feat4_li2:    'Calculadora de weapon proficiency XP',
       index_feat4_li3:    'Lista de ingredientes para Hot Cuisine Quest',
       index_feat4_li4:    'Identificador de ítems para Delivery Tasks con precios de NPC',
+      index_feat4_li5:    'Soul Core tracker con monitor de bonus de EXP del Animus Mastery',
       index_feat5_title:  'Inglés y Español',
       index_feat5_desc:   'CharmsBot es completamente bilingüe. Cada respuesta, menú, botón y mensaje de error está disponible en ambos idiomas.',
       index_feat5_li1:    'Configura tu idioma personal con <code>/setup lang</code>',
@@ -428,6 +432,8 @@
       index_uc6_desc:  'Lista de ingredientes agrupada por ciudad y NPC, con multiplicador de personajes opcional.',
       index_uc7_title: '📦 "¿Qué ítems del loot vale la pena vender a NPCs?"',
       index_uc7_desc:  'Analiza el loot de tu Hunt Analyzer e identifica ítems de Delivery Tasks con el mejor precio de venta a NPC.',
+      index_uc8_title: '🧿 "¿Cuántos Soul Cores he completado?"',
+      index_uc8_desc:  'Rastrea tu progreso de Soul Cores por personaje y monitorea tus bonuses de EXP del Animus Mastery — incluyendo qué criaturas dan +4% de EXP.',
 
       index_charm_title:        '🎓 Entendiendo el Sistema de Charms',
       index_charm_budget_title: '💎 Presupuesto de Charm Points',
