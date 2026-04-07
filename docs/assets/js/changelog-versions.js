@@ -72,8 +72,9 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<div class="note-box">
-  <strong>Setup Tip:</strong> Use <code>/character edit</code> to keep your unlocked charms list updated! <code>/analysis</code> will only recommend charms you actually have.
+<div class="highlight-box">
+  <h3>📊 Analysis & Setup</h3>
+  <p>The <code>/analysis</code> command now provides perfectly accurate hunt simulations using official Tibia damage rounding metrics. It respects your <strong>Dynamic Echoes Budget</strong> and will only analyze the Minor Charms you have explicitly unlocked using <code>/character edit</code>.</p>
 </div>
 
 <div class="highlight-box">
@@ -130,8 +131,9 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<div class="note-box">
-  <strong>Tip de Configuración:</strong> ¡Usa <code>/character edit</code> para mantener tu lista de charms al día! <code>/analysis</code> solo recomendará los charms que ya tienes.
+<div class="highlight-box">
+  <h3>📊 Analysis y Configuración</h3>
+  <p>El comando <code>/analysis</code> ahora genera simulaciones perfectas utilizando el sistema de redondeo de daño oficial de Tibia. Además, respeta estrictamente tu <strong>Presupuesto de Echoes</strong> y solo analizará los Minor Charms que hayas desbloqueado mediante <code>/character edit</code>.</p>
 </div>
 
 <div class="highlight-box">
