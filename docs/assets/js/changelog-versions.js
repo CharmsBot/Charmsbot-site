@@ -75,6 +75,9 @@ const CHANGELOG_VERSIONS = [
 <div class="highlight-box">
   <h3>📊 Analysis & Setup</h3>
   <p>The <code>/analysis</code> command now provides perfectly accurate hunt simulations using official Tibia damage rounding metrics. It respects your <strong>Dynamic Echoes Budget</strong> and will only analyze the Minor Charms you have explicitly unlocked using <code>/character edit</code>.</p>
+  <div class="note-box">
+    <strong>Note:</strong> You must set your <strong>Critical HP Threshold</strong> (via <code>/character edit</code>) to enable the assignment and analysis of Critical Charms.
+  </div>
 </div>
 
 <div class="feature-box green">
@@ -139,6 +142,9 @@ const CHANGELOG_VERSIONS = [
 <div class="highlight-box">
   <h3>📊 Analysis y Configuración</h3>
   <p>El comando <code>/analysis</code> ahora genera simulaciones perfectas utilizando el sistema de redondeo de daño oficial de Tibia. Además, respeta estrictamente tu <strong>Presupuesto de Echoes</strong> y solo analizará los Minor Charms que hayas desbloqueado mediante <code>/character edit</code>.</p>
+  <div class="note-box">
+    <strong>Nota:</strong> Es necesario fijar un <strong>Umbral de Vida Crítica</strong> (vía <code>/character edit</code>) para poder asignar y analizar Charms Críticos.
+  </div>
 </div>
 
 <div class="feature-box green">
