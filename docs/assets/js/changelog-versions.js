@@ -40,6 +40,10 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
+<div class="note-box">
+  <strong>Disclaimer - Critical Charms:</strong> Because the game client does not provide the necessary data to accurately calculate a character's raw DPS (which depends on level, vocation, and skills), it is currently not mathematically possible to automatically estimate optimal assignments for Critical Charms. Therefore, their assignment must be managed manually. Should the game expose these statistics in the future, the bot is prepared to handle these assignments automatically, just as it does with Elemental Charms.
+</div>
+
 <div class="feature-box green">
   <h3>✨ Minor Charms Added</h3>
   <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4px 20px;">
@@ -107,6 +111,10 @@ const CHANGELOG_VERSIONS = [
     <li>⭐ <strong>Low Blow</strong></li>
     <li>⭐ <strong>Savage Blow</strong></li>
   </ul>
+</div>
+
+<div class="note-box">
+  <strong>Aclaración sobre Charms Críticos:</strong> Debido a que el cliente del juego no proporciona los datos necesarios para calcular el DPS puro de un personaje (basado en nivel, vocación y skills), actualmente no es posible obtener una estimación matemática para asignar inteligentemente los charms críticos. Por esta razón, su asignación debe realizarse manualmente por el jugador. Si en el futuro el juego incorpora estas estadísticas, el bot ya se encuentra preparado para realizar estas asignaciones automáticamente, tal como lo hace hoy con los charms elementales.
 </div>
 
 <div class="feature-box green">
