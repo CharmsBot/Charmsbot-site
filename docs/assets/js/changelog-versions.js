@@ -38,27 +38,36 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>✨ Dynamic Echoes Budgeting <span class="new-badge">NEW</span></h2>
-<p>The <i>Minor Charm Echoes</i> system has been refined to be more accurate and helpful during your hunts.</p>
 <div class="feature-box green">
   <ul>
-    <li><strong>Automatic Calculation:</strong> CharmsBot now calculates your Echoes budget based on the levels of all assigned Major Charms (Elemental and Critical).</li>
-    <li><strong>Better Optimization:</strong> The recommendation engine for Minor Charms now uses the full available budget to maximize your damage output.</li>
+    <li><strong>Automatic Calculation:</strong> CharmsBot calculates your Echoes budget based on the levels of all assigned Major Charms (Elemental and Critical).</li>
+    <li><strong>Unlocked Minor Charms:</strong> Remember that <code>/analysis</code> only uses the Minor Charms you have actually unlocked. Use <code>/character edit</code> to keep your unlocked list up to date!</li>
     <li><strong>Promotion Bonus:</strong> Includes the +100 Echoes bonus for promoted characters (Lvl 20+).</li>
   </ul>
 </div>
 
+<h2>⚔️ Smarter Recommendations</h2>
+<div class="highlight-box">
+  <h3>Utility-Based Minor Charms</h3>
+  <p>The <code>/bestcharms</code> command is now smarter! It doesn't just look at damage; it recommends Minor Charms based on the actual needs of the hunt:</p>
+  <ul>
+    <li><strong>Anti-Paralyze:</strong> <i>Iron Will</i> becomes a priority for creatures that paralyze.</li>
+    <li><strong>Anti-Mana Drain:</strong> <i>Void Gaze</i> for mana-draining monsters.</li>
+    <li><strong>Anti-Flee:</strong> <i>Lethal Hold</i> for creatures that flee at low health.</li>
+  </ul>
+</div>
+
 <h2>⚖️ "Tibia-Accurate" Damage Engine</h2>
-<p>We've audited every single formula to ensure the numbers match the game's actual behavior.</p>
 <div class="feature-box">
   <ul>
-    <li><strong>Exact Rounding:</strong> All damage calculations now use Tibia's <code>ceiling</code> rounding, providing the most accurate estimates available.</li>
-    <li><strong>Precise Caps:</strong> Elemental damage is now capped correctly based on your Level and Monster vulnerabilities.</li>
+    <li><strong>Exact Rounding:</strong> All damage calculations now use Tibia's <code>ceiling</code> rounding for 100% accuracy.</li>
+    <li><strong>Precise Caps:</strong> Elemental damage is capped correctly based on Level and Monster vulnerabilities.</li>
     <li><strong>Overpower & Overflux:</strong> Fully validated procs for high-tier hunting setups.</li>
   </ul>
 </div>
 
 <h2>🚀 Performance & Sharding</h2>
-<p>Massive behind-the-scenes update to ensure zero lag and 24/7 stability, even as CharmsBot scales to hundreds of servers.</p>
+<p>Massive behind-the-scenes update to ensure zero lag and 24/7 stability across hundreds of servers.</p>
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Echoes</h2>
@@ -70,27 +79,36 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <h2>✨ Presupuesto Dinámico de Echoes <span class="new-badge">NUEVO</span></h2>
-<p>El sistema de <i>Minor Charm Echoes</i> ha sido refinado para ser más preciso y útil durante tus hunts.</p>
 <div class="feature-box green">
   <ul>
-    <li><strong>Cálculo Automático:</strong> CharmsBot ahora calcula tu presupuesto de Echoes basado en los niveles de todos los Major Charms asignados (tanto elementales como críticos).</li>
-    <li><strong>Mejor Optimización:</strong> El motor de recomendación de Minor Charms ahora usa todo el presupuesto disponible para maximizar tu daño.</li>
+    <li><strong>Cálculo Automático:</strong> CharmsBot calcula tu presupuesto de Echoes basado en los niveles de todos los Major Charms asignados (tanto elementales como críticos).</li>
+    <li><strong>Charms Menores Desbloqueados:</strong> Recuerda que <code>/analysis</code> solo usa los Minor Charms que realmente tienes desbloqueados. ¡Usa <code>/character edit</code> para mantener tu lista actualizada!</li>
     <li><strong>Bono de Promoción:</strong> Incluye el bono de +100 Echoes para personajes promocionados (Nivel 20+).</li>
   </ul>
 </div>
 
+<h2>⚔️ Recomendaciones Inteligentes</h2>
+<div class="highlight-box">
+  <h3>Minor Charms por Utilidad</h3>
+  <p>¡El comando <code>/bestcharms</code> ahora es más inteligente! No solo mira el daño; recomienda Minor Charms basados en las necesidades reales de la hunt:</p>
+  <ul>
+    <li><strong>Anti-Paralización:</strong> <i>Iron Will</i> es prioridad para criaturas que paralizan.</li>
+    <li><strong>Anti-Mana Drain:</strong> <i>Void Gaze</i> para monstruos que drenan maná.</li>
+    <li><strong>Anti-Huida:</strong> <i>Lethal Hold</i> para criaturas que huyen con poca vida.</li>
+  </ul>
+</div>
+
 <h2>⚖️ Motor de Daño "Tibia-Accurate"</h2>
-<p>Hemos auditado cada fórmula para asegurar que los números coincidan con el comportamiento real del juego.</p>
 <div class="feature-box">
   <ul>
-    <li><strong>Redondeo Exacto:</strong> Todos los cálculos de daño ahora usan el redondeo superior (<code>ceiling</code>) de Tibia, ofreciendo las estimaciones más precisas.</li>
-    <li><strong>Topes Precisos:</strong> El daño elemental ahora se limita correctamente según tu Nivel y las vulnerabilidades de la criatura.</li>
-    <li><strong>Overpower y Overflux:</strong> Mecánicas de daño totalmente validadas para configuraciones de caza de alto nivel.</li>
+    <li><strong>Redondeo Exacto:</strong> Todos los cálculos de daño ahora usan el redondeo superior (<code>ceiling</code>) de Tibia para una precisión del 100%.</li>
+    <li><strong>Topes Precisos:</strong> El daño elemental se limita correctamente según el Nivel y las vulnerabilidades del monstruo.</li>
+    <li><strong>Overpower y Overflux:</strong> Mecánicas totalmente validadas para configuraciones de caza de alto nivel.</li>
   </ul>
 </div>
 
 <h2>🚀 Rendimiento y Sharding</h2>
-<p>Actualización masiva interna para garantizar cero lag y estabilidad 24/7, incluso mientras CharmsBot escala a cientos de servidores.</p>
+<p>Actualización masiva interna para garantizar cero lag y estabilidad 24/7 en cientos de servidores.</p>
 `
   },
 
