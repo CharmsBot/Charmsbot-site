@@ -29,88 +29,94 @@ const CHANGELOG_VERSIONS = [
     pill: 'Apr 2026',
     pill_es: 'Abr 2026',
     en: `
-<h2>🔥 Critical Charms & Echoes Update</h2>
-<p>v3.0.0 introduces manual tracking for Critical Charms and a completely overhauled Echoes budgeting system.</p>
+<h2>🔥 Critical Charms & Minor Charms Update</h2>
+<p>v3.0.0 brings a massive expansion to the Charms engine, introducing full support for Critical Charms and 11 new utilities.</p>
 
 <div class="feature-box">
-  <h3>🎯 Manual Critical Charms</h3>
-  <p>You can now assign Critical Charms to monsters in your hunt setup. The bot will intelligently account for these when calculating your remaining capacity for Minor Charms.</p>
+  <h3>💎 Major Charms Added</h3>
+  <ul>
+    <li>⭐ <strong>Low Blow</strong></li>
+    <li>⭐ <strong>Savage Blow</strong></li>
+  </ul>
 </div>
 
-<h2>✨ Dynamic Echoes Budgeting <span class="new-badge">NEW</span></h2>
 <div class="feature-box green">
-  <ul>
-    <li><strong>Automatic Calculation:</strong> CharmsBot calculates your Echoes budget based on the levels of all assigned Major Charms (Elemental and Critical).</li>
-    <li><strong>Unlocked Minor Charms:</strong> Remember that <code>/analysis</code> only uses the Minor Charms you have actually unlocked. Use <code>/character edit</code> to keep your unlocked list up to date!</li>
-    <li><strong>Promotion Bonus:</strong> Includes the +100 Echoes bonus for promoted characters (Lvl 20+).</li>
-  </ul>
+  <h3>✨ Minor Charms Added</h3>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4px 20px;">
+    <ul>
+      <li>🔹 <strong>Vampiric Embrace</strong></li>
+      <li>🔹 <strong>Void Call</strong></li>
+      <li>🔹 <strong>Fatal Hold</strong></li>
+      <li>🔹 <strong>Void Inversion</strong></li>
+      <li>🔹 <strong>Gut</strong></li>
+      <li>🔹 <strong>Adrenaline Burst</strong></li>
+    </ul>
+    <ul>
+      <li>🔹 <strong>Cleanse</strong></li>
+      <li>🔹 <strong>Scavenge</strong></li>
+      <li>🔹 <strong>Cripple</strong></li>
+      <li>🔹 <strong>Numb</strong></li>
+      <li>🔹 <strong>Bless</strong></li>
+    </ul>
+  </div>
 </div>
 
-<h2>⚔️ Smarter Recommendations</h2>
+<h2>⚙️ Smart Functionalities</h2>
 <div class="highlight-box">
-  <h3>Utility-Based Minor Charms</h3>
-  <p>The <code>/bestcharms</code> command is now smarter! It doesn't just look at damage; it recommends Minor Charms based on the actual needs of the hunt:</p>
   <ul>
-    <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that flee at low health.</li>
-    <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> becomes a priority for creatures that paralyze.</li>
-    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> for mana-draining monsters.</li>
-    <li><strong>Loot Optimization:</strong> <code>Gut</code> is recommended based on the creature products dropped by the monsters.</li>
+    <li><strong>Critical Assignment:</strong> You can now assign Critical Charms to monsters in your hunt setup. The bot will intelligently account for these in your Echoes budget.</li>
+    <li><strong>Utility-Based Recommendations:</strong> <code>/bestcharms</code> now suggests specific utilities: <code>Fatal Hold</code> (flees), <code>Cleanse</code> (paralyze), <code>Void Inversion</code> (mana drain), and <code>Gut</code> (creature products).</li>
+    <li><strong>Setup Tip:</strong> <code>/analysis</code> only uses the Minor Charms you have unlocked. Use <code>/character edit</code> to keep your list updated!</li>
   </ul>
 </div>
 
-<h2>⚖️ "Tibia-Accurate" Damage Engine</h2>
-<div class="feature-box">
-  <ul>
-    <li><strong>Exact Rounding:</strong> All damage calculations now use Tibia's <code>ceiling</code> rounding for 100% accuracy.</li>
-    <li><strong>Precise Caps:</strong> Elemental damage is capped correctly based on Level and Monster vulnerabilities.</li>
-    <li><strong>Overpower & Overflux:</strong> Fully validated procs for high-tier hunting setups.</li>
-  </ul>
-</div>
-
-<h2>🚀 Performance & Sharding</h2>
-<p>Massive behind-the-scenes update to ensure zero lag and 24/7 stability across hundreds of servers.</p>
+<h2>⚖️ "Tibia-Accurate" Calculations</h2>
+<p>Full engine audit: damage rounding (<code>ceiling</code>), elemental caps, and tiered Echoes budgeting are now perfectly aligned with game mechanics.</p>
 `,
     es: `
-<h2>🔥 Actualización de Charms Críticos y Echoes</h2>
-<p>La v3.0.0 introduce el seguimiento manual de Charms Críticos y un sistema de presupuesto de Echoes completamente renovado.</p>
+<h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
+<p>La v3.0.0 trae una expansión masiva al motor de Charms, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades.</p>
 
 <div class="feature-box">
-  <h3>🎯 Charms Críticos Manuales</h3>
-  <p>Ahora puedes asignar Charms Críticos a las criaturas en tu configuración de hunt. El bot los tendrá en cuenta inteligentemente al calcular tu capacidad restante para Minor Charms.</p>
+  <h3>💎 Major Charms Agregados</h3>
+  <ul>
+    <li>⭐ <strong>Low Blow</strong></li>
+    <li>⭐ <strong>Savage Blow</strong></li>
+  </ul>
 </div>
 
-<h2>✨ Presupuesto Dinámico de Echoes <span class="new-badge">NUEVO</span></h2>
 <div class="feature-box green">
-  <ul>
-    <li><strong>Cálculo Automático:</strong> CharmsBot calcula tu presupuesto de Echoes basado en los niveles de todos los Major Charms asignados (tanto elementales como críticos).</li>
-    <li><strong>Charms Menores Desbloqueados:</strong> Recuerda que <code>/analysis</code> solo usa los Minor Charms que realmente tienes desbloqueados. ¡Usa <code>/character edit</code> para mantener tu lista actualizada!</li>
-    <li><strong>Bono de Promoción:</strong> Incluye el bono de +100 Echoes para personajes promocionados (Nivel 20+).</li>
-  </ul>
+  <h3>✨ Minor Charms Agregados</h3>
+  <div style="display:grid; grid-template-columns: 1fr 1fr; gap: 4px 20px;">
+    <ul>
+      <li>🔹 <strong>Vampiric Embrace</strong></li>
+      <li>🔹 <strong>Void Call</strong></li>
+      <li>🔹 <strong>Fatal Hold</strong></li>
+      <li>🔹 <strong>Void Inversion</strong></li>
+      <li>🔹 <strong>Gut</strong></li>
+      <li>🔹 <strong>Adrenaline Burst</strong></li>
+    </ul>
+    <ul>
+      <li>🔹 <strong>Cleanse</strong></li>
+      <li>🔹 <strong>Scavenge</strong></li>
+      <li>🔹 <strong>Cripple</strong></li>
+      <li>🔹 <strong>Numb</strong></li>
+      <li>🔹 <strong>Bless</strong></li>
+    </ul>
+  </div>
 </div>
 
-<h2>⚔️ Recomendaciones Inteligentes</h2>
+<h2>⚙️ Funcionalidades Inteligentes</h2>
 <div class="highlight-box">
-  <h3>Minor Charms por Utilidad</h3>
-  <p>¡El comando <code>/bestcharms</code> ahora es más inteligente! No solo mira el daño; recomienda Minor Charms basados en las necesidades reales de la hunt:</p>
   <ul>
-    <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que huyen con poca vida.</li>
-    <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> es prioridad para criaturas que paralizan.</li>
-    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> para monstruos que drenan maná.</li>
-    <li><strong>Optimización de Loot:</strong> <code>Gut</code> se recomienda basado en los creature products que sueltan los monstruos.</li>
+    <li><strong>Asignación de Críticos:</strong> Ahora puedes asignar Charms Críticos a los monstruos. El bot los resta inteligentemente de tu presupuesto de Echoes.</li>
+    <li><strong>Recomendaciones Inteligentes:</strong> <code>/bestcharms</code> ahora sugiere utilidades: <code>Fatal Hold</code> (huidas), <code>Cleanse</code> (parálisis), <code>Void Inversion</code> (mana drain) y <code>Gut</code> (creature products).</li>
+    <li><strong>Tip de Configuración:</strong> <code>/analysis</code> solo usa los charms que tienes desbloqueados. ¡Usa <code>/character edit</code> para mantener tu lista al día!</li>
   </ul>
 </div>
 
-<h2>⚖️ Motor de Daño "Tibia-Accurate"</h2>
-<div class="feature-box">
-  <ul>
-    <li><strong>Redondeo Exacto:</strong> Todos los cálculos de daño ahora usan el redondeo superior (<code>ceiling</code>) de Tibia para una precisión del 100%.</li>
-    <li><strong>Topes Precisos:</strong> El daño elemental se limita correctamente según el Nivel y las vulnerabilidades del monstruo.</li>
-    <li><strong>Overpower y Overflux:</strong> Mecánicas totalmente validadas para configuraciones de caza de alto nivel.</li>
-  </ul>
-</div>
-
-<h2>🚀 Rendimiento y Sharding</h2>
-<p>Actualización masiva interna para garantizar cero lag y estabilidad 24/7 en cientos de servidores.</p>
+<h2>⚖️ Cálculos "Tibia-Accurate"</h2>
+<p>Auditoría completa del motor: el redondeo de daño (<code>ceiling</code>), los topes elementales y el presupuesto de Echoes están ahora perfectamente sincronizados.</p>
 `
   },
 
