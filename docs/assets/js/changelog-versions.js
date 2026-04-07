@@ -30,7 +30,7 @@ const CHANGELOG_VERSIONS = [
     pill_es: 'Abr 2026',
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
-<p>v3.0.0 introduces full support for Critical Charms and a massive library of 11 new Minor Charms to optimize your hunts.</p>
+<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 new utilities to optimize your hunts.</p>
 
 <div class="feature-box">
   <h3>💎 Major Charms Added</h3>
@@ -61,48 +61,39 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
-<div class="highlight-box">
-  <h3>🚀 Performance & Scalability</h3>
-  <p>Engine rebuilt for hundreds of servers. Enjoy faster command responses and zero downtime during peak hunting hours (Auto-Sharding implemented).</p>
-</div>
+<h2>🚀 Performance & Speed</h2>
+<p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
 
 <h2>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h2>
-<p>CharmsBot is now safer and more private. We've removed all unnecessary access to your messages and members.</p>
-<div class="feature-box">
-  <ul>
-    <li><strong>Zero Message Access:</strong> The bot only sees commands you explicitly send.</li>
-    <li><strong>Verified Compliance:</strong> Fully aligned with the latest Discord safety standards.</li>
-    <li><strong>Leaner Permissions:</strong> Fewer requirements to add the bot to your server.</li>
-  </ul>
-</div>
+<p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
 
 <h2>⚖️ "Tibia-Accurate" Calculations</h2>
 <div class="feature-box green">
   <ul>
-    <li><strong>Exact Rounding:</strong> All results now use Tibia's <code>ceiling</code> rounding logic for 100% accuracy.</li>
-    <li><strong>Verified Caps:</strong> Elemental damage caps and procs (Overpower/Overflux) validated against game data.</li>
-    <li><strong>Dynamic Echoes:</strong> Your Minor budget is automatically calculated based on your setup and promotion.</li>
+    <li><strong>Exact Rounding:</strong> Damage results now match the game's official rounding for perfect hunt planning.</li>
+    <li><strong>Validated Damage:</strong> Elemental damage and procs are now perfectly synced with current Tibia mechanics.</li>
+    <li><strong>Dynamic Echoes:</strong> Your Minor Charm budget is automatically calculated based on your setup and promotion.</li>
   </ul>
 </div>
 
 <h2>⚔️ Smart Utility Recommendations</h2>
-<p>The <code>/bestcharms</code> command now suggests Minor Charms based on your hunt's specific challenges:</p>
 <div class="highlight-box">
+  <p>The <code>/bestcharms</code> command now recommends specific Minor Charms based on your hunt's needs:</p>
   <ul>
     <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that run away.</li>
     <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> as priority for paralyzing monsters.</li>
     <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> for mana-draining targets.</li>
-    <li><strong>Loot Optimization:</strong> <code>Gut</code> recommended for high creature-product drops.</li>
+    <li><strong>Loot Optimization:</strong> <code>Gut</code> recommended for creatures with high creature-product drops.</li>
   </ul>
 </div>
 
 <div class="note-box">
-  <strong>Setup Tip:</strong> <code>/analysis</code> only uses Minor Charms you have unlocked. Keep your list updated using <code>/character edit</code>!
+  <strong>Setup Tip:</strong> Use <code>/character edit</code> to keep your unlocked charms list updated! <code>/analysis</code> will only recommend charms you actually have.
 </div>
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-<p>La v3.0.0 introduce soporte completo para Charms Críticos y una biblioteca masiva de 11 nuevos Minor Charms para optimizar tus hunts.</p>
+<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades para optimizar tus hunts.</p>
 
 <div class="feature-box">
   <h3>💎 Major Charms Agregados</h3>
@@ -133,33 +124,24 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
-<div class="highlight-box">
-  <h3>🚀 Rendimiento y Escalabilidad</h3>
-  <p>Motor reconstruido para cientos de servidores. Disfruta de respuestas más rápidas y cero tiempo de inactividad durante horas pico (Auto-Sharding implementado).</p>
-</div>
+<h2>🚀 Rendimiento y Velocidad</h2>
+<p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
 
 <h2>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h2>
-<p>CharmsBot es ahora más seguro y privado. Hemos eliminado todo acceso innecesario a tus mensajes y miembros.</p>
-<div class="feature-box">
-  <ul>
-    <li><strong>Cero Acceso a Mensajes:</strong> El bot solo ve los comandos que envías explícitamente.</li>
-    <li><strong>Cumplimiento Verificado:</strong> Alineado con los últimos estándares de seguridad de Discord.</li>
-    <li><strong>Permisos Ligeros:</strong> Menos requisitos para añadir el bot a cualquier servidor.</li>
-  </ul>
-</div>
+<p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
 
 <h2>⚖️ Cálculos "Tibia-Accurate"</h2>
 <div class="feature-box green">
   <ul>
-    <li><strong>Redondeo Exacto:</strong> Todos los resultados usan ahora el redondeo <code>ceiling</code> de Tibia para una precisión del 100%.</li>
-    <li><strong>Topes Verificados:</strong> Daño elemental y procs especiales (Overpower/Overflux) validados con datos reales.</li>
-    <li><strong>Echoes Dinámicos:</strong> Tu presupuesto se calcula automáticamente según tu build y promoción.</li>
+    <li><strong>Redondeo Exacto:</strong> Los resultados de daño ahora coinciden con el redondeo oficial del juego para una planificación perfecta.</li>
+    <li><strong>Daño Validado:</strong> El daño elemental y los procs están perfectamente sincronizados con las mecánicas actuales de Tibia.</li>
+    <li><strong>Echoes Dinámicos:</strong> Tu presupuesto de Minor Charms se calcula automáticamente según tu build y promoción.</li>
   </ul>
 </div>
 
 <h2>⚔️ Recomendaciones Inteligentes</h2>
-<p>El comando <code>/bestcharms</code> ahora sugiere Minor Charms según los retos específicos de la hunt:</p>
 <div class="highlight-box">
+  <p>El comando <code>/bestcharms</code> ahora recomienda Minor Charms específicos según las necesidades de tu hunt:</p>
   <ul>
     <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que intentan escapar.</li>
     <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> prioritario para monstruos que paralizan.</li>
@@ -169,7 +151,7 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="note-box">
-  <strong>Tip de Configuración:</strong> <code>/analysis</code> solo usa los charms desbloqueados. ¡Mantén tu lista al día con <code>/character edit</code>!
+  <strong>Tip de Configuración:</strong> ¡Usa <code>/character edit</code> para mantener tu lista de charms al día! <code>/analysis</code> solo recomendará los charms que ya tienes.
 </div>
 `
   },
