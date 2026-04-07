@@ -29,68 +29,68 @@ const CHANGELOG_VERSIONS = [
     pill: 'Apr 2026',
     pill_es: 'Abr 2026',
     en: `
-<h2>🚀 Performance & Accuracy Update</h2>
-<p>v3.0.0 focuses on making CharmsBot faster, more secure, and perfectly accurate for your hunts.</p>
+<h2>🔥 Critical Charms & Echoes Update</h2>
+<p>v3.0.0 introduces manual tracking for Critical Charms and a completely overhauled Echoes budgeting system.</p>
 
-<div class="highlight-box">
-  <h3>Scalability for 100+ Servers</h3>
-  <p>We've completely rebuilt the bot's engine to support hundreds of servers simultaneously. You'll notice faster command responses and zero downtime, even during peak hunting hours.</p>
-</div>
-
-<h2>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h2>
-<p>CharmsBot is now more private than ever. We've removed all unnecessary access to your messages and server members.</p>
 <div class="feature-box">
-  <ul>
-    <li><strong>Zero Message Access:</strong> The bot only sees the commands you explicitly send.</li>
-    <li><strong>Verified Compliance:</strong> Fully aligned with Discord's latest safety and verification standards.</li>
-    <li><strong>Leaner & Safer:</strong> Fewer permissions required to add the bot to any server.</li>
-  </ul>
+  <h3>🎯 Manual Critical Charms</h3>
+  <p>You can now assign Critical Charms (like <i>Critical Hit</i>) to monsters in your hunt setup. The bot will intelligently account for these when calculating your remaining capacity for Minor Charms.</p>
 </div>
 
-<h2>⚖️ "Tibia-Accurate" Calculations</h2>
-<p>We've performed an exhaustive audit on our damage engine to match the game's mechanics perfectly.</p>
+<h2>✨ Dynamic Echoes Budgeting <span class="new-badge">NEW</span></h2>
+<p>The <i>Minor Charm Echoes</i> system has been refined to be more accurate and helpful during your hunts.</p>
 <div class="feature-box green">
   <ul>
-    <li><strong>Exact Rounding:</strong> All damage results now use the same rounding logic as Tibia (<code>header ceiling</code>), ensuring 100% accuracy.</li>
-    <li><strong>Verified Caps:</strong> Elemental damage caps and special procs like Overpower/Overflux have been validated against real game data.</li>
-    <li><strong>Optimized Echoes:</strong> Minor Charm budget calculations are now more precise based on your character setup.</li>
+    <li><strong>Automatic Calculation:</strong> CharmsBot now calculates your Echoes budget based on the levels of all assigned Major Charms (Elemental and Critical).</li>
+    <li><strong>Better Optimization:</strong> The recommendation engine for Minor Charms now uses the full available budget to maximize your damage output.</li>
+    <li><strong>Promotion Bonus:</strong> Includes the +100 Echoes bonus for promoted characters (Lvl 20+).</li>
   </ul>
 </div>
 
-<h2>📁 Project Cleanup</h2>
-<p>Under-the-hood optimizations to ensure a cleaner, faster experience for developers and users alike.</p>
+<h2>⚖️ "Tibia-Accurate" Damage Engine</h2>
+<p>We've audited every single formula to ensure the numbers match the game's actual behavior.</p>
+<div class="feature-box">
+  <ul>
+    <li><strong>Exact Rounding:</strong> All damage calculations now use Tibia's <code>ceiling</code> rounding, providing the most accurate estimates available.</li>
+    <li><strong>Precise Caps:</strong> Elemental damage is now capped correctly based on your Level and Monster vulnerabilities.</li>
+    <li><strong>Overpower & Overflux:</strong> Fully validated procs for high-tier hunting setups.</li>
+  </ul>
+</div>
+
+<h2>🚀 Performance & Sharding</h2>
+<p>Massive behind-the-scenes update to ensure zero lag and 24/7 stability, even as CharmsBot scales to hundreds of servers.</p>
 `,
     es: `
-<h2>🚀 Actualización de Rendimiento y Precisión</h2>
-<p>La v3.0.0 se centra en hacer que CharmsBot sea más rápido, más seguro y perfectamente preciso para tus hunts.</p>
+<h2>🔥 Actualización de Charms Críticos y Echoes</h2>
+<p>La v3.0.0 introduce el seguimiento manual de Charms Críticos y un sistema de presupuesto de Echoes completamente renovado.</p>
 
-<div class="highlight-box">
-  <h3>Escalabilidad para +100 Servidores</h3>
-  <p>Hemos reconstruido el motor del bot para soportar cientos de servidores simultáneamente. Notarás respuestas más rápidas y cero tiempo de inactividad, incluso en horas pico de Tibia.</p>
-</div>
-
-<h2>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h2>
-<p>CharmsBot es ahora más privado que nunca. Hemos eliminado todo acceso innecesario a tus mensajes y miembros del servidor.</p>
 <div class="feature-box">
-  <ul>
-    <li><strong>Cero Acceso a Mensajes:</strong> El bot solo ve los comandos que envías explícitamente.</li>
-    <li><strong>Cumplimiento Verificado:</strong> Totalmente alineado con los últimos estándares de seguridad y verificación de Discord.</li>
-    <li><strong>Más Ligero y Seguro:</strong> Se requieren menos permisos para agregar el bot a cualquier servidor.</li>
-  </ul>
+  <h3>🎯 Charms Críticos Manuales</h3>
+  <p>Ahora puedes asignar Charms Críticos (como <i>Critical Hit</i>) a las criaturas en tu configuración de hunt. El bot los tendrá en cuenta inteligentemente al calcular tu capacidad restante para Minor Charms.</p>
 </div>
 
-<h2>⚖️ Cálculos "Tibia-Accurate"</h2>
-<p>Hemos realizado una auditoría exhaustiva en nuestro motor de daño para que coincida perfectamente con las mecánicas del juego.</p>
+<h2>✨ Presupuesto Dinámico de Echoes <span class="new-badge">NUEVO</span></h2>
+<p>El sistema de <i>Minor Charm Echoes</i> ha sido refinado para ser más preciso y útil durante tus hunts.</p>
 <div class="feature-box green">
   <ul>
-    <li><strong>Redondeo Exacto:</strong> Todos los resultados de daño ahora usan la misma lógica de redondeo que Tibia (<code>ceiling</code>), asegurando un 100% de precisión.</li>
-    <li><strong>Límites Verificados:</strong> Los topes de daño elemental y procs especiales como Overpower/Overflux han sido validados con datos reales.</li>
-    <li><strong>Echoes Optimizados:</strong> Los cálculos de presupuesto de Minor Charms son ahora más precisos según la configuración de tu personaje.</li>
+    <li><strong>Cálculo Automático:</strong> CharmsBot ahora calcula tu presupuesto de Echoes basado en los niveles de todos los Major Charms asignados (tanto elementales como críticos).</li>
+    <li><strong>Mejor Optimización:</strong> El motor de recomendación de Minor Charms ahora usa todo el presupuesto disponible para maximizar tu daño.</li>
+    <li><strong>Bono de Promoción:</strong> Incluye el bono de +100 Echoes para personajes promocionados (Nivel 20+).</li>
   </ul>
 </div>
 
-<h2>📁 Limpieza del Proyecto</h2>
-<p>Optimizaciones internas para garantizar una experiencia más limpia y rápida tanto para desarrolladores como para usuarios.</p>
+<h2>⚖️ Motor de Daño "Tibia-Accurate"</h2>
+<p>Hemos auditado cada fórmula para asegurar que los números coincidan con el comportamiento real del juego.</p>
+<div class="feature-box">
+  <ul>
+    <li><strong>Redondeo Exacto:</strong> Todos los cálculos de daño ahora usan el redondeo superior (<code>ceiling</code>) de Tibia, ofreciendo las estimaciones más precisas.</li>
+    <li><strong>Topes Precisos:</strong> El daño elemental ahora se limita correctamente según tu Nivel y las vulnerabilidades de la criatura.</li>
+    <li><strong>Overpower y Overflux:</strong> Mecánicas de daño totalmente validadas para configuraciones de caza de alto nivel.</li>
+  </ul>
+</div>
+
+<h2>🚀 Rendimiento y Sharding</h2>
+<p>Actualización masiva interna para garantizar cero lag y estabilidad 24/7, incluso mientras CharmsBot escala a cientos de servidores.</p>
 `
   },
 
