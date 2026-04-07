@@ -30,9 +30,18 @@ const CHANGELOG_VERSIONS = [
     pill_es: 'Abr 2026',
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
-<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 new utilities to optimize your hunts.</p>
+
+<div class="highlight-box">
+  <h3>🚀 Performance & Speed</h3>
+  <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
+</div>
 
 <div class="feature-box">
+  <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
+  <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
+</div>
+
+<div class="feature-box green">
   <h3>💎 Major Charms Added</h3>
   <ul>
     <li>⭐ <strong>Low Blow</strong></li>
@@ -61,12 +70,6 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
-<h2>🚀 Performance & Speed</h2>
-<p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
-
-<h2>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h2>
-<p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
-
 <h2>⚖️ "Tibia-Accurate" Calculations</h2>
 <div class="feature-box green">
   <ul>
@@ -93,9 +96,18 @@ const CHANGELOG_VERSIONS = [
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades para optimizar tus hunts.</p>
+
+<div class="highlight-box">
+  <h3>🚀 Rendimiento y Velocidad</h3>
+  <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
+</div>
 
 <div class="feature-box">
+  <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
+  <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
+</div>
+
+<div class="feature-box green">
   <h3>💎 Major Charms Agregados</h3>
   <ul>
     <li>⭐ <strong>Low Blow</strong></li>
@@ -123,12 +135,6 @@ const CHANGELOG_VERSIONS = [
     </ul>
   </div>
 </div>
-
-<h2>🚀 Rendimiento y Velocidad</h2>
-<p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
-
-<h2>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h2>
-<p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
 
 <h2>⚖️ Cálculos "Tibia-Accurate"</h2>
 <div class="feature-box green">
