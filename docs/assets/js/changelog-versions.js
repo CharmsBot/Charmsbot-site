@@ -30,7 +30,7 @@ const CHANGELOG_VERSIONS = [
     pill_es: 'Abr 2026',
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
-<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 new utilities to optimize your hunts.</p>
+<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 minor charms to optimize your hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Added</h3>
@@ -83,7 +83,7 @@ const CHANGELOG_VERSIONS = [
   <h3><code>/character edit</code> <span class="updated-badge">UPDATED</span></h3>
   <p>The command has been adjusted with a new flow to handle the addition of the new Critical Major Charms and Minor Charms to your profile.</p>
   <div class="note-box">
-    <strong>Note:</strong> You must set your <strong>Critical HP Threshold</strong> (via <code>/character edit</code>) to enable the assignment and analysis of Critical Charms.
+    <strong>Note:</strong> You must set your <strong>Critical HP Threshold</strong> (via <code>/character edit</code>) to enable the assignment of Critical Charms.
   </div>
 </div>
 
@@ -99,7 +99,7 @@ const CHANGELOG_VERSIONS = [
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades para optimizar tus hunts.</p>
+<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 minor charms para optimizar tus hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Agregados</h3>
@@ -152,7 +152,7 @@ const CHANGELOG_VERSIONS = [
   <h3><code>/character edit</code> <span class="updated-badge">ACTUALIZADO</span></h3>
   <p>El comando ha sido ajustado con un nuevo flujo para manejar la adición de los nuevos Charms Críticos y Minor Charms a tu perfil.</p>
   <div class="note-box">
-    <strong>Nota:</strong> Es necesario fijar un <strong>Umbral de Vida Crítica</strong> (vía <code>/character edit</code>) para poder asignar y analizar Charms Críticos.
+    <strong>Nota:</strong> Es necesario fijar un <strong>Umbral de Vida Crítica</strong> (vía <code>/character edit</code>) para poder asignar Charms Críticos.
   </div>
 </div>
 
