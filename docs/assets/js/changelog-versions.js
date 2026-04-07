@@ -30,6 +30,7 @@ const CHANGELOG_VERSIONS = [
     pill_es: 'Abr 2026',
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
+<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 new utilities to optimize your hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Added</h3>
@@ -62,7 +63,7 @@ const CHANGELOG_VERSIONS = [
 
 <div class="highlight-box">
   <h3>⚔️ Smart Utility Recommendations</h3>
-  <p>The <code>/bestcharms</code> command now recommends specific Minor Charms based on your hunt's needs:</p>
+  <p>The <code>/bestcharms</code> command now features a <strong>Dynamic Echoes Budget</strong>, automatically calculating your remaining Minor Charms capacity based on your character's promotion and assigned Major Charms. It also recommends specific utilities based on your hunt's challenges:</p>
   <ul>
     <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that run away.</li>
     <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> as priority for paralyzing monsters.</li>
@@ -87,6 +88,7 @@ const CHANGELOG_VERSIONS = [
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
+<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades para optimizar tus hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Agregados</h3>
@@ -119,7 +121,7 @@ const CHANGELOG_VERSIONS = [
 
 <div class="highlight-box">
   <h3>⚔️ Recomendaciones Inteligentes</h3>
-  <p>El comando <code>/bestcharms</code> ahora recomienda Minor Charms específicos según las necesidades de tu hunt:</p>
+  <p>El comando <code>/bestcharms</code> ahora incluye un <strong>Presupuesto Dinámico de Echoes</strong>, calculando automáticamente tu capacidad restante para Minor Charms basándose en tu promoción y los Major Charms asignados. Además, recomienda utilidades específicas según los retos de tu hunt:</p>
   <ul>
     <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que intentan escapar.</li>
     <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> prioritario para monstruos que paralizan.</li>
