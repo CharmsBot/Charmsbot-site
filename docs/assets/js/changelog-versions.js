@@ -29,81 +29,69 @@ const CHANGELOG_VERSIONS = [
     pill: 'Apr 2026',
     pill_es: 'Abr 2026',
     en: `
-<h2>🚀 Production & Scale Update <span class="new-badge">NEW</span></h2>
-<p>v3.0.0 marks the official transition to a high-scale architecture ready for 100+ servers and Discord verification.</p>
+<h2>🚀 Performance & Accuracy Update</h2>
+<p>v3.0.0 focuses on making CharmsBot faster, more secure, and perfectly accurate for your hunts.</p>
 
 <div class="highlight-box">
-  <h3>Scalability Overhaul (Auto-Sharding)</h3>
-  <p>CharmsBot now utilizes <code>AutoShardedBot</code> to handle load across hundreds of servers simultaneously without performance degradation.</p>
+  <h3>Scalability for 100+ Servers</h3>
+  <p>We've completely rebuilt the bot's engine to support hundreds of servers simultaneously. You'll notice faster command responses and zero downtime, even during peak hunting hours.</p>
 </div>
 
-<h2>🛡️ Security & Verification <span class="updated-badge">UPDATED</span></h2>
-<p>Total cleanup of Privileged Intents (Message Content and Server Members) to ensure 100% compliance with Discord's verification policies.</p>
-<div class="security-box">
-  <ul>
-    <li>Full transition to Slash Commands and Modals</li>
-    <li>No privileged permissions required for core functionality</li>
-    <li>Faster command response times and better privacy</li>
-  </ul>
-</div>
-
-<h2>⚖️ "Tibia-Accurate" Damage Audit</h2>
-<p>We've performed an exhaustive audit on all damage calculation logic to ensure perfect alignment with Tibia's engine.</p>
-<div class="feature-box green">
-  <ul>
-    <li>Centralized damage rounding (<code>ceil</code>) logic across all commands</li>
-    <li>Verified elemental damage caps ($Level \\times 2$)</li>
-    <li>Overpower and Overflux formulas validated against actual game data</li>
-    <li>Refined Minor Charm Echoes budgeting based on Tiered Major Charm levels</li>
-  </ul>
-</div>
-
-<h2>📁 Repository Optimization</h2>
+<h2>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h2>
+<p>CharmsBot is now more private than ever. We've removed all unnecessary access to your messages and server members.</p>
 <div class="feature-box">
   <ul>
-    <li>Restructured repository to a industry-standard flat root structure</li>
-    <li>Improved <code>.gitignore</code> for better security of environment secrets</li>
-    <li>Ready for automated deployment and CI/CD pipelines</li>
+    <li><strong>Zero Message Access:</strong> The bot only sees the commands you explicitly send.</li>
+    <li><strong>Verified Compliance:</strong> Fully aligned with Discord's latest safety and verification standards.</li>
+    <li><strong>Leaner & Safer:</strong> Fewer permissions required to add the bot to any server.</li>
   </ul>
-</div>`,
+</div>
+
+<h2>⚖️ "Tibia-Accurate" Calculations</h2>
+<p>We've performed an exhaustive audit on our damage engine to match the game's mechanics perfectly.</p>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Exact Rounding:</strong> All damage results now use the same rounding logic as Tibia (<code>header ceiling</code>), ensuring 100% accuracy.</li>
+    <li><strong>Verified Caps:</strong> Elemental damage caps and special procs like Overpower/Overflux have been validated against real game data.</li>
+    <li><strong>Optimized Echoes:</strong> Minor Charm budget calculations are now more precise based on your character setup.</li>
+  </ul>
+</div>
+
+<h2>📁 Project Cleanup</h2>
+<p>Under-the-hood optimizations to ensure a cleaner, faster experience for developers and users alike.</p>
+`,
     es: `
-<h2>🚀 Actualización de Producción y Escala <span class="new-badge">NUEVO</span></h2>
-<p>La v3.0.0 marca la transición oficial a una arquitectura de alta escala lista para más de 100 servidores y la verificación de Discord.</p>
+<h2>🚀 Actualización de Rendimiento y Precisión</h2>
+<p>La v3.0.0 se centra en hacer que CharmsBot sea más rápido, más seguro y perfectamente preciso para tus hunts.</p>
 
 <div class="highlight-box">
-  <h3>Revisión de Escalabilidad (Auto-Sharding)</h3>
-  <p>CharmsBot ahora utiliza <code>AutoShardedBot</code> para manejar la carga en cientos de servidores simultáneamente sin degradación del rendimiento.</p>
+  <h3>Escalabilidad para +100 Servidores</h3>
+  <p>Hemos reconstruido el motor del bot para soportar cientos de servidores simultáneamente. Notarás respuestas más rápidas y cero tiempo de inactividad, incluso en horas pico de Tibia.</p>
 </div>
 
-<h2>🛡️ Seguridad y Verificación <span class="updated-badge">ACTUALIZADO</span></h2>
-<p>Limpieza total de Privileged Intents (Contenido de Mensajes y Miembros del Servidor) para asegurar el 100% de cumplimiento con las políticas de verificación de Discord.</p>
-<div class="security-box">
-  <ul>
-    <li>Transición completa a Slash Commands y Modales</li>
-    <li>No se requieren permisos privilegiados para la funcionalidad principal</li>
-    <li>Tiempos de respuesta de comandos más rápidos y mejor privacidad</li>
-  </ul>
-</div>
-
-<h2>⚖️ Auditoría de Daño "Tibia-Accurate"</h2>
-<p>Hemos realizado una auditoría exhaustiva en toda la lógica de cálculo de daño para asegurar una alineación perfecta con el motor de Tibia.</p>
-<div class="feature-box green">
-  <ul>
-    <li>Lógica de redondeo de daño (<code>ceil</code>) centralizada en todos los comandos</li>
-    <li>Verificación de los límites de daño elemental ($Nivel \\times 2$)</li>
-    <li>Fórmulas de Overpower y Overflux validadas con datos reales del juego</li>
-    <li>Presupuesto de Echoes de Minor Charms refinado basado en los niveles de Major Charms</li>
-  </ul>
-</div>
-
-<h2>📁 Optimización del Repositorio</h2>
+<h2>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h2>
+<p>CharmsBot es ahora más privado que nunca. Hemos eliminado todo acceso innecesario a tus mensajes y miembros del servidor.</p>
 <div class="feature-box">
   <ul>
-    <li>Repositorio reestructurado a una estructura raíz plana estándar de la industria</li>
-    <li><code>.gitignore</code> mejorado para mayor seguridad de los secretos del entorno</li>
-    <li>Listo para despliegue automatizado y pipelines de CI/CD</li>
+    <li><strong>Cero Acceso a Mensajes:</strong> El bot solo ve los comandos que envías explícitamente.</li>
+    <li><strong>Cumplimiento Verificado:</strong> Totalmente alineado con los últimos estándares de seguridad y verificación de Discord.</li>
+    <li><strong>Más Ligero y Seguro:</strong> Se requieren menos permisos para agregar el bot a cualquier servidor.</li>
   </ul>
-</div>`
+</div>
+
+<h2>⚖️ Cálculos "Tibia-Accurate"</h2>
+<p>Hemos realizado una auditoría exhaustiva en nuestro motor de daño para que coincida perfectamente con las mecánicas del juego.</p>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Redondeo Exacto:</strong> Todos los resultados de daño ahora usan la misma lógica de redondeo que Tibia (<code>ceiling</code>), asegurando un 100% de precisión.</li>
+    <li><strong>Límites Verificados:</strong> Los topes de daño elemental y procs especiales como Overpower/Overflux han sido validados con datos reales.</li>
+    <li><strong>Echoes Optimizados:</strong> Los cálculos de presupuesto de Minor Charms son ahora más precisos según la configuración de tu personaje.</li>
+  </ul>
+</div>
+
+<h2>📁 Limpieza del Proyecto</h2>
+<p>Optimizaciones internas para garantizar una experiencia más limpia y rápida tanto para desarrolladores como para usuarios.</p>
+`
   },
 
   // ── v2.6.0 ────────────────────────────────────────────────────────────────
