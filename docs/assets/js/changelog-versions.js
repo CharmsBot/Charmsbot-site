@@ -61,9 +61,11 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
+<h2>⚔️ Command Updates</h2>
+
 <div class="highlight-box">
-  <h3>⚔️ Smart Utility Recommendations</h3>
-  <p>The <code>/bestcharms</code> command now features a <strong>Dynamic Echoes Budget</strong>, automatically calculating your remaining Minor Charms capacity based on your character's promotion and assigned Major Charms. It also recommends specific utilities based on your hunt's challenges:</p>
+  <h3><code>/bestcharms</code></h3>
+  <p>The command now features a <strong>Dynamic Echoes Budget</strong>, automatically calculating your remaining Minor Charms capacity based on your character's promotion and assigned Major Charms. It also recommends specific utilities based on your hunt's challenges:</p>
   <ul>
     <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that run away.</li>
     <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> as priority for paralyzing monsters.</li>
@@ -73,16 +75,16 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
-  <h3>📊 Analysis & Setup</h3>
-  <p>The <code>/analysis</code> command now provides perfectly accurate hunt simulations using official Tibia damage rounding metrics. It respects your <strong>Dynamic Echoes Budget</strong> and will only analyze the Minor Charms you have explicitly unlocked using <code>/character edit</code>.</p>
+  <h3><code>/analysis</code></h3>
+  <p>The command now provides perfectly accurate hunt simulations using official Tibia damage rounding metrics. It respects your <strong>Dynamic Echoes Budget</strong> and will only analyze the Minor Charms you have explicitly unlocked using <code>/character edit</code>.</p>
+</div>
+
+<div class="highlight-box">
+  <h3><code>/character edit</code> <span class="updated-badge">UPDATED</span></h3>
+  <p>The command has been completely redesigned with a new flow, allowing you to easily add both Critical Major Charms and Minor Charms to your profile.</p>
   <div class="note-box">
     <strong>Note:</strong> You must set your <strong>Critical HP Threshold</strong> (via <code>/character edit</code>) to enable the assignment and analysis of Critical Charms.
   </div>
-</div>
-
-<div class="feature-box green">
-  <h3>⚙️ Dynamic Echoes System</h3>
-  <p>The minor charms <strong>Echoes Budget</strong> automatically updates in real-time as you assign Major Charms to creatures. It accurately calculates your remaining capacity, seamlessly taking into account the costs of both <strong>Elemental</strong> and <strong>Critical</strong> Charms.</p>
 </div>
 
 <div class="highlight-box">
@@ -128,9 +130,11 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
+<h2>⚔️ Actualización de Comandos</h2>
+
 <div class="highlight-box">
-  <h3>⚔️ Recomendaciones Inteligentes</h3>
-  <p>El comando <code>/bestcharms</code> ahora incluye un <strong>Presupuesto Dinámico de Echoes</strong>, calculando automáticamente tu capacidad restante para Minor Charms basándose en tu promoción y los Major Charms asignados. Además, recomienda utilidades específicas según los retos de tu hunt:</p>
+  <h3><code>/bestcharms</code></h3>
+  <p>El comando ahora incluye un <strong>Presupuesto Dinámico de Echoes</strong>, calculando automáticamente tu capacidad restante para Minor Charms basándose en tu promoción y los Major Charms asignados. Además, recomienda utilidades específicas según los retos de tu hunt:</p>
   <ul>
     <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que intentan escapar.</li>
     <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> prioritario para monstruos que paralizan.</li>
@@ -140,16 +144,16 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
-  <h3>📊 Analysis y Configuración</h3>
-  <p>El comando <code>/analysis</code> ahora genera simulaciones perfectas utilizando el sistema de redondeo de daño oficial de Tibia. Además, respeta estrictamente tu <strong>Presupuesto de Echoes</strong> y solo analizará los Minor Charms que hayas desbloqueado mediante <code>/character edit</code>.</p>
+  <h3><code>/analysis</code></h3>
+  <p>El comando ahora genera simulaciones perfectas utilizando el sistema de redondeo de daño oficial de Tibia. Además, respeta estrictamente tu <strong>Presupuesto de Echoes</strong> y solo analizará los Minor Charms que hayas desbloqueado mediante <code>/character edit</code>.</p>
+</div>
+
+<div class="highlight-box">
+  <h3><code>/character edit</code> <span class="updated-badge">ACTUALIZADO</span></h3>
+  <p>El comando ha sido rediseñado con un nuevo flujo que te permite agregar fácilmente Charms Críticos y Minor Charms a tu perfil.</p>
   <div class="note-box">
     <strong>Nota:</strong> Es necesario fijar un <strong>Umbral de Vida Crítica</strong> (vía <code>/character edit</code>) para poder asignar y analizar Charms Críticos.
   </div>
-</div>
-
-<div class="feature-box green">
-  <h3>⚙️ Sistema de Echoes Dinámico</h3>
-  <p>El <strong>Presupuesto de Echoes</strong> para minor charms se actualiza automáticamente en tiempo real al momento de agregar Major Charms a las criaturas. Calcula con precisión tu capacidad restante, tomando en cuenta los costos tanto de los Charms <strong>Elementales</strong> como de los <strong>Críticos</strong>.</p>
 </div>
 
 <div class="highlight-box">
