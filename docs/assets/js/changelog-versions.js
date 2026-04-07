@@ -61,25 +61,6 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
-  <h3>🚀 Performance & Speed</h3>
-  <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
-</div>
-
-<div class="feature-box">
-  <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
-  <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
-</div>
-
-<h2>⚖️ "Tibia-Accurate" Calculations</h2>
-<div class="feature-box green">
-  <ul>
-    <li><strong>Exact Rounding:</strong> Damage results now match the game's official rounding for perfect hunt planning.</li>
-    <li><strong>Validated Damage:</strong> Elemental damage and procs are now perfectly synced with current Tibia mechanics.</li>
-    <li><strong>Dynamic Echoes:</strong> Your Minor Charm budget is automatically calculated based on your setup and promotion.</li>
-  </ul>
-</div>
-
-<div class="highlight-box">
   <h3>⚔️ Smart Utility Recommendations</h3>
   <p>The <code>/bestcharms</code> command now recommends specific Minor Charms based on your hunt's needs:</p>
   <ul>
@@ -92,6 +73,16 @@ const CHANGELOG_VERSIONS = [
 
 <div class="note-box">
   <strong>Setup Tip:</strong> Use <code>/character edit</code> to keep your unlocked charms list updated! <code>/analysis</code> will only recommend charms you actually have.
+</div>
+
+<div class="highlight-box">
+  <h3>🚀 Performance & Speed</h3>
+  <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
+</div>
+
+<div class="feature-box">
+  <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
+  <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
 </div>
 `,
     es: `
@@ -127,25 +118,6 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
-  <h3>🚀 Rendimiento y Velocidad</h3>
-  <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
-</div>
-
-<div class="feature-box">
-  <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
-  <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
-</div>
-
-<h2>⚖️ Cálculos "Tibia-Accurate"</h2>
-<div class="feature-box green">
-  <ul>
-    <li><strong>Redondeo Exacto:</strong> Los resultados de daño ahora coinciden con el redondeo oficial del juego para una planificación perfecta.</li>
-    <li><strong>Daño Validado:</strong> El daño elemental y los procs están perfectamente sincronizados con las mecánicas actuales de Tibia.</li>
-    <li><strong>Echoes Dinámicos:</strong> Tu presupuesto de Minor Charms se calcula automáticamente según tu build y promoción.</li>
-  </ul>
-</div>
-
-<div class="highlight-box">
   <h3>⚔️ Recomendaciones Inteligentes</h3>
   <p>El comando <code>/bestcharms</code> ahora recomienda Minor Charms específicos según las necesidades de tu hunt:</p>
   <ul>
@@ -158,6 +130,16 @@ const CHANGELOG_VERSIONS = [
 
 <div class="note-box">
   <strong>Tip de Configuración:</strong> ¡Usa <code>/character edit</code> para mantener tu lista de charms al día! <code>/analysis</code> solo recomendará los charms que ya tienes.
+</div>
+
+<div class="highlight-box">
+  <h3>🚀 Rendimiento y Velocidad</h3>
+  <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
+</div>
+
+<div class="feature-box">
+  <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
+  <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
 </div>
 `
   },
