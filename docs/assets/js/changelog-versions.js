@@ -31,16 +31,6 @@ const CHANGELOG_VERSIONS = [
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
 
-<div class="highlight-box">
-  <h3>🚀 Performance & Speed</h3>
-  <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
-</div>
-
-<div class="feature-box">
-  <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
-  <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
-</div>
-
 <div class="feature-box green">
   <h3>💎 Major Charms Added</h3>
   <ul>
@@ -70,6 +60,16 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
+<div class="highlight-box">
+  <h3>🚀 Performance & Speed</h3>
+  <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
+</div>
+
+<div class="feature-box">
+  <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
+  <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
+</div>
+
 <h2>⚖️ "Tibia-Accurate" Calculations</h2>
 <div class="feature-box green">
   <ul>
@@ -79,8 +79,8 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<h2>⚔️ Smart Utility Recommendations</h2>
 <div class="highlight-box">
+  <h3>⚔️ Smart Utility Recommendations</h3>
   <p>The <code>/bestcharms</code> command now recommends specific Minor Charms based on your hunt's needs:</p>
   <ul>
     <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that run away.</li>
@@ -96,16 +96,6 @@ const CHANGELOG_VERSIONS = [
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-
-<div class="highlight-box">
-  <h3>🚀 Rendimiento y Velocidad</h3>
-  <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
-</div>
-
-<div class="feature-box">
-  <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
-  <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
-</div>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Agregados</h3>
@@ -136,6 +126,16 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
+<div class="highlight-box">
+  <h3>🚀 Rendimiento y Velocidad</h3>
+  <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
+</div>
+
+<div class="feature-box">
+  <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
+  <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
+</div>
+
 <h2>⚖️ Cálculos "Tibia-Accurate"</h2>
 <div class="feature-box green">
   <ul>
@@ -145,8 +145,8 @@ const CHANGELOG_VERSIONS = [
   </ul>
 </div>
 
-<h2>⚔️ Recomendaciones Inteligentes</h2>
 <div class="highlight-box">
+  <h3>⚔️ Recomendaciones Inteligentes</h3>
   <p>El comando <code>/bestcharms</code> ahora recomienda Minor Charms específicos según las necesidades de tu hunt:</p>
   <ul>
     <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que intentan escapar.</li>
