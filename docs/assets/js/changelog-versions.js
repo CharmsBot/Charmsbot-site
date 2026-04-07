@@ -30,7 +30,7 @@ const CHANGELOG_VERSIONS = [
     pill_es: 'Abr 2026',
     en: `
 <h2>🔥 Critical Charms & Minor Charms Update</h2>
-<p>v3.0.0 brings a massive expansion to the Charms engine, introducing full support for Critical Charms and 11 new utilities.</p>
+<p>v3.0.0 introduces full support for Critical Charms and a massive library of 11 new Minor Charms to optimize your hunts.</p>
 
 <div class="feature-box">
   <h3>💎 Major Charms Added</h3>
@@ -61,21 +61,48 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
-<h2>⚙️ Smart Functionalities</h2>
 <div class="highlight-box">
+  <h3>🚀 Performance & Scalability</h3>
+  <p>Engine rebuilt for hundreds of servers. Enjoy faster command responses and zero downtime during peak hunting hours (Auto-Sharding implemented).</p>
+</div>
+
+<h2>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h2>
+<p>CharmsBot is now safer and more private. We've removed all unnecessary access to your messages and members.</p>
+<div class="feature-box">
   <ul>
-    <li><strong>Critical Assignment:</strong> You can now assign Critical Charms to monsters in your hunt setup. The bot will intelligently account for these in your Echoes budget.</li>
-    <li><strong>Utility-Based Recommendations:</strong> <code>/bestcharms</code> now suggests specific utilities: <code>Fatal Hold</code> (flees), <code>Cleanse</code> (paralyze), <code>Void Inversion</code> (mana drain), and <code>Gut</code> (creature products).</li>
-    <li><strong>Setup Tip:</strong> <code>/analysis</code> only uses the Minor Charms you have unlocked. Use <code>/character edit</code> to keep your list updated!</li>
+    <li><strong>Zero Message Access:</strong> The bot only sees commands you explicitly send.</li>
+    <li><strong>Verified Compliance:</strong> Fully aligned with the latest Discord safety standards.</li>
+    <li><strong>Leaner Permissions:</strong> Fewer requirements to add the bot to your server.</li>
   </ul>
 </div>
 
 <h2>⚖️ "Tibia-Accurate" Calculations</h2>
-<p>Full engine audit: damage rounding (<code>ceiling</code>), elemental caps, and tiered Echoes budgeting are now perfectly aligned with game mechanics.</p>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Exact Rounding:</strong> All results now use Tibia's <code>ceiling</code> rounding logic for 100% accuracy.</li>
+    <li><strong>Verified Caps:</strong> Elemental damage caps and procs (Overpower/Overflux) validated against game data.</li>
+    <li><strong>Dynamic Echoes:</strong> Your Minor budget is automatically calculated based on your setup and promotion.</li>
+  </ul>
+</div>
+
+<h2>⚔️ Smart Utility Recommendations</h2>
+<p>The <code>/bestcharms</code> command now suggests Minor Charms based on your hunt's specific challenges:</p>
+<div class="highlight-box">
+  <ul>
+    <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that run away.</li>
+    <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> as priority for paralyzing monsters.</li>
+    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> for mana-draining targets.</li>
+    <li><strong>Loot Optimization:</strong> <code>Gut</code> recommended for high creature-product drops.</li>
+  </ul>
+</div>
+
+<div class="note-box">
+  <strong>Setup Tip:</strong> <code>/analysis</code> only uses Minor Charms you have unlocked. Keep your list updated using <code>/character edit</code>!
+</div>
 `,
     es: `
 <h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-<p>La v3.0.0 trae una expansión masiva al motor de Charms, introduciendo soporte completo para Charms Críticos y 11 nuevas utilidades.</p>
+<p>La v3.0.0 introduce soporte completo para Charms Críticos y una biblioteca masiva de 11 nuevos Minor Charms para optimizar tus hunts.</p>
 
 <div class="feature-box">
   <h3>💎 Major Charms Agregados</h3>
@@ -106,17 +133,44 @@ const CHANGELOG_VERSIONS = [
   </div>
 </div>
 
-<h2>⚙️ Funcionalidades Inteligentes</h2>
 <div class="highlight-box">
+  <h3>🚀 Rendimiento y Escalabilidad</h3>
+  <p>Motor reconstruido para cientos de servidores. Disfruta de respuestas más rápidas y cero tiempo de inactividad durante horas pico (Auto-Sharding implementado).</p>
+</div>
+
+<h2>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h2>
+<p>CharmsBot es ahora más seguro y privado. Hemos eliminado todo acceso innecesario a tus mensajes y miembros.</p>
+<div class="feature-box">
   <ul>
-    <li><strong>Asignación de Críticos:</strong> Ahora puedes asignar Charms Críticos a los monstruos. El bot los resta inteligentemente de tu presupuesto de Echoes.</li>
-    <li><strong>Recomendaciones Inteligentes:</strong> <code>/bestcharms</code> ahora sugiere utilidades: <code>Fatal Hold</code> (huidas), <code>Cleanse</code> (parálisis), <code>Void Inversion</code> (mana drain) y <code>Gut</code> (creature products).</li>
-    <li><strong>Tip de Configuración:</strong> <code>/analysis</code> solo usa los charms que tienes desbloqueados. ¡Usa <code>/character edit</code> para mantener tu lista al día!</li>
+    <li><strong>Cero Acceso a Mensajes:</strong> El bot solo ve los comandos que envías explícitamente.</li>
+    <li><strong>Cumplimiento Verificado:</strong> Alineado con los últimos estándares de seguridad de Discord.</li>
+    <li><strong>Permisos Ligeros:</strong> Menos requisitos para añadir el bot a cualquier servidor.</li>
   </ul>
 </div>
 
 <h2>⚖️ Cálculos "Tibia-Accurate"</h2>
-<p>Auditoría completa del motor: el redondeo de daño (<code>ceiling</code>), los topes elementales y el presupuesto de Echoes están ahora perfectamente sincronizados.</p>
+<div class="feature-box green">
+  <ul>
+    <li><strong>Redondeo Exacto:</strong> Todos los resultados usan ahora el redondeo <code>ceiling</code> de Tibia para una precisión del 100%.</li>
+    <li><strong>Topes Verificados:</strong> Daño elemental y procs especiales (Overpower/Overflux) validados con datos reales.</li>
+    <li><strong>Echoes Dinámicos:</strong> Tu presupuesto se calcula automáticamente según tu build y promoción.</li>
+  </ul>
+</div>
+
+<h2>⚔️ Recomendaciones Inteligentes</h2>
+<p>El comando <code>/bestcharms</code> ahora sugiere Minor Charms según los retos específicos de la hunt:</p>
+<div class="highlight-box">
+  <ul>
+    <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que intentan escapar.</li>
+    <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> prioritario para monstruos que paralizan.</li>
+    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> para objetivos que drenan maná.</li>
+    <li><strong>Optimización de Loot:</strong> <code>Gut</code> recomendado para criaturas con muchos creature products.</li>
+  </ul>
+</div>
+
+<div class="note-box">
+  <strong>Tip de Configuración:</strong> <code>/analysis</code> solo usa los charms desbloqueados. ¡Mantén tu lista al día con <code>/character edit</code>!
+</div>
 `
   },
 
