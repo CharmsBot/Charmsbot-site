@@ -77,6 +77,11 @@ const CHANGELOG_VERSIONS = [
   <p>The <code>/analysis</code> command now provides perfectly accurate hunt simulations using official Tibia damage rounding metrics. It respects your <strong>Dynamic Echoes Budget</strong> and will only analyze the Minor Charms you have explicitly unlocked using <code>/character edit</code>.</p>
 </div>
 
+<div class="feature-box green">
+  <h3>⚙️ Dynamic Echoes System</h3>
+  <p>The minor charms <strong>Echoes Budget</strong> automatically updates in real-time as you assign Major Charms to creatures. It accurately calculates your remaining capacity, seamlessly taking into account the costs of both <strong>Elemental</strong> and <strong>Critical</strong> Charms.</p>
+</div>
+
 <div class="highlight-box">
   <h3>🚀 Performance & Speed</h3>
   <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
@@ -134,6 +139,11 @@ const CHANGELOG_VERSIONS = [
 <div class="highlight-box">
   <h3>📊 Analysis y Configuración</h3>
   <p>El comando <code>/analysis</code> ahora genera simulaciones perfectas utilizando el sistema de redondeo de daño oficial de Tibia. Además, respeta estrictamente tu <strong>Presupuesto de Echoes</strong> y solo analizará los Minor Charms que hayas desbloqueado mediante <code>/character edit</code>.</p>
+</div>
+
+<div class="feature-box green">
+  <h3>⚙️ Sistema de Echoes Dinámico</h3>
+  <p>El <strong>Presupuesto de Echoes</strong> para minor charms se actualiza automáticamente en tiempo real al momento de agregar Major Charms a las criaturas. Calcula con precisión tu capacidad restante, tomando en cuenta los costos tanto de los Charms <strong>Elementales</strong> como de los <strong>Críticos</strong>.</p>
 </div>
 
 <div class="highlight-box">
