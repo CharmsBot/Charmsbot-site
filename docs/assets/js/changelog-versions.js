@@ -34,7 +34,7 @@ const CHANGELOG_VERSIONS = [
 
 <div class="feature-box">
   <h3>🎯 Manual Critical Charms</h3>
-  <p>You can now assign Critical Charms (like <i>Critical Hit</i>) to monsters in your hunt setup. The bot will intelligently account for these when calculating your remaining capacity for Minor Charms.</p>
+  <p>You can now assign Critical Charms to monsters in your hunt setup. The bot will intelligently account for these when calculating your remaining capacity for Minor Charms.</p>
 </div>
 
 <h2>✨ Dynamic Echoes Budgeting <span class="new-badge">NEW</span></h2>
@@ -51,9 +51,10 @@ const CHANGELOG_VERSIONS = [
   <h3>Utility-Based Minor Charms</h3>
   <p>The <code>/bestcharms</code> command is now smarter! It doesn't just look at damage; it recommends Minor Charms based on the actual needs of the hunt:</p>
   <ul>
-    <li><strong>Anti-Paralyze:</strong> <i>Iron Will</i> becomes a priority for creatures that paralyze.</li>
-    <li><strong>Anti-Mana Drain:</strong> <i>Void Gaze</i> for mana-draining monsters.</li>
-    <li><strong>Anti-Flee:</strong> <i>Lethal Hold</i> for creatures that flee at low health.</li>
+    <li><strong>Anti-Flee:</strong> <code>Fatal Hold</code> for creatures that flee at low health.</li>
+    <li><strong>Anti-Paralyze:</strong> <code>Cleanse</code> becomes a priority for creatures that paralyze.</li>
+    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> for mana-draining monsters.</li>
+    <li><strong>Loot Optimization:</strong> <code>Gut</code> is recommended based on the creature products dropped by the monsters.</li>
   </ul>
 </div>
 
@@ -75,7 +76,7 @@ const CHANGELOG_VERSIONS = [
 
 <div class="feature-box">
   <h3>🎯 Charms Críticos Manuales</h3>
-  <p>Ahora puedes asignar Charms Críticos (como <i>Critical Hit</i>) a las criaturas en tu configuración de hunt. El bot los tendrá en cuenta inteligentemente al calcular tu capacidad restante para Minor Charms.</p>
+  <p>Ahora puedes asignar Charms Críticos a las criaturas en tu configuración de hunt. El bot los tendrá en cuenta inteligentemente al calcular tu capacidad restante para Minor Charms.</p>
 </div>
 
 <h2>✨ Presupuesto Dinámico de Echoes <span class="new-badge">NUEVO</span></h2>
@@ -92,9 +93,10 @@ const CHANGELOG_VERSIONS = [
   <h3>Minor Charms por Utilidad</h3>
   <p>¡El comando <code>/bestcharms</code> ahora es más inteligente! No solo mira el daño; recomienda Minor Charms basados en las necesidades reales de la hunt:</p>
   <ul>
-    <li><strong>Anti-Paralización:</strong> <i>Iron Will</i> es prioridad para criaturas que paralizan.</li>
-    <li><strong>Anti-Mana Drain:</strong> <i>Void Gaze</i> para monstruos que drenan maná.</li>
-    <li><strong>Anti-Huida:</strong> <i>Lethal Hold</i> para criaturas que huyen con poca vida.</li>
+    <li><strong>Anti-Huida:</strong> <code>Fatal Hold</code> para criaturas que huyen con poca vida.</li>
+    <li><strong>Anti-Paralización:</strong> <code>Cleanse</code> es prioridad para criaturas que paralizan.</li>
+    <li><strong>Anti-Mana Drain:</strong> <code>Void Inversion</code> para monstruos que drenan maná.</li>
+    <li><strong>Optimización de Loot:</strong> <code>Gut</code> se recomienda basado en los creature products que sueltan los monstruos.</li>
   </ul>
 </div>
 
