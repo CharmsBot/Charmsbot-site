@@ -29,8 +29,8 @@ const CHANGELOG_VERSIONS = [
     pill: 'Apr 2026',
     pill_es: 'Abr 2026',
     en: `
-<h2>🔥 Critical Charms & Minor Charms Update</h2>
-<p>v3.0.0 brings a massive expansion to CharmsBot, introducing full support for Critical Charms and 11 minor charms to optimize your hunts.</p>
+<h2>🔥 Partial Critical Charms & Minor Charms Update</h2>
+<p>v3.0.0 brings a massive expansion to CharmsBot, introducing partial support for Critical Charms and 11 minor charms to optimize your hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Added</h3>
@@ -92,6 +92,11 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
+  <h3><code>/setup response</code> <span class="new-badge">NEW</span></h3>
+  <p>Introducing <strong>Hybrid Visibility Mode</strong>. You can now choose whether command responses should be private (ephemeral) or public. This setting applies to the following 4 commands: <code>/analysis</code>, <code>/bestcharms</code>, <code>/element</code>, and <code>/hunt view</code>.</p>
+</div>
+
+<div class="highlight-box">
   <h3>🚀 Performance & Speed</h3>
   <p>We've completely upgraded the bot's engine to be faster and more reliable. Enjoy near-instant command responses even during peak hunting hours.</p>
 </div>
@@ -100,10 +105,19 @@ const CHANGELOG_VERSIONS = [
   <h3>🛡️ Privacy First <span class="updated-badge">UPDATED</span></h3>
   <p>CharmsBot is now more secure and private. The bot only sees the commands you explicitly send, ensuring 100% privacy for your server conversations and members.</p>
 </div>
+
+<h2>🐛 Bug Fixes</h2>
+<div class="bug-fix-box">
+  <h3>Discord Bot</h3>
+  <ul>
+    <li>Fixed <code>/deliverytask</code> failing with very long item lists. The command now uses the embed description to increase capacity to 4,096 characters and includes an automatic truncation safeguard.</li>
+    <li>Fixed UI alignment issues in <code>/setup</code> and <code>/character edit</code> menus on mobile devices. Implemented an invisible Braille padding system to ensure columns remain perfectly aligned across all platforms.</li>
+  </ul>
+</div>
 `,
     es: `
-<h2>🔥 Actualización de Charms Críticos y Minor Charms</h2>
-<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte completo para Charms Críticos y 11 minor charms para optimizar tus hunts.</p>
+<h2>🔥 Soporte Parcial de Charms Críticos y Minor Charms</h2>
+<p>La v3.0.0 trae una expansión masiva a CharmsBot, introduciendo soporte parcial para Charms Críticos y 11 minor charms para optimizar tus hunts.</p>
 
 <div class="feature-box green">
   <h3>💎 Major Charms Agregados</h3>
@@ -165,6 +179,11 @@ const CHANGELOG_VERSIONS = [
 </div>
 
 <div class="highlight-box">
+  <h3><code>/setup response</code> <span class="new-badge">NUEVO</span></h3>
+  <p>Presentamos el <strong>Modo de Visibilidad Híbrida</strong>. Ahora puedes elegir si las respuestas de los comandos deben ser privadas (efímeras) o públicas. Esta configuración se aplica a los siguientes 4 comandos: <code>/analysis</code>, <code>/bestcharms</code>, <code>/element</code> y <code>/hunt view</code>.</p>
+</div>
+
+<div class="highlight-box">
   <h3>🚀 Rendimiento y Velocidad</h3>
   <p>Hemos actualizado completamente el motor del bot para que sea más rápido y confiable. Disfruta de respuestas casi instantáneas incluso en las horas pico de juego.</p>
 </div>
@@ -173,7 +192,16 @@ const CHANGELOG_VERSIONS = [
   <h3>🛡️ Privacidad Ante Todo <span class="updated-badge">ACTUALIZADO</span></h3>
   <p>CharmsBot es ahora más seguro y privado. El bot solo ve los comandos que envías explícitamente, garantizando privacidad total para tus conversaciones y miembros.</p>
 </div>
-`
+
+<h2>🐛 Corrección de Bugs</h2>
+<div class="bug-fix-box">
+  <h3>Discord Bot</h3>
+  <ul>
+    <li>Corregido el error en <code>/deliverytask</code> al procesar listas de ítems muy extensas. El comando ahora utiliza la descripción del embed para aumentar la capacidad a 4,096 caracteres e incluye un sistema de truncado automático de seguridad.</li>
+    <li>Corregidos problemas de alineación visual en los menús de <code>/setup</code> y <code>/character edit</code> en dispositivos móviles. Se implementó un sistema de padding con caracteres Braille invisibles para garantizar que las columnas se mantengan perfectamente alineadas en todas las plataformas.</li>
+  </ul>
+</div>
+`,
   },
 
   // ── v2.6.0 ────────────────────────────────────────────────────────────────
